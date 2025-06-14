@@ -1,43 +1,43 @@
 # Site Configuration
 [site]
-  title                = "Bioxiplas" # Shared title for SEO and OpenGraph
-  description          = "Sustainable packaging and biodegradable protection solutions for responsible industries." # Shared description for SEO and OpenGraph
-  tagline              = "Biotechnology applied to circular packaging"
-  tagline_separator    = ""
-  base_url             = "https://upstart-astro.netlify.app"
-  logo                 = "/images/logobioxiplas2.png"
-  logo_hover_animation = true
-  logo_text            = ""
-  logo_width           = "65px"
-  logo_height          = "60px"
-  trailing_slash       = true
+title                = "Bioxiplas"
+description          = "Sustainable packaging and biodegradable protection solutions for responsible industries."
+tagline              = "Biotechnology applied to circular packaging"
+tagline_separator    = ""
+base_url             = "https://upstart-astro.netlify.app"
+logo                 = "/images/logobioxiplas2.png"
+logo_hover_animation = true
+logo_text            = ""
+logo_width           = "65px"
+logo_height          = "60px"
+trailing_slash       = true
 
   [site.favicon]
-    path  = "/images/favicons"
-    image = "/images/logo.svg"
+  path  = "/images/favicons"
+  image = "/images/logo.svg"
 
 
 # SEO Metadata
 [seo]
-  author = "Bioxiplas"
-  keywords = [
-    "biodegradable packaging",
-    "eco-friendly materials",
-    "compostable solutions",
-    "sustainable industrial packaging",
-    "Bioxiplas",
-  ]
-  robots = "index, follow"
+author = "Bioxiplas"
+keywords = [
+  "biodegradable packaging",
+  "eco-friendly materials",
+  "compostable solutions",
+  "sustainable industrial packaging",
+  "Bioxiplas",
+]
+robots = "index, follow"
 
   [seo.robots_txt]
-    enable = true
-    disallow = [
-      "/cdn-cgi/",
-    ]
+  enable = true
+  disallow = [
+    "/cdn-cgi/",
+  ]
 
   [seo.sitemap]
-    enable = true
-    exclude = []
+  enable = true
+  exclude = []
 
 
 # Theme Settings
@@ -70,16 +70,12 @@ de = "Abonniere unseren Newsletter, um unsere neuesten biologisch abbaubaren Lö
 
 [settings.navigation_button]
 enable = true
+url    = "/contact/" # URL única para evitar errores
 
 [settings.navigation_button.label]
 es = "Contáctanos"
 en = "Contact us"
 de = "Kontaktieren Sie uns"
-
-[settings.navigation_button.url]
-es = "/contacto/"
-en = "/contact/"
-de = "/kontakt/"
 
 [settings.multilingual]
 enable                   = true
