@@ -1,0 +1,105 @@
+---
+import ButtonLink from "../buttons/ButtonLink.astro";
+import OptimizedImage from "../utilities/OptimizedImage.astro";
+import { markdownify } from "@/lib/utils/textConverter";
+
+type Props = {
+  content: {
+    featured?: boolean;
+    badge?: {
+      enable: boolean;
+      label: string;
+    };
+    name: string;
+    description: string;
+    image?: string;
+    price: {
+      prepend_value?: string;
+      value: number | string;
+      append_value?: string;
+    };
+    features?: string[];
+    cta_btn?: {
+      enable: boolean;
+      label: string;
+      url: string;
+    };
+  };
+  class?: string; // <- agregado
+};
+
+const { content, class: className } = Astro.props;
+---
+
+<div
+  class:list={[
+    "group relative rounded-3xl p-6 transition duration-500 hover:shadow-xl min-h-full overflow-hidden",
+    content.featured
+      ? "bg-gradient-to-t from-primary/20 to-transparent border-2 border-primary/60 text-white"
+      : "border border-white/10 text-white",
+    className // <- para que se pase bien desde ProductsSection
+  ]}>
+
+  {content.badge?.enable && (
+    <span
+      class="absolute top-5 right-5 z-10 px-4 py-1 rounded-sm text-xs font-medium uppercase tracking-wider text-white bg-primary transition-transform duration-300 group-hover:rotate-[3deg]">
+      {markdownify(content.badge.label)}
+    </span>
+  )}
+
+  {content.image && (
+    <OptimizedImage
+      class="h-48 w-full object-contain mb-5"
+      src={content.image}
+      alt={content.name}
+    />
+  )}
+
+  <div class="flex flex-col gap-3 flex-1">
+    {content.name && (
+      <h3
+        class="text-h4 font-bold text-center"
+        set:html={markdownify(content.name)}
+      />
+    )}
+
+    {content.description && (
+      <p
+        class="text-text-default text-center text-base leading-relaxed"
+        set:html={markdownify(content.description)}
+      />
+    )}
+
+    {content.price && (
+      <div class="text-primary text-3xl font-extrabold text-center mt-2">
+        {content.price.prepend_value}
+        {content.price.value}
+        {content.price.append_value}
+      </div>
+    )}
+
+    {content.features && (
+      <div class="mt-4 w-full flex-1">
+        <ul class="list-disc list-inside space-y-2 text-sm text-text-default">
+          {content.features.map((feature) => (
+            <li set:html={markdownify(feature)} />
+          ))}
+        </ul>
+      </div>
+    )}
+  </div>
+
+  {content.cta_btn?.enable && (
+    <ButtonLink
+      class="btn-md btn-primary btn-has-icon group relative z-30 mt-6 flex items-center justify-center gap-4 w-full"
+      content={content.cta_btn}>
+      <span class="flex h-6 w-12 items-center justify-center rounded-full bg-white/15">
+        <OptimizedImage
+          alt="icon"
+          class="h-5 w-5 transition-all duration-300 group-hover:rotate-180"
+          src="/images/icons/svg/star.svg"
+        />
+      </span>
+    </ButtonLink>
+  )}
+</div>

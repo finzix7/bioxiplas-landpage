@@ -1,0 +1,55 @@
+---
+
+---
+
+<div id="custom-cursor" class="custom-cursor-light"></div>
+
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", () => {
+    const cursor = document.getElementById("custom-cursor");
+
+    const handleMouseMove = (e) => {
+      if (!cursor) return;
+      cursor.style.left = e.clientX + "px";
+      cursor.style.top = e.clientY + "px";
+    };
+
+    const handleScroll = () => {
+      if (!cursor) return;
+      if (window.scrollY > 0) {
+        cursor.classList.add("scrolled");
+      } else {
+        cursor.classList.remove("scrolled");
+      }
+    };
+
+    window.addEventListener("mousemove", handleMouseMove);
+    window.addEventListener("scroll", handleScroll);
+
+    window.addEventListener("astro:before-disconnect", () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("scroll", handleScroll);
+    });
+  });
+</script>
+
+<style is:inline>
+  .custom-cursor-light {
+    position: absolute;
+    width: 50rem;
+    right: 0;
+    height: 50rem;
+    background: linear-gradient(to bottom, #affa60, #1ac840, #1fb72b);
+    opacity: 0.1;
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    filter: blur(120px);
+    z-index: -1;
+    transition: opacity 0.5s ease;
+  }
+
+  .custom-cursor-light.scrolled {
+    opacity: 0.2;
+  }
+</style>

@@ -1,0 +1,91 @@
+---
+
+---
+
+<div class="hexagon-grid opacity-40 -z-10 w-full h-full"></div>
+
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", () => {
+    const hexagonGrid = document.querySelector(".hexagon-grid");
+
+    const handleMouseMove = (e) => {
+      const { clientX, clientY } = e;
+      const { innerWidth, innerHeight } = window;
+
+      const offsetX = ((clientX / innerWidth) - 0.5) * 10;
+      const offsetY = ((clientY / innerHeight) - 0.5) * 10;
+
+      if (hexagonGrid) {
+        hexagonGrid.style.transform = `translate3d(${offsetX}px, ${offsetY}px, 0)`;
+      }
+    };
+
+    window.addEventListener("mousemove", handleMouseMove);
+
+    window.addEventListener("astro:before-disconnect", () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+    });
+  });
+</script>
+
+<style is:inline>
+  .hexagon-grid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    max-width: 100vw;
+    max-height: 100vh;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: -10;
+    background: radial-gradient(
+          circle farthest-side at 0% 50%,
+          #0a0a0a 23.5%,
+          rgba(255, 170, 0, 0) 0
+        )
+        21px 30px,
+      radial-gradient(
+          circle farthest-side at 0% 50%,
+          #1e1f20 24%,
+          rgba(240, 166, 17, 0) 0
+        )
+        19px 30px,
+      linear-gradient(
+          #0a0a0a 14%,
+          rgba(240, 166, 17, 0) 0,
+          rgba(240, 166, 17, 0) 85%,
+          #0a0a0a 0
+        )
+        0 0,
+      linear-gradient(
+          150deg,
+          #0a0a0a 24%,
+          #1e1f20 0,
+          #1e1f20 26%,
+          rgba(240, 166, 17, 0) 0,
+          rgba(240, 166, 17, 0) 74%,
+          #1e1f20 0,
+          #1e1f20 76%,
+          #0a0a0a 0
+        )
+        0 0,
+      linear-gradient(
+          30deg,
+          #0a0a0a 24%,
+          #1e1f20 0,
+          #1e1f20 26%,
+          rgba(240, 166, 17, 0) 0,
+          rgba(240, 166, 17, 0) 74%,
+          #1e1f20 0,
+          #1e1f20 76%,
+          #0a0a0a 0
+        )
+        0 0,
+      linear-gradient(90deg, #1e1f20 2%, #0a0a0a 0, #0a0a0a 98%, #1e1f20 0%) 0 0
+        #0a0a0a;
+    background-size: 40px 60px;
+    will-change: transform;
+  }
+</style>

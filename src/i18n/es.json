@@ -1,0 +1,29 @@
+{
+  "common": {
+    "read_more": "Leer más",
+    "category": "Categoría",
+    "published_on": "Publicado el",
+    "learn_more_about": "Conoce más sobre",
+    "email_placeholder": "Correo electrónico",
+    "pagination_next": "Siguiente",
+    "pagination_previous": "Anterior"
+  },
+  "navigation": {
+    "button_label": "Solicitar información"
+  },
+  "subscription": {
+    "label": "Suscríbete a nuestro boletín"
+  },
+  "integration": {
+    "related_integration_section_title": "También podría **interesarte**",
+    "back_to_integration": "Volver"
+  },
+  "footer": {
+    "quick_links": "Enlaces rápidos",
+    "legal": "Legal",
+    "resources": "Recursos",
+    "description": "Innovación en packaging y protección biodegradable: soluciones certificadas, circulares y personalizadas para la industria alimentaria, salud y retail.",
+    "copyright": "Derechos reservados {{ year }} ",
+    "_comment": "Agradecemos amablemente que conserves el copyright del tema. ¡Gracias por apoyar a Getastrothemes!"
+  }
+}

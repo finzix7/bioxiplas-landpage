@@ -1,0 +1,29 @@
+{
+  "common": {
+    "read_more": "Mehr lesen",
+    "category": "Kategorie",
+    "published_on": "Veröffentlicht am",
+    "learn_more_about": "Mehr erfahren über",
+    "email_placeholder": "E-Mail-Adresse",
+    "pagination_next": "Weiter",
+    "pagination_previous": "Zurück"
+  },
+  "navigation": {
+    "button_label": "Informationen anfordern"
+  },
+  "subscription": {
+    "label": "Abonniere unseren Newsletter"
+  },
+  "integration": {
+    "related_integration_section_title": "Das könnte dich auch **interessieren**",
+    "back_to_integration": "Zurück"
+  },
+  "footer": {
+    "quick_links": "Schnellzugriff",
+    "legal": "Rechtliches",
+    "resources": "Ressourcen",
+    "description": "Innovation bei biologisch abbaubaren Verpackungen und Schutz: zertifizierte, zirkuläre und maßgeschneiderte Lösungen für die Lebensmittel-, Gesundheits- und Einzelhandelsbranche.",
+    "copyright": "Alle Rechte vorbehalten {{ year }}",
+    "_comment": "Wir würden uns freuen, wenn du den Copyright-Hinweis des Themes beibehältst. Vielen Dank für deine Unterstützung von Getastrothemes!"
+  }
+}

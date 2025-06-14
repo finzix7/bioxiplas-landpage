@@ -1,0 +1,279 @@
+{
+  "main": [
+    {
+      "enable": true,
+      "name": "Startseite",
+      "weight": 1,
+      "url": ""
+    },
+    {
+      "name": "Seiten",
+      "enable": true,
+      "weight": 3,
+      "hasChildren": true,
+      "children": [
+        {
+          "enable": true,
+          "name": "Verschachteltes Menü",
+          "hasChildren": true,
+          "weight": 2,
+          "children": [
+            {
+              "enable": true,
+              "name": "Menü 01",
+              "weight": 1
+            },
+            {
+              "enable": true,
+              "name": "Verschachteltes Menü",
+              "hasChildren": true,
+              "weight": 4,
+              "children": [
+                {
+                  "enable": true,
+                  "name": "Untermenüeintrag",
+                  "weight": 1
+                },
+                {
+                  "enable": true,
+                  "name": "Untermenüeintrag",
+                  "weight": 2
+                },
+                {
+                  "enable": true,
+                  "name": "Untermenüeintrag",
+                  "weight": 3
+                },
+                {
+                  "enable": true,
+                  "name": "Untermenüeintrag",
+                  "weight": 4
+                }
+              ]
+            },
+            {
+              "enable": true,
+              "name": "Menü 02",
+              "weight": 2
+            },
+            {
+              "enable": true,
+              "name": "Menü 03",
+              "weight": 3
+            }
+          ]
+        },
+        {
+          "enable": true,
+          "name": "Funktionen",
+          "url": "/features/",
+          "weight": 1
+        },
+        {
+          "enable": true,
+          "name": "Preise",
+          "url": "/pricing/",
+          "weight": 2
+        },
+        {
+          "enable": true,
+          "name": "FAQ",
+          "url": "/faq/",
+          "weight": 3
+        },
+        {
+          "enable": true,
+          "name": "Änderungsprotokoll",
+          "url": "/changelog/",
+          "weight": 4
+        },
+        {
+          "enable": true,
+          "name": "Integration",
+          "url": "/integration/",
+          "weight": 5
+        },
+        {
+          "enable": true,
+          "name": "Einzelne Integration",
+          "url": "/integration/discord/",
+          "weight": 6
+        },
+        {
+          "enable": true,
+          "name": "Blog",
+          "url": "/blog/",
+          "weight": 7
+        },
+        {
+          "enable": true,
+          "name": "Einzelner Blogbeitrag",
+          "url": "/blog/post-1/",
+          "weight": 8
+        }
+      ]
+    },
+    {
+      "enable": true,
+      "name": "Funktionen",
+      "weight": 2,
+      "hasMegaMenu": true,
+      "cta": {
+        "enable": true,
+        "image": "/images/menu-cta.png",
+        "title": "Erhalte umsetzbare Erkenntnisse",
+        "description": "Upstart ist selbst gehostet, deine Website-Daten bleiben auf deinem Server.",
+        "cta_btn": {
+          "enable": true,
+          "label": "Kostenlose Testversion erhalten",
+          "url": "/contact/",
+          "rel": "",
+          "target": ""
+        }
+      },
+      "menus": [
+        {
+          "enable": true,
+          "children": [
+            {
+              "enable": true,
+              "icon": "/images/icons/svg/focus.svg",
+              "name": "Konzentriere dich auf das Wesentliche",
+              "description": "Upstart verfolgt die wichtigsten Website-Kennzahlen, die dir wichtig sind.",
+              "url": "/features/"
+            },
+            {
+              "enable": true,
+              "icon": "/images/icons/svg/privacy.svg",
+              "name": "Datenschutz an erster Stelle",
+              "description": "Upstart verfolgt keine Nutzer über Websites hinweg und sammelt keine Daten.",
+              "url": "/features/"
+            },
+            {
+              "enable": true,
+              "icon": "/images/icons/svg/data.svg",
+              "name": "Eigene deine Daten",
+              "description": "Upstart ist selbst gehostet, deine Website-Daten bleiben auf deinem Server.",
+              "url": "/features/"
+            },
+            {
+              "enable": true,
+              "icon": "/images/icons/svg/time.svg",
+              "name": "Sofort verfügbare Daten",
+              "description": "Von Upstart erfasste Daten sind sofort im Dashboard verfügbar.",
+              "url": "/features/"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "enable": true,
+      "name": "Elemente",
+      "url": "/elements/",
+      "weight": 4,
+      "badge": {
+        "enable": true,
+        "label": "NEU",
+        "color": "primary",
+        "_color_comment": "color expected value - primary, info, success, danger",
+        "type": "text",
+        "_type_comment": "type expected value - text, dot"
+      }
+    },
+    {
+      "enable": true,
+      "name": "Kontakt",
+      "url": "/contact/",
+      "weight": 5,
+      "badge": {
+        "enable": true,
+        "label": "NEU",
+        "color": "danger",
+        "_color_comment": "color expected value - primary, info, success, danger",
+        "type": "dot",
+        "_type_comment": "type expected value - text, dot"
+      }
+    }
+  ],
+  "footer_menu": [
+    {
+      "enable": true,
+      "name": "Allgemeine Geschäftsbedingungen",
+      "url": "/terms-conditions/",
+      "weight": 0
+    },
+    {
+      "enable": true,
+      "name": "Datenschutzrichtlinie",
+      "url": "/privacy-policy/",
+      "weight": 0
+    }
+  ],
+  "footer_menu_quick_link": [
+    {
+      "enable": true,
+      "name": "Preise",
+      "url": "/pricing/",
+      "weight": 0
+    },
+    {
+      "enable": true,
+      "name": "Änderungsprotokoll",
+      "url": "/changelog/",
+      "weight": 0
+    },
+    {
+      "enable": true,
+      "name": "Integration",
+      "url": "/integration/",
+      "weight": 0
+    },
+    {
+      "enable": true,
+      "name": "Funktionen",
+      "url": "/features/",
+      "weight": 0
+    },
+    {
+      "enable": true,
+      "name": "FAQ",
+      "url": "/faq/",
+      "weight": 0
+    }
+  ],
+  "footer_menu_resources": [
+    {
+      "enable": true,
+      "name": "Blog",
+      "url": "/blog/",
+      "weight": 0
+    },
+    {
+      "enable": true,
+      "name": "Integration",
+      "url": "/integration/",
+      "weight": 0
+    },
+    {
+      "enable": true,
+      "name": "Änderungsprotokoll",
+      "url": "/changelog/",
+      "weight": 0
+    }
+  ],
+  "footer_menu_legal": [
+    {
+      "enable": true,
+      "name": "Allgemeine Geschäftsbedingungen",
+      "url": "/terms-conditions/",
+      "weight": 0
+    },
+    {
+      "enable": true,
+      "name": "Datenschutzrichtlinie",
+      "url": "/privacy-policy/",
+      "weight": 0
+    }
+  ]
+}

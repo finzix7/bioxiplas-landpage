@@ -1,0 +1,71 @@
+---
+import ReactIcons from "@/helpers/ReactIcons.astro";
+import OptimizedImage from "@/components/utilities/OptimizedImage.astro";
+import {
+  getLocaleUrlCTM,
+  supportedLanguages,
+} from "@/lib/utils/languageParser.ts";
+import trailingSlashChecker from "@/lib/utils/trailingSlashChecker";
+
+const currentLocale = Astro.currentLocale;
+const languages = supportedLanguages.map((lang) => {
+  const href = getLocaleUrlCTM(Astro.url.pathname, lang.languageCode as string);
+
+  // Don't include current locale in url
+  if (href === trailingSlashChecker(Astro.url.pathname)) {
+    return;
+  }
+
+  return {
+    slug: href,
+    ...lang,
+  };
+});
+
+const currentLanguageName =
+  supportedLanguages.find((l) => l.languageCode === currentLocale)?.languageName || currentLocale;
+---
+
+<div
+  class="language-switcher hs-dropdown relative inline-block [--gpu-acceleration:false] [--placement:bottom-right] [--strategy:auto] lg:[--auto-close:inside]">
+  <button
+    type="button"
+    id="language-switcher-dropdown-toggle"
+    class="language-switcher-button hs-dropdown-toggle"
+    aria-expanded="false"
+    aria-label="Language Menu">
+    <OptimizedImage
+      inlineSvg={true}
+      src="/images/icons/svg/multilingual.svg"
+      alt="icon"
+      class="w-4"
+    />
+    <span class="text uppercase">{currentLanguageName}</span>
+    <ReactIcons
+      icon="IoIosArrowDown"
+      class="hs-dropdown-open:rotate-180 w-3.5 transition-transform duration-300"
+    />
+  </button>
+  <ul
+  class="language-switcher-dropdown hs-dropdown-menu hs-dropdown-open:opacity-100 hs-dropdown-open:!mt-0 hs-dropdown-open:visible z-10 mt-2 hidden min-w-[8rem] rounded-md border bg-theme-dark/90 backdrop-blur-md p-2 opacity-0 transition-[opacity,margin] [--placement:right-bottom]">
+  {supportedLanguages.map((language) => {
+    const href = getLocaleUrlCTM(Astro.url.pathname, language.languageCode as string);
+    const isActive = language.languageCode === currentLocale;
+
+    return (
+      <li>
+        <a
+          href={href}
+          class:list={[
+            "flex items-center gap-2  w-full rounded px-3 py-2 text-sm text-white transition hover:bg-white/10 uppercase",
+            { "bg-white/10 text-emerald-400 font-semibold": isActive },
+          ]}>
+          <span>{language.flagEmoji}</span>
+          <span>{language.languageName}</span>
+        </a>
+      </li>
+    );
+  })}
+</ul>
+
+</div>

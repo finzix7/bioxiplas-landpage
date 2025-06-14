@@ -1,0 +1,100 @@
+---
+import 'swiper/css';
+import 'swiper/css/navigation';
+
+import ProductCard from "@/layouts/components/cards/ProductCard.astro";
+import Subtitle from "@/layouts/components/widgets/Subtitle.astro";
+import { markdownify } from "@/lib/utils/textConverter";
+import CustomCursor from '../global/CustomCursor.astro';
+
+type Props = {
+  content?: {
+    enable?: boolean;
+    title?: string;
+    subtitle?: string;
+    list?: any[];
+  };
+  class?: string;
+};
+
+const { class: className, content = {} } = Astro.props;
+const {
+  enable = false,
+  title = "",
+  subtitle = "",
+  list = [],
+} = content;
+---
+
+{enable && (
+  <section class:list={["relative", className]}>
+    <div class="container space-y-12 md:space-y-16">
+      <CustomCursor />
+
+      <div class="mx-auto max-w-2xl text-center" data-aos="fade-up-sm">
+        <Subtitle content={subtitle} />
+        <h2
+          class="has-italic-text capitalize"
+          set:html={markdownify(title)}
+        />
+      </div>
+
+      <!-- Controles solo en desktop -->
+      <div
+        class="hidden md:flex justify-end gap-6 mb-8"
+        data-aos="fade-up-sm"
+        data-aos-delay="200">
+        <button class="products-slider-btn-prev bg-primary hover:bg-secondary group/slider-control relative flex h-12 w-12 items-center justify-center rounded-full transition duration-300">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="h-6 w-6 text-white">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+          </svg>
+        </button>
+        <button class="products-slider-btn-next bg-primary hover:bg-secondary group/slider-control relative flex h-12 w-12 items-center justify-center rounded-full transition duration-300">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="h-6 w-6 text-white rotate-180">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+          </svg>
+        </button>
+      </div>
+
+      {list.length > 0 && (
+        <div class="products-swiper swiper w-full">
+          <div class="swiper-wrapper">
+            {list.map((item, i) => (
+              <div
+                class="swiper-slide h-full p-3 flex"
+                data-aos="fade-up-sm"
+                data-aos-delay={((i % 3) + 1) * 100}>
+                <ProductCard class="h-full flex flex-col" content={item} />
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+    </div>
+  </section>
+)}
+
+<script>
+  window.addEventListener("load", async () => {
+    const { Swiper } = await import("swiper");
+    const { Navigation, Autoplay } = await import("swiper/modules");
+
+    new Swiper(".products-swiper", {
+      modules: [Navigation, Autoplay],
+      speed: 1000,
+      spaceBetween: 0,
+      breakpoints: {
+        320: { slidesPerView: 1, spaceBetween: 0 },
+        540: { slidesPerView: 1, spaceBetween: 0 },
+        768: { slidesPerView: 2, spaceBetween: 20 },
+        1024: { slidesPerView: 3 },
+      },
+      loop: true,
+      autoplay: { delay: 3000 },
+      navigation: {
+        nextEl: ".products-slider-btn-next",
+        prevEl: ".products-slider-btn-prev",
+      },
+    });
+  });
+</script>

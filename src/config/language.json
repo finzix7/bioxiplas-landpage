@@ -1,0 +1,23 @@
+[
+  {
+    "languageName": "ES",
+    "languageCode": "es",
+    "contentDir": "spanish",
+    "weight": 1,
+    "flagEmoji": "🇪🇸"
+  },
+  {
+    "languageName": "EN",
+    "languageCode": "en",
+    "contentDir": "english",
+    "weight": 2,
+    "flagEmoji": "🇬🇧"
+  },
+  {
+    "languageName": "DE",
+    "languageCode": "de",
+    "contentDir": "german",
+    "weight": 3,
+    "flagEmoji": "🇩🇪"
+  }
+]
