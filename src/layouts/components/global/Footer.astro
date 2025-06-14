@@ -12,10 +12,22 @@ import { useTranslations } from "@/lib/utils/languageParser.ts";
 const config = parseTomlToJson("./src/config/config.toml");
 const t = await useTranslations(Astro.currentLocale as string);
 
-const { copyright, footer_description, subscription } = config.settings;
-const footerDescription = footer_description || t("footer.description") || "";
+const { copyright, subscription } = config.settings;
+const currentLang = Astro.currentLocale || "es";
 
-const copyrightText = copyright.text || t("footer.copyright") || "";
+const footerDescription =
+  config.settings.footer_description?.[currentLang] ||
+  t("footer.description") ||
+  "";
+
+const subscriptionTitle =
+  config.settings.subscription.title?.[currentLang] ||
+  t("subscription.label") ||
+  "";
+
+const copyrightText =
+  copyright?.text || t("footer.copyright") || "";
+
 const copyrightParts = splitProtectedText(copyrightText);
 ---
 
@@ -56,18 +68,17 @@ const copyrightParts = splitProtectedText(copyrightText);
             }
             <ul class="flex flex-col gap-y-1.5">
               {
-                t("footer_menu_quick_link") &&
-                  t("footer_menu_quick_link").map(
-                    (menu: { name: string; url: string }) => (
-                      <li class="inline-block">
-                        <a
-                          class="inline-block py-px text-inherit opacity-90 duration-300 hover:text-white"
-                          href={getLocaleUrlCTM(menu.url, Astro.currentLocale)}>
-                          {menu.name}
-                        </a>
-                      </li>
-                    ),
+                t("footer_menu_quick_link")?.map(
+                  (menu: { name: string; url: string }) => (
+                    <li class="inline-block">
+                      <a
+                        class="inline-block py-px text-inherit opacity-90 duration-300 hover:text-white"
+                        href={getLocaleUrlCTM(menu.url, currentLang)}>
+                        {menu.name}
+                      </a>
+                    </li>
                   )
+                )
               }
             </ul>
           </div>
@@ -86,19 +97,16 @@ const copyrightParts = splitProtectedText(copyrightText);
                 }
                 <ul class="flex flex-col gap-2">
                   {
-                    t("footer_menu_resources").map(
+                    t("footer_menu_resources")?.map(
                       (menu: { name: string; url: string }) => (
                         <li class="inline-block">
                           <a
                             class="inline-block py-px text-inherit opacity-90 duration-300 hover:text-white"
-                            href={getLocaleUrlCTM(
-                              menu.url,
-                              Astro.currentLocale,
-                            )}
+                            href={getLocaleUrlCTM(menu.url, currentLang)}
                             set:html={menu.name}
                           />
                         </li>
-                      ),
+                      )
                     )
                   }
                 </ul>
@@ -114,41 +122,30 @@ const copyrightParts = splitProtectedText(copyrightText);
                 }
                 <ul class="flex flex-col gap-2">
                   {
-                    t("footer_menu_legal").map(
+                    t("footer_menu_legal")?.map(
                       (menu: { name: string; url: string }) => (
                         <li class="inline-block">
                           <a
                             class="inline-block py-px text-inherit opacity-90 duration-300 hover:text-white"
-                            href={getLocaleUrlCTM(
-                              menu.url,
-                              Astro.currentLocale,
-                            )}
+                            href={getLocaleUrlCTM(menu.url, currentLang)}
                             set:html={menu.name}
                           />
                         </li>
-                      ),
+                      )
                     )
                   }
                 </ul>
               </div>
             </div>
-            {
-              subscription && subscription.enable && (
-                <div class="mt-8 border-t pt-5">
-                  {(config.settings.subscription.title ||
-                    t("subscription.label")) && (
-                    <p
-                      class="mb-2.5"
-                      set:html={
-                        config.settings.subscription.title ||
-                        markdownify(t("subscription.label"))
-                      }
-                    />
-                  )}
-                  <SubscriptionForm {...subscription} />
-                </div>
-              )
-            }
+
+            {subscription?.enable && (
+              <div class="mt-8 border-t pt-5">
+                {subscriptionTitle && (
+                  <p class="mb-2.5" set:html={markdownify(subscriptionTitle)} />
+                )}
+                <SubscriptionForm {...subscription} />
+              </div>
+            )}
           </div>
         </div>
       </div>
@@ -156,31 +153,28 @@ const copyrightParts = splitProtectedText(copyrightText);
       <!-- Footer Menu & Copyright -->
       <div class="py-7 text-sm md:text-base">
         <div class="flex flex-wrap justify-between gap-x-8 gap-y-6">
-          <ul
-            class="has-list has-list-dot flex flex-wrap gap-y-2 md:flex-nowrap">
+          <ul class="has-list has-list-dot flex flex-wrap gap-y-2 md:flex-nowrap">
             {
-              t("footer_menu").map((menu: { name: string; url: string }) => (
+              t("footer_menu")?.map((menu: { name: string; url: string }) => (
                 <li class="inline-block">
                   <a
                     class="inline-block py-px text-inherit opacity-90 duration-300 hover:text-white"
-                    href={getLocaleUrlCTM(menu.url, Astro.currentLocale)}
+                    href={getLocaleUrlCTM(menu.url, currentLang)}
                     set:html={menu.name}
                   />
                 </li>
               ))
             }
           </ul>
-          {
-            config.settings.copyright && config.settings.copyright.enable && (
-              <ul class="has-list has-list-slash prose-a:text-inherit flex flex-wrap gap-y-4 text-white">
-                {copyrightParts.map((value: string) => (
-                  <li class="prose-a:transition-colors prose-a:duration-300 prose-a:text-secondary prose-a:underline-offset-2 prose-a:underline inline-block opacity-90 [&_a:hover]:text-white">
-                    <span set:html={markdownify(value)} />
-                  </li>
-                ))}
-              </ul>
-            )
-          }
+          {copyright?.enable && (
+            <ul class="has-list has-list-slash prose-a:text-inherit flex flex-wrap gap-y-4 text-white">
+              {copyrightParts.map((value: string) => (
+                <li class="prose-a:transition-colors prose-a:duration-300 prose-a:text-secondary prose-a:underline-offset-2 prose-a:underline inline-block opacity-90 [&_a:hover]:text-white">
+                  <span set:html={markdownify(value)} />
+                </li>
+              ))}
+            </ul>
+          )}
         </div>
       </div>
     </div>
@@ -188,13 +182,7 @@ const copyrightParts = splitProtectedText(copyrightText);
 </footer>
 
 <script>
-  // Detect if the page has a call to action section and add a class to the footer accordingly.
-  // This approach adds a section gap between the last section of main tag & footer.
-
   const ctaSection = document.querySelector(".cta-section");
-  const footer = document.querySelector("footer") as HTMLElement;
-
-  if (!ctaSection) {
-    footer.classList.add("has-call-to-action");
-  }
+  const footer = document.querySelector("footer");
+  if (!ctaSection) footer?.classList.add("has-call-to-action");
 </script>

@@ -70,12 +70,8 @@ de = "Abonniere unseren Newsletter, um unsere neuesten biologisch abbaubaren Lö
 
 [settings.navigation_button]
 enable = true
-url    = "/contact/" # URL única para evitar errores
-
-[settings.navigation_button.label]
-es = "Contáctanos"
-en = "Contact us"
-de = "Kontaktieren Sie uns"
+label = "Contact us" # Puede usarse si no lo estás localizando dinámicamente
+url    = "/contact/"
 
 [settings.multilingual]
 enable                   = true
