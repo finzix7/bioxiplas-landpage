@@ -4,7 +4,7 @@ description: Transformamos tu industria con plásticos biodegradables certificad
 image: "/images/product-demo-bioxiplas.png"
 buttons:
   - enable: true
-    label: "Solicitar muestras" 
+    label: "Solicitar Información" 
     url: "/contact"
     rel: ""
     target: ""

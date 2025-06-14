@@ -1,11 +1,11 @@
 ---
 enable: true
-title: Solicita tu <br /> **muestra gratuita personalizada**
+title: Solicita <br /> **información personalizada**
 rating_content: +10 empresas líderes ya confían en Bioxiplas
 
 cta_btn:
   enable: true
-  label: Solicitar muestra
+  label: Solicitar información
   url: /contact/
   rel: ""
   target: ""

@@ -214,7 +214,7 @@
 
 /* Fit To Screen (Prevent Screen Flash ) */
 .fit-to-screen {
-  @apply flex min-h-[102vh] flex-col justify-start;
+  @apply flex min-h-[102dvh] flex-col justify-start;
 }
 
 /* Logo */
