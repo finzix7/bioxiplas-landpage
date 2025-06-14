@@ -5,11 +5,11 @@
   tagline              = "Biotechnology applied to circular packaging"
   tagline_separator    = "" 
   base_url             = "https://upstart-astro.netlify.app" 
-  logo                 = "/images/bioxilogo.webp" 
+  logo                 = "/images/logobioxiplas.png" 
   logo_hover_animation = true 
   logo_text            = "" 
-  logo_width           = "110px" 
-  logo_height          = "30px" 
+  logo_width           = "60px" 
+  logo_height          = "60px" 
   trailing_slash       = true
 
   [site.favicon]
