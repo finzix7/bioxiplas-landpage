@@ -3,18 +3,18 @@
   title                = "Bioxiplas" # Shared title for SEO and OpenGraph
   description          = "Sustainable packaging and biodegradable protection solutions for responsible industries." # Shared description for SEO and OpenGraph
   tagline              = "Biotechnology applied to circular packaging"
-  tagline_separator    = "" 
-  base_url             = "https://upstart-astro.netlify.app" 
-  logo                 = "/images/logobioxiplas2.png" 
-  logo_hover_animation = true 
-  logo_text            = "" 
-  logo_width           = "65px" 
-  logo_height          = "60px" 
+  tagline_separator    = ""
+  base_url             = "https://upstart-astro.netlify.app"
+  logo                 = "/images/logobioxiplas2.png"
+  logo_hover_animation = true
+  logo_text            = ""
+  logo_width           = "65px"
+  logo_height          = "60px"
   trailing_slash       = true
 
   [site.favicon]
-    path  = "/images/favicons" 
-    image = "/images/logo.svg" 
+    path  = "/images/favicons"
+    image = "/images/logo.svg"
 
 
 # SEO Metadata
@@ -42,56 +42,71 @@
 
 # Theme Settings
 [settings]
-  blog_folder        = "blog" 
-  integration_folder = "integration" 
-  pagination         = 6 
-  sticky_header      = true 
+blog_folder        = "blog"
+integration_folder = "integration"
+pagination         = 6
+sticky_header      = true
 
-  contact_form_action   = "https://formsubmit.co/temp.gats@gmail.com" 
-  contact_form_provider = "formsubmit.co"
+contact_form_action   = "https://formsubmit.co/temp.gats@gmail.com"
+contact_form_provider = "formsubmit.co"
 
-  footer_description = "We develop certified biodegradable packaging and protective products designed for demanding industries seeking sustainability and circularity."
+[settings.footer_description]
+es = "Desarrollamos envases biodegradables certificados y productos de protección diseñados para industrias exigentes que buscan sostenibilidad y circularidad."
+en = "We develop certified biodegradable packaging and protective products designed for demanding industries seeking sustainability and circularity."
+de = "Wir entwickeln zertifizierte biologisch abbaubare Verpackungen und Schutzprodukte für anspruchsvolle Branchen, die Nachhaltigkeit und Kreislaufwirtschaft anstreben."
 
-  [settings.copyright]
-    enable = true
-    text   = "© {{ year }} Bioxiplas. All rights reserved."
+[settings.copyright]
+enable = true
+text   = "© {{ year }} Bioxiplas. All rights reserved."
 
-  [settings.subscription]
-    enable      = true 
-    title       = "Subscribe to discover our latest biodegradable solutions"
-    form_action = "https://gmail.us11.list-manage.com/subscribe/post?u=d870b06d86c16269e4b1f9b39&amp;id=12cf0c6ac2&amp;f_id=007e61e1f0"
+[settings.subscription]
+enable      = true
+form_action = "https://gmail.us11.list-manage.com/subscribe/post?u=d870b06d86c16269e4b1f9b39&amp;id=12cf0c6ac2&amp;f_id=007e61e1f0"
 
-  [settings.multilingual]
-    enable                   = true
-    default_language         = "es"
-    disable_languages        = [""]
-    show_default_lang_in_url = false
+[settings.subscription.title]
+es = "Suscríbete para descubrir nuestras últimas soluciones biodegradables"
+en = "Subscribe to discover our latest biodegradable solutions"
+de = "Abonniere unseren Newsletter, um unsere neuesten biologisch abbaubaren Lösungen zu entdecken"
 
-  [settings.navigation_button]
-    enable = true
-    label  = "Contact us"
-    url    = "/contact/"
+[settings.navigation_button]
+enable = true
 
-  [settings.markup.table_of_contents]
-    enable      = true
-    expanded    = true
-    end_level   = 5
-    ordered     = false
-    start_level = 1
+[settings.navigation_button.label]
+es = "Contáctanos"
+en = "Contact us"
+de = "Kontaktieren Sie uns"
+
+[settings.navigation_button.url]
+es = "/contacto/"
+en = "/contact/"
+de = "/kontakt/"
+
+[settings.multilingual]
+enable                   = true
+default_language         = "es"
+disable_languages        = [""]
+show_default_lang_in_url = false
+
+[settings.markup.table_of_contents]
+enable      = true
+expanded    = true
+end_level   = 5
+ordered     = false
+start_level = 1
 
 
 # OpenGraph Metadata
 [opengraph]
-  image        = "/images/bioxiplas.png" 
-  og_locale    = "en_US" 
-  og_type      = "website" 
-  twitter      = "" 
-  twitter_card = "summary_large_image" 
+image        = "/images/bioxiplas.png"
+og_locale    = "en_US"
+og_type      = "website"
+twitter      = ""
+twitter_card = "summary_large_image"
 
 
 # Custom Scripts
 [head]
-  content = """
-  <!-- You can easily add this type of tracking code by updating the `config.toml` file -->
-  <script defer src="/umami.is.js" data-website-id=""></script>
-  """
+content = """
+<!-- You can easily add this type of tracking code by updating the `config.toml` file -->
+<script defer src="/umami.is.js" data-website-id=""></script>
+"""
