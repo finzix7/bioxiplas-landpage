@@ -1,31 +1,30 @@
 # Site Configuration
 [site]
-  title                = "Bioxiplas"
-  description          = "Soluciones avanzadas en packaging y protección biodegradable para industrias responsables"
-  tagline              = "Biotecnología aplicada a embalajes sostenibles"
-  tagline_separator    = ""
-  base_url             = "https://bioxiplas-astro.vercel.app"
-  logo                 = "/images/bioxilogo.webp"
-  logo_hover_animation = true
-  logo_text            = ""
-  logo_width           = "110px"
-  logo_height          = "30px"
+  title                = "Bioxiplas" # Shared title for SEO and OpenGraph
+  description          = "Sustainable packaging and biodegradable protection solutions for responsible industries." # Shared description for SEO and OpenGraph
+  tagline              = "Biotechnology applied to circular packaging"
+  tagline_separator    = "" 
+  base_url             = "https://upstart-astro.netlify.app" 
+  logo                 = "/images/bioxilogo.webp" 
+  logo_hover_animation = true 
+  logo_text            = "" 
+  logo_width           = "110px" 
+  logo_height          = "30px" 
   trailing_slash       = true
 
   [site.favicon]
-    path  = "/images/favicons"
-    image = "/images/bioxilogo.svg"
+    path  = "/images/favicons" 
+    image = "/images/logo.svg" 
+
 
 # SEO Metadata
 [seo]
   author = "Bioxiplas"
   keywords = [
-    "packaging biodegradable",
-    "embalajes compostables",
-    "protección biodegradable",
-    "soluciones sostenibles",
-    "envases ecológicos",
-    "economía circular",
+    "biodegradable packaging",
+    "eco-friendly materials",
+    "compostable solutions",
+    "sustainable industrial packaging",
     "Bioxiplas",
   ]
   robots = "index, follow"
@@ -40,25 +39,26 @@
     enable = true
     exclude = []
 
+
 # Theme Settings
 [settings]
-  blog_folder        = "blog"
-  integration_folder = "productos"
-  pagination         = 6
-  sticky_header      = true
+  blog_folder        = "blog" 
+  integration_folder = "integration" 
+  pagination         = 6 
+  sticky_header      = true 
 
-  contact_form_action = "https://formsubmit.co/contacto@bioxiplas.com"
+  contact_form_action   = "https://formsubmit.co/temp.gats@gmail.com" 
   contact_form_provider = "formsubmit.co"
 
-  footer_description = "En Bioxiplas desarrollamos soluciones de packaging y protección personal biodegradables, adaptadas a diversas industrias con un enfoque de economía circular."
+  footer_description = "We develop certified biodegradable packaging and protective products designed for demanding industries seeking sustainability and circularity."
 
   [settings.copyright]
     enable = true
-    text   = "© {{ year }} Bioxiplas. Todos los derechos reservados."
+    text   = "© {{ year }} Bioxiplas. All rights reserved."
 
   [settings.subscription]
-    enable      = true
-    title       = "Suscríbete para conocer nuevas soluciones sustentables"
+    enable      = true 
+    title       = "Subscribe to discover our latest biodegradable solutions"
     form_action = "https://gmail.us11.list-manage.com/subscribe/post?u=d870b06d86c16269e4b1f9b39&amp;id=12cf0c6ac2&amp;f_id=007e61e1f0"
 
   [settings.multilingual]
@@ -69,7 +69,7 @@
 
   [settings.navigation_button]
     enable = true
-    label  = "Contáctanos"
+    label  = "Contact us"
     url    = "/contact/"
 
   [settings.markup.table_of_contents]
@@ -79,16 +79,19 @@
     ordered     = false
     start_level = 1
 
+
 # OpenGraph Metadata
 [opengraph]
-  image        = "/images/bioxiplas.jpg"
-  og_locale    = "es_CL"
-  og_type      = "website"
-  twitter      = "@bioxiplas"
-  twitter_card = "summary_large_image"
+  image        = "/images/bioxiplas.png" 
+  og_locale    = "en_US" 
+  og_type      = "website" 
+  twitter      = "" 
+  twitter_card = "summary_large_image" 
 
-# Head Injection (Analytics, etc.)
+
+# Custom Scripts
 [head]
   content = """
-  <!-- Código de seguimiento u otros scripts -->
+  <!-- You can easily add this type of tracking code by updating the `config.toml` file -->
+  <script defer src="/umami.is.js" data-website-id=""></script>
   """
