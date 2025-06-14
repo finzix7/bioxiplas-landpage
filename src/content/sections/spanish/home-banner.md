@@ -1,6 +1,6 @@
 ---
-title: Reduce tu huella plástica con **materiales bio-inteligentes**
-description: Transformamos tu industria con plásticos biodegradables certificados, ingeniería avanzada en materiales y soluciones circulares que generan impacto real.
+title: Plásticos inteligentes para un **futuro más limpio**
+description: Creamos con responsabilidad, pensando en el futuro de todos.
 image: "/images/product-demo-bioxiplas.png"
 buttons:
   - enable: true
