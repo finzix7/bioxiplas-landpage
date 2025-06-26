@@ -5,7 +5,6 @@ import type { Button, Section } from "@/types";
 import OptimizedImage from "@/components/utilities/OptimizedImage.astro";
 import { getEntryCTM } from "@/lib/contentParser.astro";
 import Customers from "./Customers.astro";
-import { plainify } from "@/lib/utils/textConverter";
 import ButtonLink from "../buttons/ButtonLink.astro";
 import VideoModal from "../widgets/VideoModal.astro";
 import AnimatedText from "../widgets/AnimatedText.astro";
@@ -16,10 +15,6 @@ import CustomCursor from "../global/CustomCursor.astro";
 type home_banner_section_type = Section & {
   buttons: Button[];
   customers: customersSectionType;
-};
-
-type Props = {
-  content?: home_banner_section_type;
 };
 
 let default_content = (
@@ -34,7 +29,10 @@ let actual_content = overrideObjects(
 let { title, customers, description, image, buttons } =
   actual_content as home_banner_section_type;
 
-const videoButton = buttons.find((button) => button.type === "video");
+// Encuentra todos los botones de tipo 'video'
+const videoButtons = buttons.filter((btn) => btn.type === "video");
+// Toma solo el primero para renderizar el botón
+const videoButton = videoButtons[0];
 ---
 
 <section>
@@ -50,7 +48,6 @@ const videoButton = buttons.find((button) => button.type === "video");
               content={markdownify(title)}
             />
           )}
-
           {description && (
             <AnimatedText
               class="text-center text-base leading-snug text-white/70"
@@ -68,67 +65,77 @@ const videoButton = buttons.find((button) => button.type === "video");
           data-aos-duration="900"
           class="has-video-modal flex flex-wrap items-center justify-center gap-5"
         >
-          {buttons &&
-            buttons.map((button: Button) =>
-              button.type !== "video" ? (
-                <ButtonLink
-                  content={button}
-                  class="btn-md btn-primary btn-has-icon group relative z-0 flex items-center gap-4 [&>.label]:z-20"
+          {/*
+            1) Botones que NO son de video
+          */}
+          {buttons
+            .filter((b) => b.type !== "video")
+            .map((button) => (
+              <ButtonLink
+                content={button}
+                class="btn-md btn-primary btn-has-icon group relative z-0 flex items-center gap-4 [&>.label]:z-20"
+              >
+                <span class="flex h-6 w-12 items-center justify-center rounded-full bg-white/15">
+                  <OptimizedImage
+                    alt="icon"
+                    class="h-5 w-5 transition-all duration-300 group-hover:rotate-180"
+                    src="/images/icons/svg/star.svg"
+                  />
+                </span>
+              </ButtonLink>
+            ))}
+
+          {/*
+            2) Solo un botón de video, apuntando a '#video-modal'
+          */}
+          {videoButton && (
+            <ButtonLink
+              tag="button"
+              content={videoButton}
+              type="button"
+              title="Play Video"
+              aria-haspopup="dialog"
+              aria-expanded="false"
+              aria-controls="#video-modal"
+              data-hs-overlay="#video-modal"
+              data-hs-overlay-options='{"emulateScrollbarSpace": true}'
+              class="video-modal-toggle btn-md btn-primary btn-has-icon group after:bg-primary/25 relative z-0 flex items-center gap-4 after:pointer-events-none after:absolute after:inset-0 after:z-10 after:size-full [&>.label]:z-20"
+            >
+              <span class="has-animated-waves waves-white waves-sm relative z-20 flex h-6 w-6 items-center justify-center rounded-full">
+                <OptimizedImage
+                  alt="icon"
+                  inlineSvg
+                  class="text-primary ml-px h-2 w-2"
+                  src="/images/icons/svg/play-icon.svg"
+                />
+              </span>
+
+              {/*
+                Preview de video dentro del botón
+              */}
+              {videoButton.video?.src && (
+                <video
+                  autoplay
+                  muted
+                  loop
+                  playsinline
+                  class="absolute top-0 left-0 z-0 z-10 h-full w-full object-cover rounded-md"
+                  src={
+                    videoButton.video.src.startsWith("http")
+                      ? videoButton.video.src
+                      : undefined
+                  }
                 >
-                  <span class="flex h-6 w-12 items-center justify-center rounded-full bg-white/15">
-                    <OptimizedImage
-                      alt="icon"
-                      class="h-5 w-5 transition-all duration-300 group-hover:rotate-180"
-                      src="/images/icons/svg/star.svg"
+                  {!videoButton.video.src.startsWith("http") && (
+                    <source
+                      src={videoButton.video.src}
+                      type="video/mp4"
                     />
-                  </span>
-                </ButtonLink>
-              ) : (
-                <ButtonLink
-                  tag={"button"}
-                  content={button}
-                  type="button"
-                  title="Play Video"
-                  aria-haspopup="dialog"
-                  aria-expanded="false"
-                  aria-controls={"#" + button.video?.id}
-                  data-hs-overlay={"#" + button.video?.id}
-                  data-hs-overlay-options={`{"emulateScrollbarSpace" : true}`}
-                  class="video-modal-toggle btn-md btn-primary btn-has-icon group after:bg-primary/25 relative z-0 flex items-center gap-4 after:pointer-events-none after:absolute after:inset-0 after:z-10 after:size-full [&>.label]:z-20"
-                >
-                  <span class="has-animated-waves waves-white waves-sm relative z-20 flex h-6 w-6 items-center justify-center rounded-full">
-                    <OptimizedImage
-                      alt="icon"
-                      inlineSvg={true}
-                      class="text-primary ml-px h-2 w-2"
-                      src="/images/icons/svg/play-icon.svg"
-                    />
-                  </span>
-                  {button.video?.src && (
-                    <video
-                      autoplay
-                      muted
-                      loop
-                      playsinline
-                      class="absolute top-0 left-0 z-0 z-10 h-full w-full object-cover"
-                      {...{
-                        src: button.video.src.startsWith("http")
-                          ? button.video.src
-                          : null,
-                      }}
-                    >
-                      {!button.video.src.startsWith("http") && (
-                        <source
-                          src={button.video.src}
-                          type="video/mp4"
-                        />
-                      )}
-                      Your browser does not support the video tag.
-                    </video>
                   )}
-                </ButtonLink>
-              )
-            )}
+                </video>
+              )}
+            </ButtonLink>
+          )}
         </div>
 
         <Customers
@@ -141,13 +148,19 @@ const videoButton = buttons.find((button) => button.type === "video");
     </div>
   </div>
 
-  {videoButton && (
+  {/*
+    3) Un único modal, con todos los videos en el carrusel
+  */}
+  {videoButtons.length > 0 && (
     <VideoModal
-      video={{
-        id: videoButton.video?.id,
-        src: videoButton.video?.src,
-        provider: videoButton.video?.provider,
-      }}
+      videos={videoButtons.map((b) => ({
+        id: b.video!.id,
+        src: b.video!.src,
+        provider: b.video!.provider,
+        poster: b.video!.poster,
+        autoplay: b.video!.autoplay,
+        type: b.video!.type,
+      }))}
     />
   )}
 </section>

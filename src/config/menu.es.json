@@ -6,113 +6,7 @@
         "weight": 1,
         "url": ""
       },
-      {
-        "name": "Páginas",
-        "enable": true,
-        "weight": 3,
-        "hasChildren": true,
-        "children": [
-          {
-            "enable": true,
-            "name": "Menú Anidado",
-            "hasChildren": true,
-            "weight": 2,
-            "children": [
-              {
-                "enable": true,
-                "name": "Menú 01",
-                "weight": 1
-              },
-              {
-                "enable": true,
-                "name": "Menú Anidado",
-                "hasChildren": true,
-                "weight": 4,
-                "children": [
-                  {
-                    "enable": true,
-                    "name": "Elemento de Menú Anidado",
-                    "weight": 1
-                  },
-                  {
-                    "enable": true,
-                    "name": "Elemento de Menú Anidado",
-                    "weight": 2
-                  },
-                  {
-                    "enable": true,
-                    "name": "Elemento de Menú Anidado",
-                    "weight": 3
-                  },
-                  {
-                    "enable": true,
-                    "name": "Elemento de Menú Anidado",
-                    "weight": 4
-                  }
-                ]
-              },
-              {
-                "enable": true,
-                "name": "Menú 02",
-                "weight": 2
-              },
-              {
-                "enable": true,
-                "name": "Menú 03",
-                "weight": 3
-              }
-            ]
-          },
-          {
-            "enable": true,
-            "name": "Características",
-            "url": "/features/",
-            "weight": 1
-          },
-          {
-            "enable": true,
-            "name": "Precios",
-            "url": "/pricing/",
-            "weight": 2
-          },
-          {
-            "enable": true,
-            "name": "Preguntas Frecuentes",
-            "url": "/faq/",
-            "weight": 3
-          },
-          {
-            "enable": true,
-            "name": "Registro de Cambios",
-            "url": "/changelog/",
-            "weight": 4
-          },
-          {
-            "enable": true,
-            "name": "Integraciones",
-            "url": "/integration/",
-            "weight": 5
-          },
-          {
-            "enable": true,
-            "name": "Integración Individual",
-            "url": "/integration/discord/",
-            "weight": 6
-          },
-          {
-            "enable": true,
-            "name": "Blog",
-            "url": "/blog/",
-            "weight": 7
-          },
-          {
-            "enable": true,
-            "name": "Entrada del Blog",
-            "url": "/blog/post-1/",
-            "weight": 8
-          }
-        ]
-      },
+      
       {
         "enable": true,
         "name": "Características",
@@ -137,15 +31,15 @@
             "children": [
               {
                 "enable": true,
-                "icon": "/images/icons/svg/focus.svg",
-                "name": "Concéntrate en lo Importante",
+                "icon": "/images/icons/svg/feature.svg",
+                "name": "Quiénes Somos",
                 "description": "Upstart rastrea las métricas esenciales que realmente te importan.",
                 "url": "/features/"
               },
               {
                 "enable": true,
-                "icon": "/images/icons/svg/privacy.svg",
-                "name": "Privacidad Primero",
+                "icon": "/images/icons/svg/success.svg",
+                "name": "Nuestros Productos",
                 "description": "Upstart no rastrea a los usuarios entre sitios ni recopila datos innecesarios.",
                 "url": "/features/"
               },
@@ -153,13 +47,6 @@
                 "enable": true,
                 "icon": "/images/icons/svg/data.svg",
                 "name": "Tú Controlas tus Datos",
-                "description": "Upstart está autohospedado, tus datos permanecen en tu servidor.",
-                "url": "/features/"
-              },
-              {
-                "enable": true,
-                "icon": "/images/icons/svg/time.svg",
-                "name": "Datos Instantáneos",
                 "description": "Los datos recopilados por Upstart están disponibles de inmediato en tu panel.",
                 "url": "/features/"
               }
@@ -169,7 +56,7 @@
       },
       {
         "enable": true,
-        "name": "Elementos",
+        "name": "Catálogo",
         "url": "/elements/",
         "weight": 4,
         "badge": {
@@ -183,8 +70,8 @@
       },
       {
         "enable": true,
-        "name": "Contacto",
-        "url": "/contact/",
+        "name": "Certificaciones",
+        "url": "/certifications/",
         "weight": 5,
         "badge": {
           "enable": true,
