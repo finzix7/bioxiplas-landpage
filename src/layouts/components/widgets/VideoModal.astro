@@ -3,10 +3,10 @@ import ReactIcons from "@/helpers/ReactIcons.astro";
 import type { VideoConfig } from "@/types";
 
 interface Props {
-  videos: VideoConfig[];
+  videos?: VideoConfig[];
 }
 
-const { videos } = Astro.props;
+const videos: VideoConfig[] = Astro.props.videos ?? [];
 
 function getYouTubeId(url: string) {
   const m1 = url.match(/[?&]v=([^&]+)/);
@@ -43,8 +43,8 @@ let players: any[] = [];
     <div
       class="hs-overlay-animation-target hs-overlay-open:mt-7 hs-overlay-open:opacity-100 hs-overlay-open:duration-500 flex h-full items-center justify-center opacity-0 transition-[opacity,margin] ease-out"
     >
-      <div class="pointer-events-auto relative w-full max-w-[95vw] sm:max-w-[85vw] md:max-w-[75vw] p-4 sm:p-6 mx-auto overflow-visible">
-        <!-- Botón cerrar -->
+      <div class="pointer-events-auto relative w-full max-w-[95vw] sm:max-w-[85vw] md:max-w-[75vw] p-2 sm:p-6 mx-auto overflow-visible">
+        <!-- Cerrar -->
         <button
           type="button"
           aria-label="Close"
@@ -65,31 +65,33 @@ let players: any[] = [];
         </button>
 
         <!-- Carrusel -->
-        <div class="video-carousel mx-auto flex items-center gap-4 sm:gap-6 overflow-x-auto scroll-smooth snap-x snap-mandatory">
+        <div class="video-carousel mx-auto flex items-center gap-2 sm:gap-4 overflow-x-auto scroll-smooth snap-x snap-mandatory">
           {processed.map((video) => (
-            <div class="snap-start flex-shrink-0 w-full flex items-center justify-center">
-              {video.provider === "html5" ? (
-                <video
-                  class="video-player w-full h-[40vh] sm:h-[60vh] md:h-[70vh] rounded-lg shadow-lg"
-                  playsinline
-                  controls
-                  autoplay={video.autoplay}
-                  muted
-                  loop
-                  data-id={video.id}
-                  data-poster={video.poster}
-                  data-plyr-config={JSON.stringify(config)}
-                >
-                  <source src={video.embedId} type={`video/${video.type}`} />
-                </video>
-              ) : (
-                <iframe
-                  class="video-player w-full h-[40vh] sm:h-[60vh] md:h-[70vh] rounded-lg shadow-lg"
-                  src={`https://www.youtube.com/embed/${video.embedId}?rel=0&showinfo=0`}
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen
-                ></iframe>
-              )}
+            <div class="snap-start flex-shrink-0 w-full px-1 sm:px-2">
+              <div class="aspect-video w-full rounded-lg shadow-lg overflow-hidden">
+                {video.provider === "html5" ? (
+                  <video
+                    class="w-full h-full object-cover"
+                    playsinline
+                    controls
+                    autoplay={video.autoplay}
+                    muted
+                    loop
+                    data-id={video.id}
+                    data-poster={video.poster}
+                    data-plyr-config={JSON.stringify(config)}
+                  >
+                    <source src={video.embedId} type={`video/${video.type}`} />
+                  </video>
+                ) : (
+                  <iframe
+                    class="w-full h-full"
+                    src={`https://www.youtube.com/embed/${video.embedId}?rel=0&showinfo=0`}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                  ></iframe>
+                )}
+              </div>
             </div>
           ))}
         </div>
