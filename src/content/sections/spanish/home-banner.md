@@ -4,7 +4,7 @@ description: Creamos con responsabilidad, pensando en el futuro de todos.
 image: "/images/product-demo-bioxiplas.png"
 buttons:
   - enable: true
-    label: "Solicitar Información"
+    label: "Saber Más"
     url: "/contact"
     rel: ""
     target: ""
