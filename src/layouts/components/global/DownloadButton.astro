@@ -1,0 +1,75 @@
+---
+/*
+  src/components/Catalogo.astro
+  Componente Astro único que replica exactamente tu ejemplo React,
+  con texto giratorio alrededor del círculo y contenido centralizable.
+*/
+
+const text = " - CATÁLOGO - CATÁLOGO - CATÁLOGO";
+const letters = text.split("");
+const deg = 360 / letters.length;
+---
+<style>
+  @keyframes spin {
+    0%   { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  .spinning-text-wrapper {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 10px;
+    font-weight: bold;
+    padding: 15px;
+  }
+
+  .spinning-text {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    animation: spin 15s linear infinite;
+  }
+
+  .spinning-text span {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform-origin: 0 40px;
+  }
+</style>
+
+<div
+  class="fixed bottom-5 right-5 lg:bottom-7 lg:right-7
+         rounded-full flex justify-center items-center
+         z-50 hover:scale-110 lg:scale-125 transition cursor-pointer backdrop-blur-md
+        "
+>
+  <a
+    href="/public/catalogo.pdf"
+    download
+    aria-label="Descargar catálogo"
+    class="overflow-hidden p-1 flex justify-center items-center
+           bg-secondary/20  w-full h-full
+           rounded-full text-white/80"
+  >
+    <div class="spinning-text-wrapper bg-secondary/40 ">
+      <div class="spinning-text">
+        {letters.map((letra, i) => (
+          <span
+            style={`transform: rotate(${deg * i}deg);`}
+          >
+            {letra}
+          </span>
+        ))}
+      </div>
+      <slot>
+        <p class="text-[12px] ">2025</p>
+      </slot>
+    </div>
+  </a>
+</div>
