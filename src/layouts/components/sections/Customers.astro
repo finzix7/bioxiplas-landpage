@@ -83,24 +83,6 @@ let duplicatedList = list.length <= 3
                 />
               </div>
             ))}
-          {duplicatedList.map((item) => (
-            <div
-              class:list={[
-                "px-4",
-                {
-                  "min-w-fit": marquee.element_width_auto,
-                },
-              ]}
-              class="flex items-center justify-center"
-            >
-              <OptimizedImage
-                src={item.src}
-                alt={item.alt}
-                height={80} // Altura fija
-                class="object-contain h-[80px] w-auto max-w-none" // Estilos clave
-              />
-            </div>
-          ))}
           </Marquee>
         </div>
       </div>
