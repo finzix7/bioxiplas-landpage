@@ -1,167 +1,161 @@
 {
-    "main": [
-      {
+  "main": [
+    {
+      "enable": true,
+      "name": "Inicio",
+      "weight": 1,
+      "url": "/"
+    },
+    {
+      "enable": true,
+      "name": "Sobre Nosotros",
+      "weight": 2,
+      "hasMegaMenu": true,
+      "cta": {
         "enable": true,
-        "name": "Inicio",
-        "weight": 1,
-        "url": ""
-      },
-      
-      {
-        "enable": true,
-        "name": "Características",
-        "weight": 2,
-        "hasMegaMenu": true,
-        "cta": {
+        "image": "/images/bioxifam.jpg",
+        "title": "Empaques Sostenibles a Tu Medida",
+        "description": "Descubre cómo nuestras soluciones reducen tu huella de carbono y optimizan tu cadena de suministro.",
+        "cta_btn": {
           "enable": true,
-          "image": "/images/menu-cta.png",
-          "title": "Obtén Información Accionable",
-          "description": "Upstart está autohospedado, lo que significa que los datos de tu sitio permanecen en tu servidor.",
-          "cta_btn": {
-            "enable": true,
-            "label": "Prueba Gratuita",
-            "url": "/contact/",
-            "rel": "",
-            "target": ""
-          }
-        },
-        "menus": [
-          {
-            "enable": true,
-            "children": [
-              {
-                "enable": true,
-                "icon": "/images/icons/svg/feature.svg",
-                "name": "Quiénes Somos",
-                "description": "Upstart rastrea las métricas esenciales que realmente te importan.",
-                "url": "/features/"
-              },
-              {
-                "enable": true,
-                "icon": "/images/icons/svg/success.svg",
-                "name": "Nuestros Productos",
-                "description": "Upstart no rastrea a los usuarios entre sitios ni recopila datos innecesarios.",
-                "url": "/features/"
-              },
-              {
-                "enable": true,
-                "icon": "/images/icons/svg/data.svg",
-                "name": "Tú Controlas tus Datos",
-                "description": "Los datos recopilados por Upstart están disponibles de inmediato en tu panel.",
-                "url": "/features/"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "enable": true,
-        "name": "Catálogo",
-        "url": "/elements/",
-        "weight": 4,
-        "badge": {
-          "enable": true,
-          "label": "NUEVO",
-          "color": "primary",
-          "_color_comment": "valores esperados - primary, info, success, danger",
-          "type": "text",
-          "_type_comment": "valores esperados - text, dot"
+          "label": "Contáctanos",
+          "url": "/contacto/",
+          "rel": "",
+          "target": ""
         }
       },
-      {
-        "enable": true,
-        "name": "Certificaciones",
-        "url": "/certifications/",
-        "weight": 5,
-        "badge": {
+      "menus": [
+        {
           "enable": true,
-          "label": "NUEVO",
-          "color": "danger",
-          "_color_comment": "valores esperados - primary, info, success, danger",
-          "type": "dot",
-          "_type_comment": "valores esperados - text, dot"
+          "children": [
+            {
+              "enable": true,
+              "icon": "/images/icons/svg/feature.svg",
+              "name": "Quiénes Somos",
+              "description": "Conoce la misión de Bioxiplas y nuestro compromiso con la economía circular y el medioambiente.",
+              "url": "/quienes-somos/"
+            },
+            {
+              "enable": true,
+              "icon": "/images/icons/svg/success.svg",
+              "name": "Nuestros Productos",
+              "description": "Empaques 100% biodegradables diseñados para cada industria.",
+              "url": "/productos/"
+            },
+            {
+              "enable": true,
+              "icon": "/images/icons/svg/data.svg",
+              "name": "Calcula tu Huella",
+              "description": "Herramienta interactiva para medir el impacto de carbono de tus productos y procesos.",
+              "url": "/huella-carbono/"
+            }
+          ]
         }
+      ]
+    },
+    {
+      "enable": true,
+      "name": "Catálogo",
+      "url": "/catalogo/",
+      "weight": 4,
+      "badge": {
+        "enable": true,
+        "label": "NUEVO",
+        "color": "primary",
+        "type": "text"
       }
-    ],
-    "footer_menu": [
-      {
+    },
+    {
+      "enable": true,
+      "name": "Certificaciones",
+      "url": "/certificaciones/",
+      "weight": 5,
+      "badge": {
         "enable": true,
-        "name": "Términos y Condiciones",
-        "url": "/terms-conditions/",
-        "weight": 0
-      },
-      {
-        "enable": true,
-        "name": "Política de Privacidad",
-        "url": "/privacy-policy/",
-        "weight": 0
+        "label": "VERIFICADO",
+        "color": "success",
+        "type": "dot"
       }
-    ],
-    "footer_menu_quick_link": [
-      {
-        "enable": true,
-        "name": "Precios",
-        "url": "/pricing/",
-        "weight": 0
-      },
-      {
-        "enable": true,
-        "name": "Registro de Cambios",
-        "url": "/changelog/",
-        "weight": 0
-      },
-      {
-        "enable": true,
-        "name": "Integraciones",
-        "url": "/integration/",
-        "weight": 0
-      },
-      {
-        "enable": true,
-        "name": "Características",
-        "url": "/features/",
-        "weight": 0
-      },
-      {
-        "enable": true,
-        "name": "Preguntas Frecuentes",
-        "url": "/faq/",
-        "weight": 0
-      }
-    ],
-    "footer_menu_resources": [
-      {
-        "enable": true,
-        "name": "Blog",
-        "url": "/blog/",
-        "weight": 0
-      },
-      {
-        "enable": true,
-        "name": "Integraciones",
-        "url": "/integration/",
-        "weight": 0
-      },
-      {
-        "enable": true,
-        "name": "Registro de Cambios",
-        "url": "/changelog/",
-        "weight": 0
-      }
-    ],
-    "footer_menu_legal": [
-      {
-        "enable": true,
-        "name": "Términos y Condiciones",
-        "url": "/terms-conditions/",
-        "weight": 0
-      },
-      {
-        "enable": true,
-        "name": "Política de Privacidad",
-        "url": "/privacy-policy/",
-        "weight": 0
-      }
-    ]
-  }
-  
+    }
+  ],
+  "footer_menu": [
+    {
+      "enable": true,
+      "name": "Términos y Condiciones",
+      "url": "/terminos-y-condiciones/",
+      "weight": 0
+    },
+    {
+      "enable": true,
+      "name": "Política de Privacidad",
+      "url": "/politica-de-privacidad/",
+      "weight": 0
+    }
+  ],
+  "footer_menu_quick_link": [
+    {
+      "enable": true,
+      "name": "Precios",
+      "url": "/precios/",
+      "weight": 0
+    },
+    {
+      "enable": true,
+      "name": "Blog",
+      "url": "/blog/",
+      "weight": 0
+    },
+    {
+      "enable": true,
+      "name": "Integraciones",
+      "url": "/integraciones/",
+      "weight": 0
+    },
+    {
+      "enable": true,
+      "name": "Soluciones",
+      "url": "/soluciones/",
+      "weight": 0
+    },
+    {
+      "enable": true,
+      "name": "FAQ",
+      "url": "/preguntas-frecuentes/",
+      "weight": 0
+    }
+  ],
+  "footer_menu_resources": [
+    {
+      "enable": true,
+      "name": "Blog",
+      "url": "/blog/",
+      "weight": 0
+    },
+    {
+      "enable": true,
+      "name": "Casos de Éxito",
+      "url": "/casos-exito/",
+      "weight": 0
+    },
+    {
+      "enable": true,
+      "name": "Whitepapers",
+      "url": "/whitepapers/",
+      "weight": 0
+    }
+  ],
+  "footer_menu_legal": [
+    {
+      "enable": true,
+      "name": "Términos y Condiciones",
+      "url": "/terminos-y-condiciones/",
+      "weight": 0
+    },
+    {
+      "enable": true,
+      "name": "Política de Privacidad",
+      "url": "/politica-de-privacidad/",
+      "weight": 0
+    }
+  ]
+}
