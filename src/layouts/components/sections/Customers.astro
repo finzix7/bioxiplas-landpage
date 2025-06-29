@@ -44,7 +44,7 @@ let duplicatedList = list.length <= 3
       <div
         class:list={[
           "mx-auto text-center",
-          width === "sm" ? "max-w-sm" : "max-w-full",
+          width === "sm" ? "max-w-full" : "max-w-full",
         ]}
       >
         {description && (
@@ -66,41 +66,41 @@ let duplicatedList = list.length <= 3
             marqueeElementWidthResponsive={marquee.element_width_in_small_devices}
           >
             {duplicatedList.map((item) => (
-  <div
-    class:list={[
-      "px-4",
-      {
-        "min-w-fit": marquee.element_width_auto,
-      },
-    ]}
-    class="flex items-center justify-center"
-  >
-    <OptimizedImage
-      src={item.src}
-      alt={item.alt}
-      height={80} // Altura fija
-      class="object-contain h-[80px] w-auto max-w-none" // Estilos clave
-    />
-  </div>
-))}
-{duplicatedList.map((item) => (
-  <div
-    class:list={[
-      "px-4",
-      {
-        "min-w-fit": marquee.element_width_auto,
-      },
-    ]}
-    class="flex items-center justify-center"
-  >
-    <OptimizedImage
-      src={item.src}
-      alt={item.alt}
-      height={80} // Altura fija
-      class="object-contain h-[80px] w-auto max-w-none" // Estilos clave
-    />
-  </div>
-))}
+              <div
+                class:list={[
+                  "px-4",
+                  {
+                    "min-w-fit": marquee.element_width_auto,
+                  },
+                ]}
+                class="flex items-center justify-center"
+              >
+                <OptimizedImage
+                  src={item.src}
+                  alt={item.alt}
+                  height={80} // Altura fija
+                  class="object-contain h-[80px] w-auto max-w-none" // Estilos clave
+                />
+              </div>
+            ))}
+          {duplicatedList.map((item) => (
+            <div
+              class:list={[
+                "px-4",
+                {
+                  "min-w-fit": marquee.element_width_auto,
+                },
+              ]}
+              class="flex items-center justify-center"
+            >
+              <OptimizedImage
+                src={item.src}
+                alt={item.alt}
+                height={80} // Altura fija
+                class="object-contain h-[80px] w-auto max-w-none" // Estilos clave
+              />
+            </div>
+          ))}
           </Marquee>
         </div>
       </div>
