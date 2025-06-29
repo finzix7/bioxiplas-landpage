@@ -1,7 +1,7 @@
 ---
 enable: true
 subtitle: Soluciones Integrales
-title: Innovación en Packaging y Protección **Biodegradable**
+title:  
 
 layout_type: modern
 
