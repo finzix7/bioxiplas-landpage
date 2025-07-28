@@ -1,7 +1,7 @@
 ---
 enable: true # Steuert die Sichtbarkeit dieses Abschnitts auf allen Seiten, auf denen er verwendet wird
 title: "Kontaktieren Sie uns für weitere **Informationen**"
-description: "Egal, ob Sie fachkundige Unterstützung benötigen – unser Team steht Ihnen bei jedem Schritt zur Seite."
+description: "Ganz gleich, ob Sie fachkundige Unterstützung benötigen – unser Team ist bereit, Sie bei jedem Schritt zu unterstützen."
 subtitle: "Kontakt"
 
 contact_list:
@@ -20,11 +20,14 @@ contact_list:
 social:
   enable: true
   title: "Folgen Sie uns in den sozialen Medien"
+  # list: (optional, kommentieren/entkommentieren, wenn Überschreibung erforderlich ist)
 
 form:
-  email_subject: "Neue Formularübermittlung von der Upstart-Website"
+  email_subject: "Neues Formular vom Upstart-Webseite eingereicht"
   submit_button:
     label: "Senden"
+  # note: |
+  #   Ihre Daten sind bei uns sicher. Wir respektieren Ihre Privatsphäre und geben Ihre Informationen niemals weiter. <br /> Lesen Sie unsere [Datenschutzerklärung](/privacy-policy/).
   inputs:
     - label: ""
       placeholder: "Vollständiger Name"
@@ -47,8 +50,8 @@ form:
       half_width: true
       default_value: ""
     - label: ""
-      placeholder: "Firma"
-      name: "Firma"
+      placeholder: "Unternehmen"
+      name: "Unternehmen"
       required: true
       type: "text"
       half_width: true
@@ -70,14 +73,14 @@ form:
           - label: "Beispiel 03"
             value: "Beispiel 03"
     - label: ""
-      placeholder: "Betreff mit Suche"
-      name: "Betreff mit Suche"
+      placeholder: "Suchbarer Betreff"
+      name: "Suchbarer Betreff"
       required: true
       half_width: true
       dropdown:
         type: "search"
         search:
-          placeholder: "Betreff mit Suche"
+          placeholder: "Suchbarer Betreff"
         items:
           - label: "Lowni Saiki"
             value: "Lowni Saiki"
@@ -99,7 +102,7 @@ form:
       half_width: false
     - label: "Google-Suche"
       checked: false
-      name: "Herkunft des Benutzers"
+      name: "Nutzerquelle"
       required: true
       group_label: "Wie haben Sie uns gefunden?"
       group: "source"
@@ -107,7 +110,7 @@ form:
       half_width: true
       default_value: ""
     - label: "Soziale Medien"
-      name: "Herkunft des Benutzers"
+      name: "Nutzerquelle"
       required: true
       group_label: ""
       group: "source"
@@ -115,22 +118,22 @@ form:
       half_width: true
       default_value: ""
     - label: "Empfehlung"
-      name: "Herkunft des Benutzers"
+      name: "Nutzerquelle"
       required: true
       group_label: ""
       group: "source"
       type: "radio"
       half_width: true
       default_value: ""
-    - label: "Andere"
-      name: "Herkunft des Benutzers"
+    - label: "Sonstiges"
+      name: "Nutzerquelle"
       required: true
       group_label: ""
       group: "source"
       type: "radio"
       half_width: true
       default_value: ""
-    - label: "Ich akzeptiere die Allgemeinen Geschäftsbedingungen und die [Datenschutzrichtlinie](/contact/)."
+    - label: "Ich akzeptiere die Allgemeinen Geschäftsbedingungen und die [Datenschutzerklärung](/contact/)."
       name: "Datenschutz akzeptiert"
       value: "Akzeptiert"
       checked: false
@@ -143,5 +146,5 @@ form:
       content: Wir haben Ihre Nachricht erhalten! Wir werden uns so schnell wie möglich bei Ihnen melden.
     - note: warning
       parent_class: "hidden message error"
-      content: Etwas ist schiefgelaufen! Bitte senden Sie eine E-Mail an [upstart-astro-theme@gmail.com](mailto:upstart-astro-theme@gmail.com), um ein Ticket zu senden.
+      content: Etwas ist schiefgelaufen! Bitte senden Sie eine E-Mail an [upstart-astro-theme@gmail.com](mailto:upstart-astro-theme@gmail.com), um ein Ticket zu erstellen.
 ---

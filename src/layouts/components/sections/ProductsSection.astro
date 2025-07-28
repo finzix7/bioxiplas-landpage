@@ -1,100 +1,83 @@
 ---
-import 'swiper/css';
-import 'swiper/css/navigation';
-
-import ProductCard from "@/layouts/components/cards/ProductCard.astro";
-import Subtitle from "@/layouts/components/widgets/Subtitle.astro";
+import type { Section } from "@/types";
+import { sortByDate } from "@/lib/utils/sortFunctions";
+import { getCollectionCTM } from "@/lib/contentParser.astro";
+import parseTomlToJson from "@/lib/utils/parseTomlToJson";
+import { getEntryCTM } from "@/lib/contentParser.astro";
+import Subtitle from "../widgets/Subtitle.astro";
+import Pagination from "../widgets/Pagination.astro";
 import { markdownify } from "@/lib/utils/textConverter";
-import CustomCursor from '../global/CustomCursor.astro';
+import overrideObjects from "@/lib/utils/overrideObjects.ts";
+import ProductCard from "@/layouts/components/cards/ProductCard.astro";
 
+const config = parseTomlToJson("./src/config/config.toml");
+const { products_folder }: { products_folder: "products" } = config.settings;
+
+type product_section_type = Section;
 type Props = {
-  content?: {
-    enable?: boolean;
-    title?: string;
-    subtitle?: string;
-    list?: any[];
+  content?: product_section_type;
+  pagination: {
+    enable: boolean;
+    currentPage: number;
   };
-  class?: string;
 };
 
-const { class: className, content = {} } = Astro.props;
-const {
-  enable = false,
-  title = "",
-  subtitle = "",
-  list = [],
-} = content;
+let default_content = (
+  await getEntryCTM("sections", "products-section", Astro.currentLocale)
+)?.data as product_section_type;
+
+let actual_content = overrideObjects(
+  { ...default_content },
+  Astro.props.content,
+) as product_section_type;
+
+let { enable = true, title, subtitle } = actual_content;
+
+let products = await getCollectionCTM(products_folder, Astro.currentLocale);
+products = sortByDate(products);
+
+let totalPages = Math.ceil(products?.length / config.settings.pagination);
+
+if (Astro.props.pagination?.enable) {
+  const indexOfLastProduct =
+    Astro.props.pagination.currentPage * config.settings.pagination;
+  const indexOfFirstProduct = indexOfLastProduct - config.settings.pagination;
+  products = products.slice(indexOfFirstProduct, indexOfLastProduct);
+}
 ---
 
 {enable && (
-  <section class:list={["relative", className]}>
-    <div class="container space-y-12 md:space-y-16">
-      <CustomCursor />
-
+  <section class="relative overflow-hidden">
+    <div class="container">
       <div class="mx-auto max-w-2xl text-center" data-aos="fade-up-sm">
         <Subtitle content={subtitle} />
-        <h2
-          class="has-italic-text capitalize"
-          set:html={markdownify(title)}
-        />
+        {title && (
+          <h2
+            class="h2 has-italic-text capitalize"
+            set:html={markdownify(title)}
+          />
+        )}
       </div>
-
-      <!-- Controles solo en desktop -->
       <div
-        class="hidden md:flex justify-end gap-6 mb-8"
+        class="md:bg-primary/10 mt-12 space-y-16 rounded-lg md:mt-16 md:p-16"
         data-aos="fade-up-sm"
         data-aos-delay="200">
-        <button class="products-slider-btn-prev bg-primary hover:bg-secondary group/slider-control relative flex h-12 w-12 items-center justify-center rounded-full transition duration-300">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="h-6 w-6 text-white">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
-          </svg>
-        </button>
-        <button class="products-slider-btn-next bg-primary hover:bg-secondary group/slider-control relative flex h-12 w-12 items-center justify-center rounded-full transition duration-300">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="h-6 w-6 text-white rotate-180">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
-          </svg>
-        </button>
-      </div>
-
-      {list.length > 0 && (
-        <div class="products-swiper swiper w-full">
-          <div class="swiper-wrapper">
-            {list.map((item, i) => (
-              <div
-                class="swiper-slide h-full p-3 flex"
+        <div class="grid gap-x-6 gap-y-10 md:grid-cols-2 xl:grid-cols-3">
+          {products &&
+            products.map((product, index) => (
+              <ProductCard
+                content={{ ...product.data, ...product }}
                 data-aos="fade-up-sm"
-                data-aos-delay={((i % 3) + 1) * 100}>
-                <ProductCard class="h-full flex flex-col" content={item} />
-              </div>
+                data-aos-delay={((index % 3) + 1) * 100}
+              />
             ))}
-          </div>
         </div>
-      )}
+        <Pagination
+          collection="products"
+          currentPage={Astro.props.pagination?.currentPage || 1}
+          totalPages={totalPages}
+        />
+      </div>
     </div>
   </section>
 )}
-
-<script>
-  window.addEventListener("load", async () => {
-    const { Swiper } = await import("swiper");
-    const { Navigation, Autoplay } = await import("swiper/modules");
-
-    new Swiper(".products-swiper", {
-      modules: [Navigation, Autoplay],
-      speed: 1000,
-      spaceBetween: 0,
-      breakpoints: {
-        320: { slidesPerView: 1, spaceBetween: 0 },
-        540: { slidesPerView: 1, spaceBetween: 0 },
-        768: { slidesPerView: 2, spaceBetween: 20 },
-        1024: { slidesPerView: 3 },
-      },
-      loop: true,
-      autoplay: { delay: 3000 },
-      navigation: {
-        nextEl: ".products-slider-btn-next",
-        prevEl: ".products-slider-btn-prev",
-      },
-    });
-  });
-</script>

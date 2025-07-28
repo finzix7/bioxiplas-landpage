@@ -1,17 +1,17 @@
 ---
-enable: true # Control the visibility of this section across all pages where it is used
+enable: true # Controls the visibility of this section across all pages where it's used
 subtitle: Features
-title: An overview <br /> of the **Core features**
+title: An overview <br /> of the **Main Functions**
 
 list:
   - Drag me!
-  - Visitor info
+  - Visitor information
   - Drag me!
   - Page views
   - Traffic sources
   - Drag me!
   - Device
   - Drag me!
-  - Realtime data
+  - Real-time data
   - Bounce rate
 ---

@@ -1,12 +1,12 @@
 ---
 enable: true # Steuert die Sichtbarkeit dieses Abschnitts auf allen Seiten, auf denen er verwendet wird
-description: "Vertrauen von Tausenden von Unternehmen"
+description: "Vertraut von Tausenden von Unternehmen"
 
 marquee:
-  # element_width: # Breite in rem (z. B. 10rem oder leer lassen, wenn die Breite vom Inhalt abhängt)
+  # element_width: # Breite in rem (z. B. 10rem oder leer lassen, um sich am Inhalt zu orientieren)
   element_width_auto: true
-  element_height: # Höhe in rem (z. B. 10rem oder leer lassen, wenn die Höhe vom Inhalt abhängt)
-  # element_width_in_small_devices: # Breite in rem auf kleinen Geräten
+  element_height: # Höhe in rem (z. B. 10rem oder leer lassen, um sich am Inhalt zu orientieren)
+  # element_width_in_small_devices: # Breite in rem für kleine Geräte
   pause_on_hover: false
   reverse: "" # reverse / ""
   duration: "20s"

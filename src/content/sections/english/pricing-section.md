@@ -1,284 +1,293 @@
 ---
-enable: true  # Controls the visibility of this section on all pages where it's used
-title: Pricing That **Makes Sense**
+enable: true  # Controla la visibilidad de esta sección en todas las páginas donde se utilice
+title: Precios Que **Tienen Sentido**
 
 plans:
   enable: true
   list:
     - selected: true
-      label: Monthly
+      label: Mensual
     - selected: false
-      label: Yearly
+      label: Anual
 
 list:
-  # Basic Plan
+  # Plan Basic
   - enable: true
     featured: false
     badge:
       enable: false
       label: ""
     name: Basic
-    description: Basic plan to get started with ARIA at an affordable price.
+    description: Plan básico para empezar con ARIA a un precio accesible.
 
     price:
-      - type: Monthly
+      - type: Mensual
         prepend_value: $
         value: 20000
         append_value: 
-      - type: Yearly
+      - type: Anual
         prepend_value: $
         value: 200000
         append_value: 
 
     features:
-      - Basic digital menu with real-time updates
-      - Limited storage for images and documents
-      - Basic email support
+      - Menú digital básico con actualizaciones en tiempo real
+      - Almacenamiento limitado para imágenes y documentos
+      - Soporte por correo electrónico básico
 
     usages:
-      - type: Monthly
+      - type: Mensual
         list:
-          - label: Connected tables
+          - label: Mesas conectadas
             value: 3
-          - label: Loyal customers
+          - label: Clientes fidelizados
             value: 20
-      - type: Yearly
+      - type: Anual
         list:
-          - label: Connected tables
+          - label: Mesas conectadas
             value: 36
-          - label: Loyal customers
+          - label: Clientes fidelizados
             value: 240
 
     cta_btn:
       enable: true
-      label: Get Started
+      label: Comenzar
       url: /contact/
       rel: 
       target: 
 
-  # Starter Plan
+  # Plan Starter
   - enable: true
     featured: false
     badge:
       enable: false
       label: ""
     name: Starter
-    description: Ideal for digitizing your menu with ARIA and trying out essential features.
+    description: Ideal para digitalizar tu menú con ARIA y probar las funciones esenciales.
 
     price:
-      - type: Monthly
+      - type: Mensual
         prepend_value: $
         value: 45000
         append_value: 
-      - type: Yearly
+      - type: Anual
         prepend_value: $
         value: 450000
         append_value: 
 
     features:
-      - Interactive digital menu with real-time updates
-      - Featured product boosters to maximize sales
-      - Basic custom design (colors and fonts)
-      - Unlimited storage for images and documents
-      - Trial Loyalty module (up to 50 registered users for 3 months)
+      - Menú digital interactivo con actualizaciones en tiempo real
+      - Boosters de productos destacados para maximizar ventas
+      - Diseño personalizado básico (colores y tipografía)
+      - Almacenamiento ilimitado para imágenes y documentos
+      - Módulo de Loyalty de prueba (hasta 50 usuarios registrados por 3 meses)
 
     usages:
-      - type: Monthly
+      - type: Mensual
         list:
-          - label: Connected tables
+          - label: Mesas conectadas
             value: 5
-          - label: Loyal customers
+          - label: Clientes fidelizados
             value: 50
-      - type: Yearly
+      - type: Anual
         list:
-          - label: Connected tables
+          - label: Mesas conectadas
             value: 60
-          - label: Loyal customers
+          - label: Clientes fidelizados
             value: 600
 
     cta_btn:
       enable: true
-      label: Get Started
+      label: Comenzar
       url: /contact/
       rel: 
       target: 
 
-  # Advance Plan
+  # Plan Medio
   - enable: true
     featured: true
     badge:
       enable: true
-      label: Most Popular
+      label: Más Popular
     name: Advance
-    description: Perfect for businesses looking to enhance customer experience and optimize operations through data analysis and greater visibility.
+    description: Perfecto para negocios que buscan mejorar la experiencia del cliente y optimizar operaciones con análisis de datos y mayor visibilidad.
 
     price:
-      - type: Monthly
+      - type: Mensual
         prepend_value: $
         value: 70000
         append_value: 
-      - type: Yearly
+      - type: Anual
         prepend_value: $
         value: 700000
         append_value: 
 
     features:
-      - All features from the Starter Plan
-      - Multi-language menu
-      - Data analytics
-      - Unlimited Loyalty
+      - Todas las funcionalidades del Plan Starter
+      - Carta multi-idioma
+      - Análisis de datos
+      - Loyalty ilimitado
 
     usages:
-      - type: Monthly
+      - type: Mensual
         list:
-          - label: Connected tables
+          - label: Mesas conectadas
             value: 20
-          - label: Loyal customers
-            value: Unlimited
-      - type: Yearly
+          - label: Clientes fidelizados
+            value: Ilimitado
+      - type: Anual
         list:
-          - label: Connected tables
+          - label: Mesas conectadas
             value: 240
-          - label: Loyal customers
-            value: Unlimited
+          - label: Clientes fidelizados
+            value: Ilimitado
 
     cta_btn:
       enable: true
-      label: Get Started
+      label: Comenzar
       url: /contact/
       rel: 
       target: 
 
-  # Pro Plan
+  # Plan Pro
   - enable: true
     featured: false
     badge:
       enable: false
       label: ""
     name: Pro
-    description: For medium and large businesses seeking to maximize customer retention and optimize operations with advanced features and automation.
+    description: Para negocios medianos y grandes que desean maximizar la retención de clientes y optimizar sus operaciones con funcionalidades avanzadas y automatización.
 
     price:
-      - type: Monthly
+      - type: Mensual
         prepend_value: $
         value: 100000
         append_value: 
-      - type: Yearly
+      - type: Anual
         prepend_value: $
         value: 1000000
         append_value: 
 
     features:
-      - All features from the Advance Plan
-      - Upcoming modules included at launch
-      - Advanced data analytics
-      - Detailed customer insights
+      - Todas las funcionalidades del Plan Advance
+      - Módulos en preparación gratis en su lanzamiento
+      - Análisis de datos avanzados
+      - Insights detallados del cliente
 
     usages:
-      - type: Monthly
+      - type: Mensual
         list:
-          - label: Connected tables
+          - label: Mesas conectadas
             value: 50
-          - label: Loyal customers
-            value: Unlimited
-      - type: Yearly
+          - label: Clientes fidelizados
+            value: Ilimitado
+      - type: Anual
         list:
-          - label: Connected tables
+          - label: Mesas conectadas
             value: 600
-          - label: Loyal customers
-            value: Unlimited
+          - label: Clientes fidelizados
+            value: Ilimitado
 
     cta_btn:
       enable: true
-      label: Get Started
+      label: Comenzar
       url: /contact/
       rel: 
       target: 
 
-  # Loyalty Plan
+  # Plan Loyalty
   - enable: true
     featured: false
     badge:
       enable: false
       label: ""
     name: Loyalty
-    description: Includes only the features of the loyalty program.
+    description: Incluye únicamente las funcionalidades del programa de fidelización.
 
     price:
-      - type: Monthly
+      - type: Mensual
         prepend_value: $
         value: 20000
         append_value: 
-      - type: Yearly
+      - type: Anual
         prepend_value: $
         value: 200000
         append_value: 
 
     features:
-      - Unlimited Loyalty
+      - Loyalty ilimitado
 
     usages:
-      - type: Monthly
+      - type: Mensual
         list:
-          - label: Connected tables
+          - label: Mesas conectadas
             value: 0
-          - label: Loyal customers
-            value: Unlimited
-      - type: Yearly
+          - label: Clientes fidelizados
+            value: Ilimitado
+      - type: Anual
         list:
-          - label: Connected tables
+          - label: Mesas conectadas
             value: 0
-          - label: Loyal customers
-            value: Unlimited
+          - label: Clientes fidelizados
+            value: Ilimitado
 
     cta_btn:
       enable: true
-      label: Get Started
+      label: Comenzar
       url: /contact/
       rel: 
       target: 
 
-  # Exclusive Plan
+  # Plan Exclusive
   - enable: true
     featured: false
     badge:
       enable: false
       label: ""
     name: Exclusive
-    description: For fully customized businesses with tailored features and premium support.
+    description: Para negocios full personalizados con funcionalidades a medida y soporte premium.
 
+    # Pricing personalizado: no se especifica valor fijo. Contactar para cotización.
     features:
-      - All features from the Pro Plan
-      - Custom development and integrations
-      - Personalized consulting
-      - Dedicated support and onboarding priority
+      - Todas las funcionalidades del Plan Pro
+      - Desarrollo e integración a medida
+      - Consultoría personalizada
+      - Soporte dedicado y prioridad en incorporación
 
     usages:
-      - type: Monthly
+      - type: Mensual
         list:
-          - label: Connected tables
-            value: Unlimited
-          - label: Loyal customers
-            value: Unlimited
-      - type: Yearly
+          - label: Mesas conectadas
+            value: Ilimitado
+          - label: Clientes fidelizados
+            value: Ilimitado
+      - type: Anual
         list:
-          - label: Connected tables
-            value: Unlimited
-          - label: Loyal customers
-            value: Unlimited
+          - label: Mesas conectadas
+            value: Ilimitado
+          - label: Clientes fidelizados
+            value: Ilimitado
 
     cta_btn:
       enable: true
-      label: Get Started
+      label: Comenzar
       url: /contact/
       rel: 
       target: 
 
-# Price Comparison
+# Comparativa de Precios
 comparison:
-  - label: Features
+  - label: Funcionalidades
     list:
-      - value: Integrations
+      - value: Integraciones
+        included:
+          - true   # Basic
+          - true   # Starter
+          - true   # Advance
+          - true   # Pro
+          - false  # Loyalty
+          - true   # Exclusive
+      - value: Enlaces compartidos
         included:
           - true
           - true
@@ -286,7 +295,7 @@ comparison:
           - true
           - false
           - true
-      - value: Shared links
+      - value: Importación y exportación
         included:
           - true
           - true
@@ -294,50 +303,42 @@ comparison:
           - true
           - false
           - true
-      - value: Import & export
+      - value: Miembros del equipo
         included:
-          - true
-          - true
-          - true
-          - true
-          - false
-          - true
-      - value: Team members
-        included:
-          - false
-          - false
-          - Up to 20 users
-          - Up to 50 users
-          - 0 users
-          - Unlimited
+          - false            # Basic
+          - false            # Starter
+          - Hasta 20 usuarios # Advance
+          - Hasta 50 usuarios # Pro
+          - 0 usuarios        # Loyalty
+          - Ilimitados        # Exclusive
 
-  - label: Reports
+  - label: Reportes
     list:
-      - value: Advanced analytics
+      - value: Analíticas avanzadas
         included:
-          - false
-          - true
-          - true
-          - true
-          - false
-          - true
-      - value: Basic reports
+          - false  # Basic
+          - true   # Starter
+          - true   # Advance
+          - true   # Pro
+          - false  # Loyalty
+          - true   # Exclusive
+      - value: Reportes básicos
         included:
-          - false
-          - false
-          - true
-          - true
-          - false
-          - true
-      - value: Professional reports
+          - false  # Basic
+          - false  # Starter
+          - true   # Advance
+          - true   # Pro
+          - false  # Loyalty
+          - true   # Exclusive
+      - value: Reportes profesionales
         included:
-          - false
-          - false
-          - false
-          - true
-          - false
-          - true
-      - value: Custom report builder
+          - false  # Basic
+          - false  # Starter
+          - false  # Advance
+          - true   # Pro
+          - false  # Loyalty
+          - true   # Exclusive
+      - value: Generador de reportes personalizados
         included:
           - false
           - false
@@ -346,25 +347,17 @@ comparison:
           - false
           - true
 
-  - label: Support
+  - label: Soporte
     list:
-      - value: 24/7 online support
+      - value: Soporte en línea 24/7
         included:
-          - false
-          - true
-          - false
-          - false
-          - false
-          - true
-      - value: Quarterly product workshops
-        included:
-          - false
-          - false
-          - false
-          - true
-          - false
-          - true
-      - value: Priority phone support
+          - false  # Basic
+          - true   # Starter
+          - false  # Advance
+          - false  # Pro
+          - false  # Loyalty
+          - true   # Exclusive
+      - value: Talleres trimestrales del producto
         included:
           - false
           - false
@@ -372,7 +365,15 @@ comparison:
           - true
           - false
           - true
-      - value: 1:1 onboarding tour
+      - value: Soporte telefónico prioritario
+        included:
+          - false
+          - false
+          - false
+          - true
+          - false
+          - true
+      - value: Tour de incorporación 1:1
         included:
           - false
           - false

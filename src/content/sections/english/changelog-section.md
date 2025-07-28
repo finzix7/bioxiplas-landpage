@@ -1,13 +1,13 @@
 ---
-enable: true # Controls the visibility of this section on all pages where it is used
+enable: true # Controls the visibility of this section across all pages where it's used
 title: Changelog - **What's New**
 
 list:
-  - title: Priority for projects
+  - title: Priority for Projects
     version: 0.12.5
-    date: Feb 02, 2024
+    date: 02 Feb, 2024
     content: |
-      Always free, sit with a semi-adapted style. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit.
+      Always free, sitting with a semi-custom style. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit
     video:
       src: /videos/test-video.mp4
       type: mp3
@@ -39,19 +39,19 @@ list:
           - label: Archiving
             color: indigo
             content: |
-              Hierarchical relationships between issues are preserved when restoring projects from the archive
+              Hierarchical relationships between issues are now preserved when restoring projects from the archive
           - label: Board
             color: slate
             content: |
-              Fixed issues with board column headers not truncating properly
+              Fixed errors with board column headers not truncating properly
           - label: Slack
             color: crimson
             content: |
-              Now mentions of issue IDs in Slack are only expanded if the message author is a user in the Linear workspace
+              Mentions of issue IDs in Slack will now only expand if the message author is a user in the Linear workspace
           - label: Templates
             color: amber
             content: |
-              Fixed the link to create project templates, which was not working after removing the roadmap
+              Fixed the link to create project templates, which wasn't working after roadmap removal
       - active: false
         title: Improvement
         list:
@@ -62,17 +62,17 @@ list:
           - label: Archiving
             color: indigo
             content: |
-              Hierarchical relationships between issues are preserved when restoring projects from the archive
+              Hierarchical relationships between issues are now preserved when restoring projects from the archive
           - label: Board
             color: slate
             content: |
-              Fixed issues with board column headers not truncating properly
+              Fixed errors with board column headers not truncating properly
           - label: Slack
             color: crimson
             content: |
-              Now mentions of issue IDs in Slack are only expanded if the message author is a user in the Linear workspace
+              Mentions of issue IDs in Slack will now only expand if the message author is a user in the Linear workspace
           - label: Templates
             color: amber
             content: |
-              Fixed the link to create project templates, which was not working after removing the roadmap
+              Fixed the link to create project templates, which wasn't working after roadmap removal
 ---

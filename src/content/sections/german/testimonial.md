@@ -1,7 +1,7 @@
 ---
 enable: true
-subtitle: Kundenstimmen
-title: Das Sagen Sie Über **Bioxiplas**
+subtitle: Kundenmeinungen
+title: Das Sagen Unsere Kunden Über **Bioxiplas**
 
 marquee:
   element_width: "29.25rem"
@@ -14,59 +14,59 @@ marquee:
 list:
   - enable: true
     content: |
-      Die biologisch abbaubaren Produkte von Bioxiplas haben es uns ermöglicht, unser Engagement für Nachhaltigkeit in allen Produktionsbereichen zu stärken.
+      Die biologisch abbaubaren Produkte von Bioxiplas haben unser Engagement für Nachhaltigkeit in allen Produktionsbereichen gestärkt.
     customer:
       image: "/images/customers/avatar/1.jpg"
       name: "Marcelo Contreras"
-      role: "Nachhaltigkeitsmanager - Super Cerdo"
+      role: "Leiter Nachhaltigkeit – Super Cerdo"
 
   - enable: true
     content: |
-      Bei Procarne schätzen wir Innovation und Sicherheit. Die biologisch abbaubaren Schutzprodukte von Bioxiplas erfüllen die höchsten Standards der Fleischindustrie.
+      Bei Procarne schätzen wir Innovation und Sicherheit. Die biologisch abbaubare Schutzausrüstung von Bioxiplas erfüllt die höchsten Standards der Fleischindustrie.
     customer:
       image: "/images/customers/avatar/2.jpg"
       name: "Carolina Muñoz"
-      role: "Qualitätsmanagerin - Procarne"
+      role: "Qualitätsmanagerin – Procarne"
 
   - enable: true
     content: |
-      Bioxiplas hat uns praktische und nachhaltige Lösungen für unsere Betriebe in Zucht- und Verarbeitungsanlagen geliefert.
+      Bioxiplas hat uns praktische und nachhaltige Lösungen für unsere Anbau- und Verarbeitungsprozesse geliefert.
     customer:
       image: "/images/customers/avatar/3.jpg"
       name: "Juan Pablo Reyes"
-      role: "Produktionsleiter - Marine Farm"
+      role: "Betriebsleiter – Marine Farm"
 
   - enable: true
     content: |
-      Die Produkte von Bioxiplas waren entscheidend, um unseren ökologischen Fußabdruck in Verpackungs- und Transportprozessen zu reduzieren.
+      Die Produkte von Bioxiplas waren entscheidend für die Reduzierung unseres ökologischen Fußabdrucks bei Verpackung und Transport.
     customer:
       image: "/images/customers/avatar/4.jpg"
       name: "Verónica Araya"
-      role: "Umweltmanagerin - Frival"
+      role: "Umweltbeauftragte – Frival"
 
   - enable: true
     content: |
-      Die Qualität und Haltbarkeit der Bioxiplas-Produkte sind ideal für die Lachsindustrie. Eine hervorragende Alternative, um unsere Nachhaltigkeitsziele zu erreichen.
+      Die Qualität und Festigkeit der Produkte von Bioxiplas sind ideal für die Lachsindustrie. Eine ausgezeichnete Alternative, um unsere Nachhaltigkeitsziele zu erreichen.
     customer:
       image: "/images/customers/avatar/5.jpg"
       name: "Anders Eriksson"
-      role: "Operations Manager - Atlantic Sapphire"
+      role: "Betriebsleiter – Atlantic Sapphire"
 
   - enable: true
     content: |
-      Bei BluGlacier haben wir die biologisch abbaubaren Produkte von Bioxiplas als integralen Bestandteil unserer nachhaltigen Verpackungsstrategie integriert.
+      Bei BluGlacier haben wir die biologisch abbaubaren Produkte von Bioxiplas als zentralen Bestandteil unserer nachhaltigen Verpackungsstrategie integriert.
     customer:
       image: "/images/customers/avatar/6.jpg"
       name: "Cristina López"
-      role: "Leiterin Verpackung & Nachhaltigkeit - BluGlacier"
+      role: "Leiterin Verpackung & Nachhaltigkeit – BluGlacier"
 
   - enable: true
     content: |
-      Die biologisch abbaubaren Materialien, die wir über Bioxiplas beziehen, sind eine große Bereicherung für unseren Betrieb und stärken unser Engagement für Umweltverantwortung.
+      Die biologisch abbaubaren Materialien von Bioxiplas sind ein großer Gewinn für unseren Betrieb und stärken unser Engagement für Umweltverantwortung.
     customer:
       image: "/images/customers/avatar/7.jpg"
       name: "Felipe Soto"
-      role: "Geschäftsführer - Patagonia Seafarms"
+      role: "Geschäftsführer – Patagonia Seafarms"
 
   - enable: true
     content: |
@@ -74,5 +74,5 @@ list:
     customer:
       image: "/images/customers/avatar/8.jpg"
       name: "Paula González"
-      role: "Stellvertretende Produktionsleiterin - Sopraval"
+      role: "Stellv. Produktionsleiterin – Sopraval"
 ---

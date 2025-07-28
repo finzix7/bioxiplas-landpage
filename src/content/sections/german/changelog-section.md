@@ -1,13 +1,13 @@
 ---
 enable: true # Steuert die Sichtbarkeit dieses Abschnitts auf allen Seiten, auf denen er verwendet wird
-title: Änderungsprotokoll - **Neues**
+title: Änderungsprotokoll – **Was ist neu**
 
 list:
   - title: Priorität für Projekte
     version: 0.12.5
     date: 02. Feb. 2024
     content: |
-      Immer frei, sitze mit einem halb angepassten Stil. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit.
+      Immer kostenlos, mit einem halb-individuellen Stil. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit
     video:
       src: /videos/test-video.mp4
       type: mp3
@@ -43,15 +43,15 @@ list:
           - label: Board
             color: slate
             content: |
-              Fehler bei Spaltenüberschriften im Board, die nicht korrekt abgeschnitten wurden, wurden behoben
+              Fehler mit nicht korrekt abgeschnittenen Spaltenüberschriften im Board wurden behoben
           - label: Slack
             color: crimson
             content: |
-              Erwähnungen von Issue-IDs in Slack werden jetzt nur noch erweitert, wenn der Nachrichtenersteller Benutzer im Linear-Workspace ist
+              Erwähnungen von Issue-IDs in Slack werden jetzt nur erweitert, wenn der Autor des Beitrags ein Benutzer im Linear-Arbeitsbereich ist
           - label: Vorlagen
             color: amber
             content: |
-              Der Link zum Erstellen von Projektvorlagen wurde korrigiert, dieser funktionierte nach Entfernen der Roadmap nicht mehr
+              Der Link zur Erstellung von Projektvorlagen funktioniert jetzt wieder, nachdem der Fahrplan entfernt wurde
       - active: false
         title: Verbesserung
         list:
@@ -66,13 +66,13 @@ list:
           - label: Board
             color: slate
             content: |
-              Fehler bei Spaltenüberschriften im Board, die nicht korrekt abgeschnitten wurden, wurden behoben
+              Fehler mit nicht korrekt abgeschnittenen Spaltenüberschriften im Board wurden behoben
           - label: Slack
             color: crimson
             content: |
-              Erwähnungen von Issue-IDs in Slack werden jetzt nur noch erweitert, wenn der Nachrichtenersteller Benutzer im Linear-Workspace ist
+              Erwähnungen von Issue-IDs in Slack werden jetzt nur erweitert, wenn der Autor des Beitrags ein Benutzer im Linear-Arbeitsbereich ist
           - label: Vorlagen
             color: amber
             content: |
-              Der Link zum Erstellen von Projektvorlagen wurde korrigiert, dieser funktionierte nach Entfernen der Roadmap nicht mehr
+              Der Link zur Erstellung von Projektvorlagen funktioniert jetzt wieder, nachdem der Fahrplan entfernt wurde
 ---

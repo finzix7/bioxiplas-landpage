@@ -1,16 +1,19 @@
+// src/content/config.ts
 import { defineCollection, z } from "astro:content";
 import parseTomlToJson from "./lib/utils/parseTomlToJson";
 
+// Cargar configuración del archivo TOML
 const config = parseTomlToJson("./src/config/config.toml");
 const { integration_folder } = config.settings;
 
-// Universal Page Schema
+// 📄 Esquema base reutilizable (pages, blog, products, etc.)
 const page = z.object({
   title: z.string(),
-  date: z.date().optional(), // example date format 2022-01-01 or 2022-01-01T00:00:00+00:00 (Year-Month-Day Hour:Minute:Second+Timezone)
-  description: z.string().optional(),
+  date: z.date().optional(),               // e.g. 2022-01-01 or with timezone
   image: z.string().optional(),
   draft: z.boolean().optional(),
+  excerpt: z.string().optional(),          // ¡Agregado!
+  description: z.string().optional(),
   meta_title: z.string().optional(),
   meta_description: z.string().optional(),
   robots: z.string().optional(),
@@ -21,16 +24,7 @@ const page = z.object({
   disable_tagline: z.boolean().optional(),
 });
 
-// Marquee Schema
-// const marquee_config = z.object({
-//   element_width: z.string(),
-//   element_width_in_small_devices: z.string(),
-//   pause_on_hover: z.boolean(),
-//   reverse: z.enum(["reverse", ""]).optional(), // Optional: "reverse" or an empty string
-//   duration: z.string(),
-// });
-
-// Call to Action Button
+// 🧠 Botón opcional (para integraciones u otros usos)
 const buttonSchema = z.object({
   enable: z.boolean(),
   label: z.string(),
@@ -39,12 +33,7 @@ const buttonSchema = z.object({
   target: z.string().optional(),
 });
 
-// Pages collection schema
-const pages_collection = defineCollection({
-  schema: page,
-});
-
-// Post collection schema
+// 📰 Blog Collection
 const blog_collection = defineCollection({
   schema: page.merge(
     z.object({
@@ -55,7 +44,7 @@ const blog_collection = defineCollection({
   ),
 });
 
-// Integration Collection
+// 🧪 Integration Collection
 const integration_collection = defineCollection({
   schema: page.merge(
     z.object({
@@ -83,13 +72,27 @@ const integration_collection = defineCollection({
   ),
 });
 
-// Export collections
+// 🛍️ Products Collection
+const products_collection = defineCollection({
+  schema: page.merge(
+    z.object({
+      categories: z.array(z.string()).default(["productos"]),
+      author: z.string().optional(),
+      excerpt: z.string().optional(),
+      image: z.string().optional(),
+    }),
+  ),
+});
+
+// 📦 Exportar todas las colecciones
 export const collections = {
   blog: blog_collection,
   integration: integration_collection,
   [integration_folder]: integration_collection,
 
-  pages: pages_collection,
+  pages: defineCollection({ schema: page }),
+  products: products_collection,
+
   sections: defineCollection({}),
   contact: defineCollection({}),
   faq: defineCollection({}),

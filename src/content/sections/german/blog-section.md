@@ -1,5 +1,5 @@
 ---
-enable: true # Contrôle la visibilité de cette section sur toutes les pages où elle est utilisée
-title: Derniers conseils et astuces de **notre expert**
+enable: true # Controls the visibility of this section on all pages where it's used
+title: Neueste Tipps und Tricks von **unserem Experten**
 subtitle: Blog
 ---

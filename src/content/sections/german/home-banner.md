@@ -1,43 +1,44 @@
 ---
-title: Reduzieren Sie Ihren Plastik-Fußabdruck mit **bio-intelligenten Materialien**
-description: Wir transformieren Ihre Branche mit zertifizierten biologisch abbaubaren Kunststoffen, fortschrittlicher Materialtechnik und zirkulären Lösungen, die echte Wirkung erzielen.
+title: Intelligente Kunststoffe für eine **sauberere Zukunft**
+description: Wir produzieren verantwortungsvoll – im Sinne einer gemeinsamen Zukunft.
 image: "/images/product-demo-bioxiplas.png"
 buttons:
   - enable: true
-    label: "Muster anfordern"
+    label: "Mehr erfahren"
     url: "/contact"
     rel: ""
     target: ""
   - enable: true
-    label: "Video ansehen"
+    label: "Videos ansehen"
     type: "video"
     video:
-      src: "/videos/bioxiplas.mp4" # Video-URL oder Pfad, z. B.: "/videos/bioxiplas-demo.mp4" oder "https://example.com/bioxiplas-demo.mp4"
-      type: mp4 # Videotyp, z. B.: mp4, webm, etc.
-      provider: html5 # "youtube" | "vimeo" | "html5" (Standard ist "youtube")
-      poster: "/images/video-poster-bioxiplas.png" # Optional: URL oder Pfad des Vorschaubildes
-      autoplay: true # Optional: true für automatisches Abspielen, false für manuelles Starten (Standard ist false)
-      id: home-banner-video # Erforderlich, wenn dasselbe Video mehrfach auf derselben Seite verwendet wird
+      id: home-banner-video
+      src: "/videos/bioxiplas.mp4"
+      type: mp4
+      provider: html5
+      poster: "/images/video-poster-bioxiplas.png"
+      autoplay: true
+  - enable: true
+    label: "Auf YouTube ansehen"
+    type: "video"
+    video:
+      id: home-banner-video3
+      src: "https://www.youtube.com/watch?v=chD6N671Uho"
+      provider: youtube
+      poster: "/images/video-poster-yt.png"
+      autoplay: false
+  - enable: true
+    label: "Videos ansehen"
+    type: "video"
+    video:
+      id: home-banner-video2
+      src: "/videos/bioxiplas2.mp4"
+      type: mp4
+      provider: html5
+      poster: "/images/video-poster-bioxiplas.png"
+      autoplay: false
 
 customers:
   enable: true
-  description: "Vertrauenswürdig bei führenden Unternehmen der Lebensmittelindustrie und bei Firmen, die sich für eine zirkuläre Zukunft engagieren"
-  # marquee:
-  #   element_width:
-  #   element_width_auto:
-  #   element_width_in_small_devices:
-  #   pause_on_hover: false
-  #   reverse: "" # reverse / ""
-  #   duration: "20s"
-  # list:
-  #   - src: "/images/customers/cliente1.png"
-  #     alt: "Fischereiunternehmen USA"
-  #   - src: "/images/customers/cliente2.png"
-  #     alt: "Lebensmittelverarbeitungsbetrieb Chile"
-  #   - src: "/images/customers/cliente3.png"
-  #     alt: "Fleischindustrie"
-  #   - src: "/images/customers/cliente4.png"
-  #     alt: "Einzelhandelsverpackungen"
-  #   - src: "/images/customers/cliente5.png"
-  #     alt: "Medizinische Einwegprodukte"
+  description: "Vertraut von führenden Unternehmen der Lebensmittelindustrie und Firmen, die sich einer zirkulären Zukunft verschrieben haben"
 ---

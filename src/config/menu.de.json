@@ -4,128 +4,21 @@
       "enable": true,
       "name": "Startseite",
       "weight": 1,
-      "url": ""
-    },
-    {
-      "name": "Seiten",
-      "enable": true,
-      "weight": 3,
-      "hasChildren": true,
-      "children": [
-        {
-          "enable": true,
-          "name": "Verschachteltes Menü",
-          "hasChildren": true,
-          "weight": 2,
-          "children": [
-            {
-              "enable": true,
-              "name": "Menü 01",
-              "weight": 1
-            },
-            {
-              "enable": true,
-              "name": "Verschachteltes Menü",
-              "hasChildren": true,
-              "weight": 4,
-              "children": [
-                {
-                  "enable": true,
-                  "name": "Untermenüeintrag",
-                  "weight": 1
-                },
-                {
-                  "enable": true,
-                  "name": "Untermenüeintrag",
-                  "weight": 2
-                },
-                {
-                  "enable": true,
-                  "name": "Untermenüeintrag",
-                  "weight": 3
-                },
-                {
-                  "enable": true,
-                  "name": "Untermenüeintrag",
-                  "weight": 4
-                }
-              ]
-            },
-            {
-              "enable": true,
-              "name": "Menü 02",
-              "weight": 2
-            },
-            {
-              "enable": true,
-              "name": "Menü 03",
-              "weight": 3
-            }
-          ]
-        },
-        {
-          "enable": true,
-          "name": "Funktionen",
-          "url": "/features/",
-          "weight": 1
-        },
-        {
-          "enable": true,
-          "name": "Preise",
-          "url": "/pricing/",
-          "weight": 2
-        },
-        {
-          "enable": true,
-          "name": "FAQ",
-          "url": "/faq/",
-          "weight": 3
-        },
-        {
-          "enable": true,
-          "name": "Änderungsprotokoll",
-          "url": "/changelog/",
-          "weight": 4
-        },
-        {
-          "enable": true,
-          "name": "Integration",
-          "url": "/integration/",
-          "weight": 5
-        },
-        {
-          "enable": true,
-          "name": "Einzelne Integration",
-          "url": "/integration/discord/",
-          "weight": 6
-        },
-        {
-          "enable": true,
-          "name": "Blog",
-          "url": "/blog/",
-          "weight": 7
-        },
-        {
-          "enable": true,
-          "name": "Einzelner Blogbeitrag",
-          "url": "/blog/post-1/",
-          "weight": 8
-        }
-      ]
+      "url": "/"
     },
     {
       "enable": true,
-      "name": "Funktionen",
+      "name": "Über Uns",
       "weight": 2,
       "hasMegaMenu": true,
       "cta": {
         "enable": true,
-        "image": "/images/menu-cta.png",
-        "title": "Erhalte umsetzbare Erkenntnisse",
-        "description": "Upstart ist selbst gehostet, deine Website-Daten bleiben auf deinem Server.",
+        "image": "/images/bioxifam.jpg",
+        "title": "Nachhaltige Verpackungen nach Maß",
+        "description": "Entdecken Sie, wie unsere Lösungen Ihren CO₂-Fußabdruck reduzieren und Ihre Lieferkette optimieren.",
         "cta_btn": {
           "enable": true,
-          "label": "Kostenlose Testversion erhalten",
+          "label": "Kontaktieren Sie uns",
           "url": "/contact/",
           "rel": "",
           "target": ""
@@ -137,31 +30,24 @@
           "children": [
             {
               "enable": true,
-              "icon": "/images/icons/svg/focus.svg",
-              "name": "Konzentriere dich auf das Wesentliche",
-              "description": "Upstart verfolgt die wichtigsten Website-Kennzahlen, die dir wichtig sind.",
-              "url": "/features/"
+              "icon": "/images/icons/svg/feature.svg",
+              "name": "Wer wir sind",
+              "description": "Erfahren Sie mehr über die Mission von Bioxiplas und unser Engagement für Kreislaufwirtschaft und Umwelt.",
+              "url": "/about/"
             },
             {
               "enable": true,
-              "icon": "/images/icons/svg/privacy.svg",
-              "name": "Datenschutz an erster Stelle",
-              "description": "Upstart verfolgt keine Nutzer über Websites hinweg und sammelt keine Daten.",
-              "url": "/features/"
+              "icon": "/images/icons/svg/success.svg",
+              "name": "Unsere Produkte",
+              "description": "100 % biologisch abbaubare Verpackungen für jede Branche.",
+              "url": "/products/"
             },
             {
               "enable": true,
               "icon": "/images/icons/svg/data.svg",
-              "name": "Eigene deine Daten",
-              "description": "Upstart ist selbst gehostet, deine Website-Daten bleiben auf deinem Server.",
-              "url": "/features/"
-            },
-            {
-              "enable": true,
-              "icon": "/images/icons/svg/time.svg",
-              "name": "Sofort verfügbare Daten",
-              "description": "Von Upstart erfasste Daten sind sofort im Dashboard verfügbar.",
-              "url": "/features/"
+              "name": "CO₂-Fußabdruck berechnen",
+              "description": "Interaktives Tool zur Messung der Kohlenstoffauswirkungen Ihrer Produkte und Prozesse.",
+              "url": "/carbon-footprint/"
             }
           ]
         }
@@ -169,30 +55,26 @@
     },
     {
       "enable": true,
-      "name": "Elemente",
-      "url": "/elements/",
+      "name": "Katalog",
+      "url": "/products/",
       "weight": 4,
       "badge": {
         "enable": true,
         "label": "NEU",
         "color": "primary",
-        "_color_comment": "color expected value - primary, info, success, danger",
-        "type": "text",
-        "_type_comment": "type expected value - text, dot"
+        "type": "text"
       }
     },
     {
       "enable": true,
-      "name": "Kontakt",
-      "url": "/contact/",
+      "name": "Zertifizierungen",
+      "url": "/certifications/",
       "weight": 5,
       "badge": {
         "enable": true,
-        "label": "NEU",
-        "color": "danger",
-        "_color_comment": "color expected value - primary, info, success, danger",
-        "type": "dot",
-        "_type_comment": "type expected value - text, dot"
+        "label": "GEPRÜFT",
+        "color": "success",
+        "type": "dot"
       }
     }
   ],
@@ -200,7 +82,7 @@
     {
       "enable": true,
       "name": "Allgemeine Geschäftsbedingungen",
-      "url": "/terms-conditions/",
+      "url": "/terms-and-conditions/",
       "weight": 0
     },
     {
@@ -213,26 +95,14 @@
   "footer_menu_quick_link": [
     {
       "enable": true,
-      "name": "Preise",
-      "url": "/pricing/",
+      "name": "Katalog",
+      "url": "/products/",
       "weight": 0
     },
     {
       "enable": true,
-      "name": "Änderungsprotokoll",
-      "url": "/changelog/",
-      "weight": 0
-    },
-    {
-      "enable": true,
-      "name": "Integration",
-      "url": "/integration/",
-      "weight": 0
-    },
-    {
-      "enable": true,
-      "name": "Funktionen",
-      "url": "/features/",
+      "name": "Blog",
+      "url": "/blog/",
       "weight": 0
     },
     {
@@ -251,14 +121,8 @@
     },
     {
       "enable": true,
-      "name": "Integration",
-      "url": "/integration/",
-      "weight": 0
-    },
-    {
-      "enable": true,
-      "name": "Änderungsprotokoll",
-      "url": "/changelog/",
+      "name": "Zertifizierungen",
+      "url": "/certifications/",
       "weight": 0
     }
   ],
@@ -266,7 +130,7 @@
     {
       "enable": true,
       "name": "Allgemeine Geschäftsbedingungen",
-      "url": "/terms-conditions/",
+      "url": "/terms-and-conditions/",
       "weight": 0
     },
     {

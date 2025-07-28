@@ -1,226 +1,384 @@
 ---
-enable: true # Contrôle la visibilité de cette section sur toutes les pages où elle est utilisée
-title: Tarifs qui **font sens**
+enable: true  # Controla la visibilidad de esta sección en todas las páginas donde se utilice
+title: Precios Que **Tienen Sentido**
 
 plans:
   enable: true
   list:
-    # Liste des plans disponibles. Assurez-vous de utiliser ces noms de manière cohérente dans les endroits où cela est applicable.
     - selected: true
-      label: Mensuel # Utilisez cette valeur exactement dans tous les endroits correspondants ci-dessous.
+      label: Mensual
     - selected: false
-      label: Annuel # Utilisez cette valeur exactement dans tous les endroits correspondants ci-dessous.
+      label: Anual
 
 list:
-  # Plan de base
+  # Plan Basic
   - enable: true
     featured: false
     badge:
       enable: false
-      label: Le plus populaire
-    name: De base # Nom du plan de tarification.
-    description: Nostrud exercitation ullamco laboris nisi ut aliquip ex
+      label: ""
+    name: Basic
+    description: Plan básico para empezar con ARIA a un precio accesible.
 
     price:
-      # Détails des prix pour chaque type de plan.
-      - type: Mensuel # Type de plan (doit correspondre aux valeurs dans la section "plans" ci-dessus).
+      - type: Mensual
         prepend_value: $
-        value: 10
-        append_value:
-      - type: Annuel # Type de plan (doit correspondre aux valeurs dans la section "plans" ci-dessus).
+        value: 20000
+        append_value: 
+      - type: Anual
         prepend_value: $
-        value: 20
-        append_value:
+        value: 200000
+        append_value: 
 
     features:
-      - Suivi de base des vues de pages, des événements et des propriétés utilisateur
-      - Visualisation des données en temps réel
-      - Options d'exportation de données limitées **CSV**
-      - Temps de réponse du support de 48 heures
+      - Menú digital básico con actualizaciones en tiempo real
+      - Almacenamiento limitado para imágenes y documentos
+      - Soporte por correo electrónico básico
 
     usages:
-      - type: Mensuel # Type de plan (doit correspondre aux valeurs dans la section "plans" ci-dessus).
+      - type: Mensual
         list:
-          - label: Points de données
-            value: 536
-          - label: Trafic
-            value: 100
-      - type: Annuel # Type de plan (doit correspondre aux valeurs dans la section "plans" ci-dessus).
+          - label: Mesas conectadas
+            value: 3
+          - label: Clientes fidelizados
+            value: 20
+      - type: Anual
         list:
-          - label: Points de données
-            value: 1203
-          - label: Trafic
-            value: 1000
+          - label: Mesas conectadas
+            value: 36
+          - label: Clientes fidelizados
+            value: 240
 
     cta_btn:
       enable: true
-      label: Commencer
+      label: Comenzar
       url: /contact/
-      rel:
-      target:
+      rel: 
+      target: 
 
-  # Plan Medium
+  # Plan Starter
+  - enable: true
+    featured: false
+    badge:
+      enable: false
+      label: ""
+    name: Starter
+    description: Ideal para digitalizar tu menú con ARIA y probar las funciones esenciales.
+
+    price:
+      - type: Mensual
+        prepend_value: $
+        value: 45000
+        append_value: 
+      - type: Anual
+        prepend_value: $
+        value: 450000
+        append_value: 
+
+    features:
+      - Menú digital interactivo con actualizaciones en tiempo real
+      - Boosters de productos destacados para maximizar ventas
+      - Diseño personalizado básico (colores y tipografía)
+      - Almacenamiento ilimitado para imágenes y documentos
+      - Módulo de Loyalty de prueba (hasta 50 usuarios registrados por 3 meses)
+
+    usages:
+      - type: Mensual
+        list:
+          - label: Mesas conectadas
+            value: 5
+          - label: Clientes fidelizados
+            value: 50
+      - type: Anual
+        list:
+          - label: Mesas conectadas
+            value: 60
+          - label: Clientes fidelizados
+            value: 600
+
+    cta_btn:
+      enable: true
+      label: Comenzar
+      url: /contact/
+      rel: 
+      target: 
+
+  # Plan Medio
   - enable: true
     featured: true
     badge:
       enable: true
-      label: Le plus populaire
-    name: Démarrage # Nom du plan de tarification.
-    description: Nostrud exercitation ullamco laboris nisi ut aliquip ex
+      label: Más Popular
+    name: Advance
+    description: Perfecto para negocios que buscan mejorar la experiencia del cliente y optimizar operaciones con análisis de datos y mayor visibilidad.
 
     price:
-      # Détails des prix pour chaque type de plan.
-      - type: Mensuel # Type de plan (doit correspondre aux valeurs dans la section "plans" ci-dessus).
+      - type: Mensual
         prepend_value: $
-        value: 20
-        append_value:
-      - type: Annuel # Type de plan (doit correspondre aux valeurs dans la section "plans" ci-dessus).
+        value: 70000
+        append_value: 
+      - type: Anual
         prepend_value: $
-        value: 40
-        append_value:
+        value: 700000
+        append_value: 
 
     features:
-      - Atelier de positionnement de marque en profondeur
-      - Analyse de la concurrence (5 principaux concurrents)
-      - Analyse de marché complète
-      - Insights sur les clients et segmentation
+      - Todas las funcionalidades del Plan Starter
+      - Carta multi-idioma
+      - Análisis de datos
+      - Loyalty ilimitado
 
     usages:
-      - type: Mensuel # Type de plan (doit correspondre aux valeurs dans la section "plans" ci-dessus).
+      - type: Mensual
         list:
-          - label: Points de données
-            value: 754
-          - label: Trafic
-            value: 850
-      - type: Annuel # Type de plan (doit correspondre aux valeurs dans la section "plans" ci-dessus).
+          - label: Mesas conectadas
+            value: 20
+          - label: Clientes fidelizados
+            value: Ilimitado
+      - type: Anual
         list:
-          - label: Points de données
-            value: 1467
-          - label: Trafic
-            value: 1600
+          - label: Mesas conectadas
+            value: 240
+          - label: Clientes fidelizados
+            value: Ilimitado
 
     cta_btn:
       enable: true
-      label: Commencer
+      label: Comenzar
       url: /contact/
-      rel:
-      target:
+      rel: 
+      target: 
 
   # Plan Pro
   - enable: true
     featured: false
     badge:
       enable: false
-      label: Le plus populaire
-    name: Pro # Nom du plan de tarification.
-    description: Nostrud exercitation ullamco laboris nisi ut aliquip ex
+      label: ""
+    name: Pro
+    description: Para negocios medianos y grandes que desean maximizar la retención de clientes y optimizar sus operaciones con funcionalidades avanzadas y automatización.
 
     price:
-      # Détails des prix pour chaque type de plan.
-      - type: Mensuel # Type de plan (doit correspondre aux valeurs dans la section "plans" ci-dessus).
+      - type: Mensual
         prepend_value: $
-        value: 30
-        append_value:
-      - type: Annuel # Type de plan (doit correspondre aux valeurs dans la section "plans" ci-dessus).
+        value: 100000
+        append_value: 
+      - type: Anual
         prepend_value: $
-        value: 60
-        append_value:
+        value: 1000000
+        append_value: 
 
     features:
-      - Stratégie de positionnement de marque complète
-      - Analyse de la concurrence complète
-      - Analyse de marché avancée
-      - Insights sur les clients approfondis
+      - Todas las funcionalidades del Plan Advance
+      - Módulos en preparación gratis en su lanzamiento
+      - Análisis de datos avanzados
+      - Insights detallados del cliente
 
     usages:
-      - type: Mensuel # Type de plan (doit correspondre aux valeurs dans la section "plans" ci-dessus).
+      - type: Mensual
         list:
-          - label: Points de données
-            value: 976
-          - label: Trafic
-            value: 1200
-      - type: Annuel # Type de plan (doit correspondre aux valeurs dans la section "plans" ci-dessus).
+          - label: Mesas conectadas
+            value: 50
+          - label: Clientes fidelizados
+            value: Ilimitado
+      - type: Anual
         list:
-          - label: Points de données
-            value: 2045
-          - label: Trafic
-            value: 2600
+          - label: Mesas conectadas
+            value: 600
+          - label: Clientes fidelizados
+            value: Ilimitado
 
     cta_btn:
       enable: true
-      label: Commencer
+      label: Comenzar
       url: /contact/
-      rel:
-      target:
+      rel: 
+      target: 
 
-# Comparaison des tarifs
+  # Plan Loyalty
+  - enable: true
+    featured: false
+    badge:
+      enable: false
+      label: ""
+    name: Loyalty
+    description: Incluye únicamente las funcionalidades del programa de fidelización.
+
+    price:
+      - type: Mensual
+        prepend_value: $
+        value: 20000
+        append_value: 
+      - type: Anual
+        prepend_value: $
+        value: 200000
+        append_value: 
+
+    features:
+      - Loyalty ilimitado
+
+    usages:
+      - type: Mensual
+        list:
+          - label: Mesas conectadas
+            value: 0
+          - label: Clientes fidelizados
+            value: Ilimitado
+      - type: Anual
+        list:
+          - label: Mesas conectadas
+            value: 0
+          - label: Clientes fidelizados
+            value: Ilimitado
+
+    cta_btn:
+      enable: true
+      label: Comenzar
+      url: /contact/
+      rel: 
+      target: 
+
+  # Plan Exclusive
+  - enable: true
+    featured: false
+    badge:
+      enable: false
+      label: ""
+    name: Exclusive
+    description: Para negocios full personalizados con funcionalidades a medida y soporte premium.
+
+    # Pricing personalizado: no se especifica valor fijo. Contactar para cotización.
+    features:
+      - Todas las funcionalidades del Plan Pro
+      - Desarrollo e integración a medida
+      - Consultoría personalizada
+      - Soporte dedicado y prioridad en incorporación
+
+    usages:
+      - type: Mensual
+        list:
+          - label: Mesas conectadas
+            value: Ilimitado
+          - label: Clientes fidelizados
+            value: Ilimitado
+      - type: Anual
+        list:
+          - label: Mesas conectadas
+            value: Ilimitado
+          - label: Clientes fidelizados
+            value: Ilimitado
+
+    cta_btn:
+      enable: true
+      label: Comenzar
+      url: /contact/
+      rel: 
+      target: 
+
+# Comparativa de Precios
 comparison:
-  - label: Fonctionnalités
+  - label: Funcionalidades
     list:
-      - value: Intégrations
+      - value: Integraciones
         included:
-          - true # Plan gratuit
-          - true # Plan Démarrage
-          - true # Plan Pro
-      - value: Liens partagés
+          - true   # Basic
+          - true   # Starter
+          - true   # Advance
+          - true   # Pro
+          - false  # Loyalty
+          - true   # Exclusive
+      - value: Enlaces compartidos
         included:
-          - true # Plan gratuit
-          - true # Plan Démarrage
-          - true # Plan Pro
-      - value: Importation et exportation
+          - true
+          - true
+          - true
+          - true
+          - false
+          - true
+      - value: Importación y exportación
         included:
-          - true # Plan gratuit
-          - true # Plan Démarrage
-          - true # Plan Pro
-      - value: Membres de l'équipe
+          - true
+          - true
+          - true
+          - true
+          - false
+          - true
+      - value: Miembros del equipo
+        included:
+          - false            # Basic
+          - false            # Starter
+          - Hasta 20 usuarios # Advance
+          - Hasta 50 usuarios # Pro
+          - 0 usuarios        # Loyalty
+          - Ilimitados        # Exclusive
+
+  - label: Reportes
+    list:
+      - value: Analíticas avanzadas
+        included:
+          - false  # Basic
+          - true   # Starter
+          - true   # Advance
+          - true   # Pro
+          - false  # Loyalty
+          - true   # Exclusive
+      - value: Reportes básicos
+        included:
+          - false  # Basic
+          - false  # Starter
+          - true   # Advance
+          - true   # Pro
+          - false  # Loyalty
+          - true   # Exclusive
+      - value: Reportes profesionales
+        included:
+          - false  # Basic
+          - false  # Starter
+          - false  # Advance
+          - true   # Pro
+          - false  # Loyalty
+          - true   # Exclusive
+      - value: Generador de reportes personalizados
         included:
           - false
-          - Jusqu'à 20 utilisateurs
-          - Jusqu'à 50 utilisateurs
-
-  - label: Rapports
-    list:
-      - value: Analytiques avancées
-        included:
-          - true # Plan gratuit
-          - true # Plan Démarrage
-          - true # Plan Pro
-      - value: Rapports de base
-        included:
-          - false # Plan gratuit
-          - true # Plan Démarrage
-          - true # Plan Pro
-      - value: Rapports professionnels
-        included:
-          - false # Plan gratuit
-          - false # Plan Démarrage
-          - true # Plan Pro
-      - value: Générateur de rapports personnalisés
-        included:
           - false
           - false
           - true
+          - false
+          - true
 
-  - label: Support
+  - label: Soporte
     list:
-      - value: Support en ligne 24/7
+      - value: Soporte en línea 24/7
         included:
-          - true # Plan gratuit
-          - false # Plan Démarrage
-          - false # Plan Pro
-      - value: Ateliers de produits trimestriels
-        included:
-          - false # Plan gratuit
-          - false # Plan Démarrage
-          - true # Plan Pro
-      - value: Support téléphonique prioritaire
-        included:
-          - false # Plan gratuit
-          - false # Plan Démarrage
-          - true # Plan Pro
-      - value: Tour d'initiation 1:1
+          - false  # Basic
+          - true   # Starter
+          - false  # Advance
+          - false  # Pro
+          - false  # Loyalty
+          - true   # Exclusive
+      - value: Talleres trimestrales del producto
         included:
           - false
+          - false
+          - false
+          - true
+          - false
+          - true
+      - value: Soporte telefónico prioritario
+        included:
+          - false
+          - false
+          - false
+          - true
+          - false
+          - true
+      - value: Tour de incorporación 1:1
+        included:
+          - false
+          - false
+          - false
+          - true
           - false
           - true
 ---

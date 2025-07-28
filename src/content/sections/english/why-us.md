@@ -1,26 +1,26 @@
 ---
-enable: true # Control the visibility of this section across all pages where it is used
+enable: true # Controls the visibility of this section on all pages where it is used
 subtitle: Why Upstart
 title: Take Control with <br /> **Privacy-Focused** Analytics
 layout_type: creative # creative / modern (default - creative)
 
 list:
-  - title: Put Privacy First
+  - title: Privacy First
     image: "/images/why-us/1.png"
     description_font_size: "" # sm | lg (default - sm)
     description: |
-      Unlike other platforms, Upstart doesn't track users across websites or collect any personally identifiable information.
+      Unlike other platforms, Upstart does not track users across websites or collect personally identifiable information.
     cta_btn:
       enable: false
       label: ""
       url: ""
       rel: ""
       target: ""
-  - title: Own Your Data
+  - title: You Own Your Data
     image: "/images/why-us/2.png"
     description_font_size: "" # sm | lg (default - sm)
     description: |
-      Upstart is self-hosted, meaning your website data stays on your server. You have complete control.
+      Upstart is self-hosted, which means your website data remains on your server. You have full control.
     cta_btn:
       enable: false
       label: ""
@@ -31,25 +31,25 @@ list:
     # image: ""
     description_font_size: "" # sm | lg (default - sm)
     description: |
-      Upstart tracks the essential website metrics you care about - pageviews, visitor demographics, and custom events. No unnecessary data.
+      Upstart tracks only the essential metrics that truly matter: page views, visitor demographics, and custom events. No unnecessary data.
     bounced_content:
       enable: true
       bg_image: "/images/why-us/3.png"
       list:
-        - Drag me!
+        - Drag Me!
         - Filtering
         - Teams
-        - Drag me!
-        - Visitor info
-        - Drag me!
-        - Drag me!
-        - Drag me!
-        - Page views
-        - Drag me!
+        - Drag Me!
+        - Visitor Info
+        - Drag Me!
+        - Drag Me!
+        - Drag Me!
+        - Page Views
+        - Drag Me!
         - Languages
         - Compare
         - Device
-        - Traffic sources
+        - Traffic Sources
     cta_btn:
       enable: false
       label: ""

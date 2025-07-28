@@ -1,5 +1,5 @@
 ---
-enable: true # Controls the visibility of this section on all pages where it is used
+enable: true # Controls the visibility of this section across all pages where it's used
 title: "Contact Us for More **Information**"
 description: "Whether you need expert assistance, our team is ready to support you every step of the way."
 subtitle: "Contact"
@@ -20,15 +20,18 @@ contact_list:
 social:
   enable: true
   title: "Follow us on social media"
+  # list: (optional, comment/uncomment if override is needed)
 
 form:
-  email_subject: "New form submission from Upstart website"
+  email_subject: "New form submission from the Upstart website"
   submit_button:
     label: "Send"
+  # note: |
+  #   Your data is safe with us. We respect your privacy and never share your information. <br /> Read our [Privacy Policy](/privacy-policy/).
   inputs:
     - label: ""
-      placeholder: "Full Name"
-      name: "Full Name"
+      placeholder: "Full name"
+      name: "Full name"
       required: true
       half_width: true
       default_value: ""
@@ -40,8 +43,8 @@ form:
       half_width: true
       default_value: ""
     - label: ""
-      placeholder: "Phone Number"
-      name: "Phone Number"
+      placeholder: "Phone number"
+      name: "Phone number"
       required: true
       type: "text"
       half_width: true
@@ -70,14 +73,14 @@ form:
           - label: "Example 03"
             value: "Example 03"
     - label: ""
-      placeholder: "Subject with search"
-      name: "Subject with search"
+      placeholder: "Searchable subject"
+      name: "Searchable subject"
       required: true
       half_width: true
       dropdown:
         type: "search"
         search:
-          placeholder: "Subject with search"
+          placeholder: "Searchable subject"
         items:
           - label: "Lowni Saiki"
             value: "Lowni Saiki"
@@ -97,7 +100,7 @@ form:
       name: "Message"
       required: true
       half_width: false
-    - label: "Google search"
+    - label: "Google Search"
       checked: false
       name: "User Origin"
       required: true
@@ -106,7 +109,7 @@ form:
       type: "radio"
       half_width: true
       default_value: ""
-    - label: "Social Media"
+    - label: "Social media"
       name: "User Origin"
       required: true
       group_label: ""
@@ -140,8 +143,8 @@ form:
       default_value: ""
     - note: success
       parent_class: "hidden message success"
-      content: We have received your message! We will respond as soon as possible.
+      content: We have received your message! We’ll get back to you as soon as possible.
     - note: warning
       parent_class: "hidden message error"
-      content: Something went wrong! Please send an email to [upstart-astro-theme@gmail.com](mailto:upstart-astro-theme@gmail.com) to submit a ticket.
+      content: Something went wrong! Please email [upstart-astro-theme@gmail.com](mailto:upstart-astro-theme@gmail.com) to submit a ticket.
 ---

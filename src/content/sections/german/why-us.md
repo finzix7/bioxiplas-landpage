@@ -1,54 +1,57 @@
 ---
-enable: true # Control the visibility of this section across all pages where it is used
-subtitle: Pourquoi Upstart
-title: Prendre le contrôle avec des **analyses respectueuses**
+enable: true # Steuert die Sichtbarkeit dieses Abschnitts auf allen Seiten, auf denen er verwendet wird
+subtitle: Warum Upstart
+title: Übernimm die Kontrolle mit <br /> **Datenschutzorientierter** Analyse
+layout_type: creative # creative / modern (Standard: creative)
 
 list:
-  - title: Mettre la vie privée en premier
+  - title: Datenschutz an erster Stelle
     image: "/images/why-us/1.png"
-    description_font_size: "" # sm | lg (default - sm)
+    description_font_size: "" # sm | lg (Standard: sm)
     description: |
-      Contrairement aux autres plateformes, Upstart ne suit pas les utilisateurs entre les sites web et ne collecte aucune information personnelle identifiable.
+      Im Gegensatz zu anderen Plattformen verfolgt Upstart keine Nutzer über Websites hinweg und sammelt keine personenbezogenen Daten.
     cta_btn:
       enable: false
       label: ""
       url: ""
       rel: ""
       target: ""
-  - title: Posséder vos données
+
+  - title: Du besitzt deine Daten
     image: "/images/why-us/2.png"
-    description_font_size: "" # sm | lg (default - sm)
+    description_font_size: "" # sm | lg (Standard: sm)
     description: |
-      Upstart est auto-hébergé, ce qui signifie que vos données de site web restent sur votre serveur. Vous avez le.
+      Upstart ist selbstgehostet, was bedeutet, dass die Daten deiner Website auf deinem eigenen Server bleiben. Du hast die volle Kontrolle.
     cta_btn:
       enable: false
       label: ""
       url: ""
       rel: ""
       target: ""
-  - title: Se concentrer sur l'essentiel
+
+  - title: Konzentriere dich auf das Wesentliche
     # image: ""
-    description_font_size: "" # sm | lg (default - sm)
+    description_font_size: "" # sm | lg (Standard: sm)
     description: |
-      Upstart suit les métriques de site web essentielles dont vous avez besoin - vues de page, démographie des visiteurs et événements personnalisés. Aucune donnée inutile.
+      Upstart erfasst nur die wichtigsten Metriken, die wirklich zählen: Seitenaufrufe, Besucherinformationen und benutzerdefinierte Ereignisse. Keine unnötigen Daten.
     bounced_content:
       enable: true
       bg_image: "/images/why-us/3.png"
       list:
-        - Taux de rebond
-        - Filtres
-        - Équipes
-        - Suivi des UTM
-        - Informations sur les visiteurs
-        - Événements personnalisés
-        - Données en temps réel
-        - Emplacement
-        - Vues de page
-        - Données personnalisées
-        - Langues
-        - Comparaison
-        - Appareil
-        - Sources de trafic
+        - Zieh mich!
+        - Filterung
+        - Teams
+        - Zieh mich!
+        - Besucherinformationen
+        - Zieh mich!
+        - Zieh mich!
+        - Zieh mich!
+        - Seitenaufrufe
+        - Zieh mich!
+        - Sprachen
+        - Vergleichen
+        - Gerät
+        - Traffic-Quellen
     cta_btn:
       enable: false
       label: ""

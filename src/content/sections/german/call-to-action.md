@@ -1,17 +1,17 @@
 ---
 enable: true
-title: Fordere dein <br /> **personalisiertes kostenloses Muster** an
+title: Fordern Sie <br /> **personalisierte Informationen** an
 rating_content: Über 10 führende Unternehmen vertrauen bereits auf Bioxiplas
 
 cta_btn:
   enable: true
-  label: Muster anfordern
+  label: Informationen anfordern
   url: /contact/
   rel: ""
   target: ""
 
 features:
-  - Kein Kaufverpflichtung
-  - Muster individuell angepasst an deine Branche
+  - Keine Kaufverpflichtung
+  - Maßgeschneiderte Muster für Ihre Branche
   - Technische Beratung inklusive
 ---

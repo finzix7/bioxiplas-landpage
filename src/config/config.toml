@@ -43,6 +43,7 @@ robots = "index, follow"
 # Theme Settings
 [settings]
 blog_folder        = "blog"
+products_folder    = "products"  # ✅ AGREGADO PARA CORREGIR EL ERROR
 integration_folder = "integration"
 pagination         = 6
 sticky_header      = true
@@ -70,7 +71,7 @@ de = "Abonniere unseren Newsletter, um unsere neuesten biologisch abbaubaren Lö
 
 [settings.navigation_button]
 enable = true
-label = "Contact us" # Puede usarse si no lo estás localizando dinámicamente
+label = "Contact us"
 url    = "/contact/"
 
 [settings.multilingual]

@@ -1,105 +1,122 @@
 ---
+import type { Section } from "@/types";
+import dateFormat from "@/lib/utils/dateFormat";
+import OptimizedImage from "@/components/utilities/OptimizedImage.astro";
+import { humanize, plainify, slugifyyy } from "@/lib/utils/textConverter";
+import {
+  getLocaleUrlCTM,
+  useTranslations,
+} from "@/lib/utils/languageParser.ts";
 import ButtonLink from "../buttons/ButtonLink.astro";
-import OptimizedImage from "../utilities/OptimizedImage.astro";
-import { markdownify } from "@/lib/utils/textConverter";
 
-type Props = {
-  content: {
-    featured?: boolean;
-    badge?: {
-      enable: boolean;
-      label: string;
-    };
-    name: string;
-    description: string;
-    image?: string;
-    price: {
-      prepend_value?: string;
-      value: number | string;
-      append_value?: string;
-    };
-    features?: string[];
-    cta_btn?: {
-      enable: boolean;
-      label: string;
-      url: string;
-    };
+interface Props {
+  content: Section & {
+    slug: string;
+    collection: string;
   };
-  class?: string; // <- agregado
-};
+  class?: string;
+}
 
-const { content, class: className } = Astro.props;
+const t = await useTranslations(Astro.currentLocale as string);
+
+let { content, class: className, ...rest } = Astro.props;
+let { title, image, date, categories } = content || {};
+
+// Format categories
+const categoriesArray = categories?.map((category: string) => ({
+  name: category,
+  slug: slugifyyy(category),
+}));
+
+let slug = getLocaleUrlCTM(
+  content.slug,
+  Astro.currentLocale,
+  content.collection,
+);
 ---
 
-<div
+<article
   class:list={[
-    "group relative rounded-3xl p-6 transition duration-500 hover:shadow-xl min-h-full overflow-hidden",
-    content.featured
-      ? "bg-gradient-to-t from-primary/20 to-transparent border-2 border-primary/60 text-white"
-      : "border border-white/10 text-white",
-    className // <- para que se pase bien desde ProductsSection
-  ]}>
-
-  {content.badge?.enable && (
+    "to-primary/25 rounded-lg bg-gradient-to-b from-transparent p-6 pt-0",
+    className,
+  ]}
+  {...rest}>
+  <div
+    class="group after:from-primary after:via-primary/40 relative flex items-center justify-center overflow-hidden rounded-xl via-20% after:pointer-events-none after:absolute after:inset-0 after:z-10 after:bg-gradient-to-t after:transition-opacity after:duration-500 after:md:opacity-0 hover:md:after:opacity-100">
     <span
-      class="absolute top-5 right-5 z-10 px-4 py-1 rounded-sm text-xs font-medium uppercase tracking-wider text-white bg-primary transition-transform duration-300 group-hover:rotate-[3deg]">
-      {markdownify(content.badge.label)}
+      class="text-secondary bg-primary pointer-events-none absolute z-20 flex h-16 w-16 items-center justify-center rounded-full transition duration-500 md:opacity-0 group-hover:md:opacity-100">
+      <OptimizedImage
+        alt="icon"
+        inlineSvg={true}
+        class="text-secondary h-6 w-6"
+        width={24}
+        height={24}
+        src="/images/icons/svg/arrow-top-right.svg"
+      />
     </span>
-  )}
-
-  {content.image && (
-    <OptimizedImage
-      class="h-48 w-full object-contain mb-5"
-      src={content.image}
-      alt={content.name}
-    />
-  )}
-
-  <div class="flex flex-col gap-3 flex-1">
-    {content.name && (
-      <h3
-        class="text-h4 font-bold text-center"
-        set:html={markdownify(content.name)}
-      />
-    )}
-
-    {content.description && (
-      <p
-        class="text-text-default text-center text-base leading-relaxed"
-        set:html={markdownify(content.description)}
-      />
-    )}
-
-    {content.price && (
-      <div class="text-primary text-3xl font-extrabold text-center mt-2">
-        {content.price.prepend_value}
-        {content.price.value}
-        {content.price.append_value}
-      </div>
-    )}
-
-    {content.features && (
-      <div class="mt-4 w-full flex-1">
-        <ul class="list-disc list-inside space-y-2 text-sm text-text-default">
-          {content.features.map((feature) => (
-            <li set:html={markdownify(feature)} />
-          ))}
-        </ul>
-      </div>
-    )}
-  </div>
-
-  {content.cta_btn?.enable && (
-    <ButtonLink
-      class="btn-md btn-primary btn-has-icon group relative z-30 mt-6 flex items-center justify-center gap-4 w-full"
-      content={content.cta_btn}>
-      <span class="flex h-6 w-12 items-center justify-center rounded-full bg-white/15">
+    {
+      image && (
         <OptimizedImage
-          alt="icon"
-          class="h-5 w-5 transition-all duration-300 group-hover:rotate-180"
-          src="/images/icons/svg/leaf2.svg"
+          src={image}
+          width={800}
+          height={800}
+          alt={"Related to " + title?.toLowerCase()}
+          class="!h-[15.625rem] min-w-full object-cover transition duration-500 group-hover:scale-105"
         />
+      )
+    }
+    <a class="absolute inset-0 z-30" href={slug}>
+      <span class="sr-only">
+        {"Learn more about " + title?.toLowerCase()}
+      </span>
+    </a>
+  </div>
+  <div>
+    <div
+      class="font-primary text-secondary mt-6 mb-2 flex flex-wrap items-center gap-x-2.5 gap-y-px pb-3 text-sm">
+      <span>{date && dateFormat(date)}</span>
+      <span
+        class="bg-secondary inline-block h-[0.1875rem] w-[0.1875rem] rounded-full">
+      </span>
+
+      {
+        categoriesArray &&
+          categoriesArray.map((category: any, index: number) => (
+            <>
+              <span class="text-inherit">{humanize(category.name)}</span>
+              {index !== categoriesArray.length - 1 && (
+                <span class="bg-secondary inline-block h-[0.1875rem] w-[0.1875rem] rounded-full" />
+              )}
+            </>
+          ))
+      }
+    </div>
+    {title && <h2 class="text-h5 mt-2 mb-4" set:html={plainify(title)} />}
+    <ButtonLink
+      class="btn-text btn-text-secondary has-icon-moving-animation"
+      href={slug}
+      content={{ enable: true, label: t("common.read_more") }}>
+      <span
+        class="icons-wrapper ms-2 inline-flex h-2.5 w-2.5 items-center justify-center">
+        <span class="icon icon-before flex items-center justify-center">
+          <OptimizedImage
+            alt="icon"
+            inlineSvg={true}
+            class="h-6 w-6"
+            src="/images/icons/svg/arrow-top-right.svg"
+          />
+        </span>
+        <span
+          class="icon icon-after flex items-center justify-center"
+          aria-hidden="true">
+          <OptimizedImage
+            alt="icon"
+            inlineSvg={true}
+            class="h-6 w-6"
+            src="/images/icons/svg/arrow-top-right.svg"
+          />
+        </span>
       </span>
     </ButtonLink>
-  )}
-</div>
+  </div>
+</article>

@@ -1,43 +1,44 @@
 ---
-title: Reduce your plastic footprint with **bio-intelligent materials**
-description: We transform your industry with certified biodegradable plastics, advanced material engineering, and circular solutions that create real impact.
+title: Smart Plastics for a **Cleaner Future**
+description: We create responsibly, thinking about everyone's future.
 image: "/images/product-demo-bioxiplas.png"
 buttons:
   - enable: true
-    label: "Request Samples"
+    label: "Learn More"
     url: "/contact"
     rel: ""
     target: ""
   - enable: true
-    label: "Watch Video"
+    label: "Watch Videos"
     type: "video"
     video:
-      src: "/videos/bioxiplas.mp4" # Video URL or path, e.g.: "/videos/bioxiplas-demo.mp4" or "https://example.com/bioxiplas-demo.mp4"
-      type: mp4 # Video type, e.g.: mp4, webm, etc.
-      provider: html5 # "youtube" | "vimeo" | "html5" (default is "youtube")
-      poster: "/images/video-poster-bioxiplas.png" # Optional: URL or path of the video poster image
-      autoplay: true # Optional: true to autoplay, false to start manually (default is false)
-      id: home-banner-video # Required if the same video is reused multiple times on the same page
+      id: home-banner-video
+      src: "/videos/bioxiplas.mp4"
+      type: mp4
+      provider: html5
+      poster: "/images/video-poster-bioxiplas.png"
+      autoplay: true
+  - enable: true
+    label: "Watch on YouTube"
+    type: "video"
+    video:
+      id: home-banner-video3
+      src: "https://www.youtube.com/watch?v=chD6N671Uho"
+      provider: youtube
+      poster: "/images/video-poster-yt.png"
+      autoplay: false
+  - enable: true
+    label: "Watch Videos"
+    type: "video"
+    video:
+      id: home-banner-video2
+      src: "/videos/bioxiplas2.mp4"
+      type: mp4
+      provider: html5
+      poster: "/images/video-poster-bioxiplas.png"
+      autoplay: false
 
 customers:
   enable: true
   description: "Trusted by leaders in the food industry and companies committed to a circular future"
-  # marquee:
-  #   element_width:
-  #   element_width_auto:
-  #   element_width_in_small_devices:
-  #   pause_on_hover: false
-  #   reverse: "" # reverse / ""
-  #   duration: "20s"
-  # list:
-  #   - src: "/images/customers/cliente1.png"
-  #     alt: "Fishing Company USA"
-  #   - src: "/images/customers/cliente2.png"
-  #     alt: "Food Processing Plant Chile"
-  #   - src: "/images/customers/cliente3.png"
-  #     alt: "Meat Industry"
-  #   - src: "/images/customers/cliente4.png"
-  #     alt: "Retail Packaging"
-  #   - src: "/images/customers/cliente5.png"
-  #     alt: "Medical Disposables"
 ---
