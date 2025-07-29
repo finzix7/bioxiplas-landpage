@@ -1,0 +1,51 @@
+---
+import parseTomlToJson from "@/lib/utils/parseTomlToJson";
+import { supportedLanguages, useTranslations } from "@/lib/utils/languageParser.ts";
+import { getEntryCTM } from "@/lib/contentParser.astro";
+import Base from "@/layouts/Base.astro";
+import SinglePageLayout from "@/components/SinglePageLayout.astro";
+import CallToAction from "@/components/sections/CallToAction.astro";
+import buildToc from "@/lib/utils/buildToc";
+import CarbonCalculator from "@/components/CarbonCalculator.astro";
+
+// 1) Rutas estáticas
+export async function getStaticPaths() {
+  const config = parseTomlToJson("./src/config/config.toml");
+  const { default_language } = config.settings.multilingual;
+  const paths = [{ params: { lang: undefined } }];
+  supportedLanguages
+    .map(l => l.languageCode)
+    .filter(code => code !== default_language)
+    .forEach(code => paths.push({ params: { lang: code } }));
+  return paths;
+}
+
+const config = parseTomlToJson("./src/config/config.toml");
+const locale = Astro.params.lang ?? config.settings.multilingual.default_language;
+
+const entry = await getEntryCTM("pages", "carbon-footprint", locale);
+if (!entry) throw new Error("No se encontró la página de cálculo de huella.");
+
+const data = entry.data;
+const { Content, headings = [] } = await entry.render();
+const tocConfig   = config.settings.markup.table_of_contents;
+const tocHeadings = tocConfig.enable && headings.length ? buildToc(headings) : [];
+const translations = await useTranslations(locale);
+---
+
+<Base {...data} title="Carbon Footprint Calculator">
+  <SinglePageLayout
+    layout="modern"
+    translations={translations}
+    content={{
+      ...data,
+      table_of_contents: tocConfig,
+      tocHeadings,
+      Content
+    }}
+  />
+
+  <CarbonCalculator />
+
+  <CallToAction />
+</Base>
