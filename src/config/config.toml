@@ -4,7 +4,7 @@ title                = "Bioxiplas"
 description          = "Sustainable packaging and biodegradable protection solutions for responsible industries."
 tagline              = "Biotechnology applied to circular packaging"
 tagline_separator    = ""
-base_url             = "https://upstart-astro.netlify.app"
+base_url             = "https://bioxiplas.cl/"
 logo                 = "/images/logobioxiplas2.png"
 logo_hover_animation = true
 logo_text            = ""
@@ -14,7 +14,7 @@ trailing_slash       = true
 
   [site.favicon]
   path  = "/images/favicons"
-  image = "/images/logo.svg"
+  image = "/images/logobioxiplas2.png"
 
 
 # SEO Metadata

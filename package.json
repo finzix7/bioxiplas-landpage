@@ -1,9 +1,9 @@
 {
-  "name": "upstart-astro",
-  "description": "A highly customizable consulting & business astro theme built with Tailwind CSS and Astro Js",
+  "name": "bioxiplas-landing-page",
+  "description": "Un proyecto de landing page para Bioxiplas, una empresa de biotecnología enfocada en la producción de plásticos biodegradables.",
   "type": "module",
   "version": "1.0.1",
-  "author": "getastrothemes",
+  "author": "Entropia",
   "license": "UNLICENSED",
   "packageManager": "yarn@1.22.19",
   "scripts": {
