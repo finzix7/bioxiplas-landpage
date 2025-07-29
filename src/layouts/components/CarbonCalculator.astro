@@ -13,9 +13,8 @@ const productos = [
 ];
 
 const EF_CONV = 2.5; // kg CO₂e/kg plástico convencional
-const EF_BIO = 2.2; // kg CO₂e/kg plástico Bioxiplas
+const EF_BIO  = 2.2; // kg CO₂e/kg plástico Bioxiplas
 ---
-
 <style>
   .product-card {
     border: 2px solid transparent;
@@ -49,10 +48,10 @@ const EF_BIO = 2.2; // kg CO₂e/kg plástico Bioxiplas
 <div class="mt-4 mx-auto p-4 border rounded-xl">
 
   <!-- Productos -->
-  <div class="product-grid  grid grid-cols-2 md:grid-cols-4 gap-2 mb-6">
+  <div class="product-grid grid grid-cols-2 md:grid-cols-4 gap-2 mb-6">
     {productos.map((producto) => (
       <button
-        class="product-card relative"
+        class="product-card relative hover:-translate-y-1"
         data-product-id={producto.slug}
         data-product-weight={producto.peso}
         onclick={`selectProduct('${producto.slug}')`}
@@ -101,76 +100,57 @@ const EF_BIO = 2.2; // kg CO₂e/kg plástico Bioxiplas
   </div>
 </div>
 
+<!-- Carga de Chart.js desde CDN -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 <script is:inline>
-  // Factores de emisión
+  // Factores de emisión (se declaran de nuevo para el entorno cliente)
   const EF_CONV = 2.5;
-  const EF_BIO = 2.2;
-  
-  // Variables globales
-  let selectedProduct = {
-    id: 'delantal',
-    weight: 0.043
-  };
+  const EF_BIO  = 2.2;
+
+  // Estado global
+  let selectedProduct = { id: 'delantal', weight: 0.043 };
   let footprintChart = null;
 
-  // Inicializar al cargar la página
-  document.addEventListener('DOMContentLoaded', function() {
-    // Seleccionar primer producto por defecto
+  // Al cargar la página
+  document.addEventListener('DOMContentLoaded', () => {
     selectProduct('delantal');
-    
-    // Inicializar gráfico
     initializeChart();
-    
-    // Calcular huella inicial
     calculateFootprint();
   });
 
-  // Función para seleccionar producto
+  // Seleccionar producto
   function selectProduct(productId) {
-    // Remover selección anterior
-    document.querySelectorAll('.product-card').forEach(card => {
-      card.classList.remove('selected');
-    });
-    
-    // Agregar selección nueva
-    const selectedCard = document.querySelector(`[data-product-id="${productId}"]`);
-    selectedCard.classList.add('selected');
-    
-    // Actualizar producto seleccionado
+    document.querySelectorAll('.product-card').forEach(c => c.classList.remove('selected'));
+    const card = document.querySelector(`[data-product-id="${productId}"]`);
+    card.classList.add('selected');
     selectedProduct = {
       id: productId,
-      weight: parseFloat(selectedCard.dataset.productWeight)
+      weight: parseFloat(card.dataset.productWeight)
     };
-    
-    // Recalcular
     calculateFootprint();
   }
 
-  // Función para calcular la huella
+  // Calcular huella
   function calculateFootprint() {
-    const quantity = parseInt(document.getElementById('quantity').value) || 1;
-    const weight = selectedProduct.weight;
-    
-    const conventional = (weight * quantity * EF_CONV).toFixed(3);
-    const biox = (weight * quantity * EF_BIO).toFixed(3);
-    const saving = (conventional - biox).toFixed(3);
-    
-    // Actualizar resultados
-    document.getElementById('conventional-result').textContent = conventional;
-    document.getElementById('biox-result').textContent = biox;
-    document.getElementById('saving-result').textContent = saving;
-    
-    // Actualizar gráfico
+    const qty = parseInt(document.getElementById('quantity').value) || 1;
+    const conv = selectedProduct.weight * qty * EF_CONV;
+    const bio  = selectedProduct.weight * qty * EF_BIO;
+    const save = conv - bio;
+
+    document.getElementById('conventional-result').textContent = conv.toFixed(3);
+    document.getElementById('biox-result').textContent = bio.toFixed(3);
+    document.getElementById('saving-result').textContent = save.toFixed(3);
+
     if (footprintChart) {
-      footprintChart.data.datasets[0].data = [conventional, biox];
+      footprintChart.data.datasets[0].data = [conv, bio];
       footprintChart.update();
     }
   }
 
-  // Función para inicializar el gráfico
+  // Inicializar gráfico
   function initializeChart() {
     const ctx = document.getElementById('footprint-chart').getContext('2d');
-    
     footprintChart = new Chart(ctx, {
       type: 'bar',
       data: {
@@ -179,8 +159,8 @@ const EF_BIO = 2.2; // kg CO₂e/kg plástico Bioxiplas
           label: 'Emisiones (kg CO₂e)',
           data: [0, 0],
           backgroundColor: [
-            'rgba(239, 68, 68, 0.7)', // Rojo
-            'rgba(16, 185, 129, 0.7)'  // Verde
+            'rgba(239, 68, 68, 0.7)',
+            'rgba(16, 185, 129, 0.7)'
           ],
           borderColor: [
             'rgba(239, 68, 68, 1)',
@@ -192,9 +172,7 @@ const EF_BIO = 2.2; // kg CO₂e/kg plástico Bioxiplas
       options: {
         responsive: true,
         scales: {
-          y: {
-            beginAtZero: true
-          }
+          y: { beginAtZero: true }
         }
       }
     });
