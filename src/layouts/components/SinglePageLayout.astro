@@ -109,7 +109,11 @@ const tocEnabled =
                 "data-aos": "fade-up-sm",
                 "data-aos-delay": "200",
               }}>
-              <Content />
+              {typeof Content === "string" ? (
+                <div set:html={Content} />
+              ) : (
+                <Content />
+              )}
             </div>
           )
         }
