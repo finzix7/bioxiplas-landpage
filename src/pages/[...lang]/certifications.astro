@@ -1,62 +1,25 @@
 ---
-import parseTomlToJson from "@/lib/utils/parseTomlToJson";
-import { supportedLanguages, useTranslations } from "@/lib/utils/languageParser.ts";
 import { getEntryCTM } from "@/lib/contentParser.astro";
 import Base from "@/layouts/Base.astro";
-import SinglePageLayout from "@/components/SinglePageLayout.astro";
+import parseTomlToJson from "@/lib/utils/parseTomlToJson";
+import handleDraftPage from "@/lib/utils/handleDraftPage";
+import { generatePaths } from "@/lib/utils/languageParser.ts";
+import CertificationsSection from "@/components/sections/CertificationsSection.astro";
 import CallToAction from "@/components/sections/CallToAction.astro";
-import buildToc from "@/lib/utils/buildToc";
 
-// 1) Rutas estáticas: /certifications y /es/certifications, /en/certifications...
-export async function getStaticPaths() {
-  const config = parseTomlToJson("./src/config/config.toml");
-  const { default_language, show_default_lang_in_url } = config.settings.multilingual;
-  const all = supportedLanguages.map((l) => l.languageCode);
-
-  const paths = [{ params: { lang: undefined } }];
-  all
-    .filter((code) => code !== default_language)
-    .forEach((code) => paths.push({ params: { lang: code } }));
-
-  return paths;
+export function getStaticPaths() {
+  return generatePaths();
 }
 
-// 2) Configuración: carpeta “pages”, slug “certifications”
 const config = parseTomlToJson("./src/config/config.toml");
-const PAGES_FOLDER = "pages";
-const SLUG = "certifications";
+const { default_language } = config.settings.multilingual;
+const folder = "pages";
+const postIndex = await getEntryCTM(folder, "certifications", Astro.currentLocale);
 
-// 3) Locale efectivo
-const locale = Astro.params.lang ?? config.settings.multilingual.default_language;
-
-// 4) Carga de markdown
-const entry = await getEntryCTM(PAGES_FOLDER, SLUG, locale);
-if (!entry) {
-  throw new Error(`No se encontró '/${SLUG}' en la colección '${PAGES_FOLDER}'.`);
-}
-
-// 5) Frontmatter + render MDX/MD
-const data = entry.data;
-const { Content, headings = [] } = await entry.render();
-
-// 6) TOC si está activo
-const tocConfig = config.settings.markup.table_of_contents;
-const tocHeadings = tocConfig.enable && headings.length ? buildToc(headings) : [];
-
-// 7) Traducciones
-const translations = await useTranslations(locale);
+const response = handleDraftPage(postIndex?.data);
+if (response) return response;
 ---
-
-<Base {...data}>
-  <SinglePageLayout
-    layout="modern"
-    translations={translations}
-    content={{
-      ...data,
-      table_of_contents: tocConfig,
-      tocHeadings,
-      Content,
-    }}
-  />
+<Base {...postIndex?.data} fitToScreen={false}>
+  <CertificationsSection pagination={{ enable: true, currentPage: 1 }} />
   <CallToAction />
 </Base>
