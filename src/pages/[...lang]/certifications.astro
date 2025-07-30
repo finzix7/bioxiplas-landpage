@@ -1,16 +1,15 @@
 ---
-import parseTomlToJson from "@/lib/utils/parseTomlToJson";
-import { supportedLanguages, useTranslations } from "@/lib/utils/languageParser.ts";
-import { getEntryCTM } from "@/lib/contentParser.astro";
 import Base from "@/layouts/Base.astro";
 import SinglePageLayout from "@/components/SinglePageLayout.astro";
 import CallToAction from "@/components/sections/CallToAction.astro";
-import buildToc from "@/lib/utils/buildToc";
+import { supportedLanguages, useTranslations } from "@/lib/utils/languageParser.ts";
+import parseTomlToJson from "@/lib/utils/parseTomlToJson";
+import { fetchCertifications } from "@/lib/payload";
+import { markdownify } from "@/lib/utils/textConverter";
 
-// 1) Rutas estáticas: /certifications y /es/certifications, /en/certifications...
 export async function getStaticPaths() {
   const config = parseTomlToJson("./src/config/config.toml");
-  const { default_language, show_default_lang_in_url } = config.settings.multilingual;
+  const { default_language } = config.settings.multilingual;
   const all = supportedLanguages.map((l) => l.languageCode);
 
   const paths = [{ params: { lang: undefined } }];
@@ -21,41 +20,54 @@ export async function getStaticPaths() {
   return paths;
 }
 
-// 2) Configuración: carpeta “pages”, slug “certifications”
-const config = parseTomlToJson("./src/config/config.toml");
-const PAGES_FOLDER = "pages";
-const SLUG = "certifications";
+const locale = Astro.currentLocale || "es";
+const pageData = await fetchCertifications({ locale });
+const translations = await useTranslations(locale);
+const certificates = pageData?.docs || [];
 
-// 3) Locale efectivo
-const locale = Astro.params.lang ?? config.settings.multilingual.default_language;
-
-// 4) Carga de markdown
-const entry = await getEntryCTM(PAGES_FOLDER, SLUG, locale);
-if (!entry) {
-  throw new Error(`No se encontró '/${SLUG}' en la colección '${PAGES_FOLDER}'.`);
+// Construcción dinámica del contenido en markdown
+let contentMd = `## Nuestras Certificaciones\n\n`;
+// Detectar idioma y ajustar contenido
+if (locale === 'en') {
+  contentMd = `## Our Certifications\n\n`;
+} else if (locale === 'de') {
+  contentMd = `## Unsere Zertifizierungen\n\n`;
 }
 
-// 5) Frontmatter + render MDX/MD
-const data = entry.data;
-const { Content, headings = [] } = await entry.render();
+for (const cert of certificates) {
+  if (cert.title) contentMd += `### ${cert.title}\n`;
+  if (cert.image_url)
+    contentMd += `<img src="${cert.image_url}" alt="${cert.title}" class="max-w-72 mx-auto mb-2" />\n`;
+  if (cert.description) {
+    contentMd += markdownify(cert.description, true) + '\n\n';
+  };
+}
 
-// 6) TOC si está activo
-const tocConfig = config.settings.markup.table_of_contents;
-const tocHeadings = tocConfig.enable && headings.length ? buildToc(headings) : [];
+if (certificates.length === 0) {
+  contentMd += `No certifications available at the moment.`;
+}
 
-// 7) Traducciones
-const translations = await useTranslations(locale);
+contentMd += `\n\n---\n\n`;
+// Añadir un pie de página o nota adicional
+if (locale === 'en') {
+  contentMd += "With these certifications and tests, Bioxiplas ensures that each product is **safe**, **reliable**, and **environmentally friendly**.";
+} else if (locale === 'de') {
+  contentMd += "Mit diesen Zertifizierungen und Tests stellt Bioxiplas sicher, dass jedes Produkt **sicher**, **zuverlässig** und **umweltfreundlich** ist.";
+} else {
+  contentMd += "Con estas certificaciones y ensayos, Bioxiplas asegura que cada producto es **seguro**, **confiable** y **respetuoso con el medio ambiente**.";
+}
+
+// Markdown a HTML
+let contentHtml = markdownify(contentMd, true) as string;
 ---
 
-<Base {...data}>
+<Base {...pageData}>
   <SinglePageLayout
     layout="modern"
     translations={translations}
     content={{
-      ...data,
-      table_of_contents: tocConfig,
-      tocHeadings,
-      Content,
+      ...pageData,
+      Content: contentHtml,
     }}
   />
   <CallToAction />
