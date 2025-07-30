@@ -1,0 +1,1 @@
+export { getProductHeadings } from "./productHeadings";

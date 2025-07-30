@@ -88,6 +88,7 @@ export type Section = {
   description?: string;
   cta_btn?: Button;
   image?: string;
+  image_url?: string;
   bg_pattern_image?: string;
   limit?: false | number;
 };

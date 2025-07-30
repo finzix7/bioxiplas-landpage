@@ -4,20 +4,20 @@ import { getLocaleUrlCTM } from "../lib/utils/languageParser";
 const paths = [
   "http://localhost:4321",
   "http://localhost:4321/en",
-  "http://localhost:4321/fr",
+  "http://localhost:4321/de",
   "http://localhost:4321/pricing",
   "http://localhost:4321/en/pricing",
-  "http://localhost:4321/fr/pricing",
+  "http://localhost:4321/de/pricing",
   "http://localhost:4321/frog",
-  "http://localhost:4321/fr/frog",
+  "http://localhost:4321/de/frog",
   "http://localhost:4321/en/engineer",
 
   "",
   "/en",
-  "/fr",
+  "/de",
   "/en/pricing",
-  "/fr/pricing",
-  "/fr/frog",
+  "/de/pricing",
+  "/de/frog",
   "/en/engineer",
   "/engineer",
   "/frog",
@@ -25,20 +25,20 @@ const paths = [
 
   "http://localhost:4321/",
   "http://localhost:4321/en/",
-  "http://localhost:4321/fr/",
+  "http://localhost:4321/de/",
   "http://localhost:4321/en/pricing/",
-  "http://localhost:4321/fr/pricing/",
-  "http://localhost:4321/fr/frog/",
+  "http://localhost:4321/de/pricing/",
+  "http://localhost:4321/de/frog/",
   "http://localhost:4321/en/engineer/",
   "http://localhost:4321/frog/",
   "http://localhost:4321/engineer/",
 
   "/",
   "/en/",
-  "/fr/",
+  "/de/",
   "/en/pricing/",
-  "/fr/pricing/",
-  "/fr/frog/",
+  "/de/pricing/",
+  "/de/frog/",
   "/en/engineer/",
   "/frog/",
   "/engineer/",
@@ -57,7 +57,7 @@ describe("getLocaleUrlCTM", () => {
 
   test.each(paths)("Handles URL: %s", (path) => {
     const resultWithDefaultLang = getLocaleUrlCTM(path, "en", prependValue);
-    const resultWithOtherLang = getLocaleUrlCTM(path, "fr", prependValue);
+    const resultWithOtherLang = getLocaleUrlCTM(path, "de", prependValue);
 
     // Split the URL into segments for precise checks
     const defaultLangSegments = resultWithDefaultLang.split("/");
@@ -70,8 +70,8 @@ describe("getLocaleUrlCTM", () => {
       // Ensure "/en" is not present for the default language
       expect(defaultLangSegments.includes("en")).toBe(true);
 
-      // Check if "/fr" exists as a standalone segment for the other language
-      expect(otherLangSegments.includes("fr")).toBe(true);
+      // Check if "/de" exists as a standalone segment for the other language
+      expect(otherLangSegments.includes("de")).toBe(true);
     }
 
     // Ensure trailing slash is as per configuration
@@ -83,7 +83,7 @@ describe("getLocaleUrlCTM", () => {
     const url = "http://localhost:4321/en/pricing/#example-anchor";
     const result = getLocaleUrlCTM(url, "en", prependValue);
     expect(result).toBe(
-      "http://localhost:4321/case-studies/pricing/#example-anchor",
+      "http://localhost:4321/pricing/#example-anchor",
     );
   });
 

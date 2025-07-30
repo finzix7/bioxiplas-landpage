@@ -11,7 +11,6 @@ import overrideObjects from "@/lib/utils/overrideObjects.ts";
 import ProductCard from "@/layouts/components/cards/ProductCard.astro";
 
 const config = parseTomlToJson("./src/config/config.toml");
-const { products_folder }: { products_folder: "products" } = config.settings;
 
 type product_section_type = Section;
 type Props = {
@@ -69,7 +68,7 @@ let totalPages = productResponse?.totalPages || 1;
         data-aos-delay="200">
         <div class="grid gap-x-6 gap-y-10 md:grid-cols-2 xl:grid-cols-3">
           {products &&
-            products.map((product, index) => (
+            products.map((product: any, index: number) => (
               <ProductCard
                 content={{ ...product.data, ...product }}
                 data-aos="fade-up-sm"

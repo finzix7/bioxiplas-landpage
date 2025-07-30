@@ -1,34 +1,37 @@
 ---
 import CallToAction from "@/components/sections/CallToAction.astro";
-import Base from "@/layouts/Base.astro";
-import parseTomlToJson from "@/lib/utils/parseTomlToJson";
-import { useTranslations } from "@/lib/utils/languageParser.ts";
 import SinglePageLayout from "@/components/SinglePageLayout.astro";
-import { markdownify } from "@/lib/utils/textConverter";
+import Base from "@/layouts/Base.astro";
+import { getProductHeadings } from "@/lib/i18n";
 import { fetchProductBySlug } from "@/lib/payload";
+import { useTranslations } from "@/lib/utils/languageParser.ts";
+import { markdownify } from "@/lib/utils/textConverter";
 
 export const prerender = false;
 
 const { single } = Astro.params;
-const config = parseTomlToJson("@/config/config.toml");
-const product = await fetchProductBySlug(single, Astro.currentLocale);
+const lang = Astro.currentLocale || "es";
+const t = getProductHeadings(lang);
+
+const product = await fetchProductBySlug(single!, Astro.currentLocale);
 
 const translations = await useTranslations(Astro.currentLocale as string);
 
 let contentHtml = "";
 if (product) {
   if (product.descripcion) {
-    contentHtml += `## Descripción\n${product.descripcion}\n`;
+    contentHtml += `## ${t.descripcion}\n${product.descripcion}\n`;
   }
   if (product.caracteristicas) {
-    contentHtml += `\n### Características\n${product.caracteristicas}\n`;
+    contentHtml += `\n### ${t.caracteristicas}\n${product.caracteristicas}\n`;
   }
   if (product.usos) {
-    contentHtml += `\n### Usos\n${product.usos}\n`;
+    contentHtml += `\n### ${t.usos}\n${product.usos}\n`;
   }
   if (product.como_solicitar) {
-    contentHtml += `\n### ¿Cómo solicitar?\n${product.como_solicitar}\n`;
+    contentHtml += `\n### ${t.como_solicitar}\n${product.como_solicitar}\n`;
   }
+
   contentHtml = markdownify(contentHtml, true) as string;
 }
 ---
