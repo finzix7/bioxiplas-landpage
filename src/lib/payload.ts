@@ -37,3 +37,39 @@ export async function fetchProductBySlug(slug: string, locale?: string) {
   const data = await res.json();
   return data?.docs?.[0];
 }
+
+export async function fetchCertifications({
+  page = 1,
+  limit = 12,
+  locale,
+}: FetchOptions = {}) {
+  const url = new URL('/api/certifications', PAYLOAD_API_URL);
+  url.searchParams.set('page', String(page));
+  url.searchParams.set('limit', String(limit));
+  url.searchParams.set('depth', '2');
+  url.searchParams.set('draft', 'false');
+  if (locale) url.searchParams.set('locale', locale);
+
+  const res = await fetch(url.toString());
+  if (!res.ok) {
+    throw new Error(`Failed to fetch certifications: ${res.status}`);
+  }
+
+  return res.json();
+}
+
+export async function fetchCertificationBySlug(slug: string, locale?: string) {
+  const url = new URL('/api/certifications', PAYLOAD_API_URL);
+  url.searchParams.set('where[slug][equals]', slug);
+  url.searchParams.set('depth', '2');
+  url.searchParams.set('draft', 'false');
+  if (locale) url.searchParams.set('locale', locale);
+
+  const res = await fetch(url.toString());
+  if (!res.ok) {
+    throw new Error(`Failed to fetch certification: ${res.status}`);
+  }
+
+  const data = await res.json();
+  return data?.docs?.[0];
+}
