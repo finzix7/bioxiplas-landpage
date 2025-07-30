@@ -1,0 +1,43 @@
+---
+import { markdownify } from "@/lib/utils/textConverter";
+import OptimizedImage from "@/components/utilities/OptimizedImage.astro";
+
+interface Props {
+  content: {
+    title?: string;
+    excerpt?: string;
+    image?: string;
+    image_url?: string;
+  };
+  class?: string;
+}
+
+let { content, class: className } = Astro.props as Props;
+let { title, excerpt, image, image_url } = content || {};
+---
+<div
+  class:list={[
+    "border-primary/30 hover:bg-accent space-y-4 rounded-lg border p-5 transition-colors duration-300 text-center",
+    className,
+  ]}>
+  {image && (
+    <OptimizedImage
+      src={image}
+      width={96}
+      height={96}
+      alt={title || "certification"}
+      class="mx-auto h-24 w-24 object-contain"
+    />
+  )}
+  {image_url && (
+    <OptimizedImage
+      src={image_url}
+      width={96}
+      height={96}
+      alt={title || "certification"}
+      class="mx-auto h-24 w-24 object-contain"
+    />
+  )}
+  {title && <h3 class="h5" set:html={markdownify(title)} />}
+  {excerpt && <p set:html={markdownify(excerpt)} />}
+</div>
