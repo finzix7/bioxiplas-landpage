@@ -20,7 +20,7 @@ interface Props {
 const t = await useTranslations(Astro.currentLocale as string);
 
 let { content, class: className, ...rest } = Astro.props;
-let { title, image, date, categories } = content || {};
+let { title, image, image_url, date, categories } = content || {};
 
 // Format categories
 const categoriesArray = categories?.map((category: string) => ({
@@ -58,6 +58,17 @@ let slug = getLocaleUrlCTM(
       image && (
         <OptimizedImage
           src={image}
+          width={800}
+          height={800}
+          alt={"Related to " + title?.toLowerCase()}
+          class="!h-[15.625rem] min-w-full object-cover transition duration-500 group-hover:scale-105"
+        />
+      )
+    }
+    {
+      image_url && (
+        <OptimizedImage
+          src={image_url}
           width={800}
           height={800}
           alt={"Related to " + title?.toLowerCase()}

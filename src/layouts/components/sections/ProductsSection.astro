@@ -1,9 +1,9 @@
 ---
 import type { Section } from "@/types";
 import { sortByDate } from "@/lib/utils/sortFunctions";
-import { getCollectionCTM } from "@/lib/contentParser.astro";
 import parseTomlToJson from "@/lib/utils/parseTomlToJson";
 import { getEntryCTM } from "@/lib/contentParser.astro";
+import { fetchProducts } from "@/lib/payload";
 import Subtitle from "../widgets/Subtitle.astro";
 import Pagination from "../widgets/Pagination.astro";
 import { markdownify } from "@/lib/utils/textConverter";
@@ -11,7 +11,6 @@ import overrideObjects from "@/lib/utils/overrideObjects.ts";
 import ProductCard from "@/layouts/components/cards/ProductCard.astro";
 
 const config = parseTomlToJson("./src/config/config.toml");
-const { products_folder }: { products_folder: "products" } = config.settings;
 
 type product_section_type = Section;
 type Props = {
@@ -33,17 +32,22 @@ let actual_content = overrideObjects(
 
 let { enable = true, title, subtitle } = actual_content;
 
-let products = await getCollectionCTM(products_folder, Astro.currentLocale);
+const currentPage = Astro.props.pagination?.currentPage || 1;
+const limit = config.settings.pagination;
+const productResponse = await fetchProducts({
+  page: currentPage,
+  limit,
+  locale: Astro.currentLocale,
+});
+
+let products = productResponse?.docs?.map((doc: any) => ({
+  data: doc,
+  slug: doc.slug || doc.id,
+  collection: "products",
+})) || [];
 products = sortByDate(products);
 
-let totalPages = Math.ceil(products?.length / config.settings.pagination);
-
-if (Astro.props.pagination?.enable) {
-  const indexOfLastProduct =
-    Astro.props.pagination.currentPage * config.settings.pagination;
-  const indexOfFirstProduct = indexOfLastProduct - config.settings.pagination;
-  products = products.slice(indexOfFirstProduct, indexOfLastProduct);
-}
+let totalPages = productResponse?.totalPages || 1;
 ---
 
 {enable && (
@@ -64,7 +68,7 @@ if (Astro.props.pagination?.enable) {
         data-aos-delay="200">
         <div class="grid gap-x-6 gap-y-10 md:grid-cols-2 xl:grid-cols-3">
           {products &&
-            products.map((product, index) => (
+            products.map((product: any, index: number) => (
               <ProductCard
                 content={{ ...product.data, ...product }}
                 data-aos="fade-up-sm"
