@@ -1,24 +1,18 @@
 ---
 import parseTomlToJson from "@/lib/utils/parseTomlToJson";
-import { supportedLanguages, useTranslations } from "@/lib/utils/languageParser.ts";
+import { generatePaths, useTranslations } from "@/lib/utils/languageParser.ts";
 import { getEntryCTM } from "@/lib/contentParser.astro";
 import Base from "@/layouts/Base.astro";
 import SinglePageLayout from "@/components/SinglePageLayout.astro";
 import CallToAction from "@/components/sections/CallToAction.astro";
+import CertificationsSection from "@/components/sections/CertificationsSection.astro";
 import buildToc from "@/lib/utils/buildToc";
 
+export const prerender = false;
+
 // 1) Rutas estáticas: /certifications y /es/certifications, /en/certifications...
-export async function getStaticPaths() {
-  const config = parseTomlToJson("./src/config/config.toml");
-  const { default_language, show_default_lang_in_url } = config.settings.multilingual;
-  const all = supportedLanguages.map((l) => l.languageCode);
-
-  const paths = [{ params: { lang: undefined } }];
-  all
-    .filter((code) => code !== default_language)
-    .forEach((code) => paths.push({ params: { lang: code } }));
-
-  return paths;
+export function getStaticPaths() {
+  return generatePaths();
 }
 
 // 2) Configuración: carpeta “pages”, slug “certifications”
@@ -29,7 +23,7 @@ const SLUG = "certifications";
 // 3) Locale efectivo
 const locale = Astro.params.lang ?? config.settings.multilingual.default_language;
 
-// 4) Carga de markdown
+// 4) Carga de markdown para metadatos y posible contenido introductorio
 const entry = await getEntryCTM(PAGES_FOLDER, SLUG, locale);
 if (!entry) {
   throw new Error(`No se encontró '/${SLUG}' en la colección '${PAGES_FOLDER}'.`);
@@ -58,5 +52,6 @@ const translations = await useTranslations(locale);
       Content,
     }}
   />
+  <CertificationsSection pagination={{ enable: true, currentPage: 1 }} />
   <CallToAction />
 </Base>
