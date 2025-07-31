@@ -11,6 +11,8 @@ export function getStaticPaths() {
   return generatePaths();
 }
 
+export const prerender = false;
+
 const config = parseTomlToJson("./src/config/config.toml");
 const { blog_folder }: { blog_folder: "blog"; pagination: number } =
   config.settings;

@@ -20,10 +20,12 @@ This project uses **Astro** together with **Payload CMS**. Products are fetched 
 
 ## Payload API
 
-Product data is retrieved using requests like:
-`GET $PAYLOAD_API_URL/api/productos?page=1&limit=12`.
+Content is retrieved from Payload using HTTP requests. For example:
+`GET $PAYLOAD_API_URL/api/productos?page=1&limit=12` to list products or
+`GET $PAYLOAD_API_URL/api/blogs?page=1&limit=12` for blog posts.
 
-The front-end uses these endpoints from [`src/lib/payload.ts`](src/lib/payload.ts).
+The front-end uses helper functions defined in
+[`src/lib/payload.ts`](src/lib/payload.ts).
 
 ## Tests
 
