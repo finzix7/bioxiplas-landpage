@@ -13,7 +13,6 @@ Welcome to Upstart ("we," "our," or "us"). Your privacy is important to us, and 
 We collect two types of information from you:
 
 - **Personal Information:**
-
   - Name
   - Email address
   - Billing information (e.g., credit card details)

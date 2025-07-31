@@ -78,7 +78,10 @@ let {
         )}
 
         {logo_text && (
-          <span class="logo-text text-lg mr-3" set:html={markdownify(logo_text)} />
+          <span
+            class="logo-text mr-3 text-lg"
+            set:html={markdownify(logo_text)}
+          />
         )}
       </>
     ) : logo_text ? (

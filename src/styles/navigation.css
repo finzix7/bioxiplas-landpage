@@ -18,7 +18,7 @@
 
 .header .logo-wrapper {
   .logo-text {
-    @apply text-white text-lg font-medium;
+    @apply text-lg font-medium text-white;
   }
 }
 
@@ -36,7 +36,7 @@
 
   .language-switcher-dropdown {
     /* REEMPLAZAMOS LO QUE ESTÁ MAL AQUÍ */
-    @apply bg-theme-dark hs-dropdown-open:opacity-100 absolute top-[calc(100%+0.5rem)] right-0 min-w-32 space-y-1 rounded-md border opacity-0 transition-[opacity,margin] lg:!transform-none text-left backdrop-blur-md p-2 shadow-lg;
+    @apply bg-theme-dark hs-dropdown-open:opacity-100 absolute top-[calc(100%+0.5rem)] right-0 min-w-32 space-y-1 rounded-md border p-2 text-left opacity-0 shadow-lg backdrop-blur-md transition-[opacity,margin] lg:!transform-none;
     /* Correcciones explicadas:
       - rounded-md → no full pill, sino esquinas suaves
       - text-left → alineado natural
@@ -45,16 +45,15 @@
     */
 
     li a {
-      @apply block w-full rounded px-3 py-2 text-sm text-white transition hover:bg-white/10 uppercase;
+      @apply block w-full rounded px-3 py-2 text-sm text-white uppercase transition hover:bg-white/10;
       /* uppercase → dejamos texto todo en mayúsculas para consistencia */
 
       &.active {
-        @apply bg-white/10 text-emerald-400 font-semibold;
+        @apply bg-white/10 font-semibold text-emerald-400;
       }
     }
   }
 }
-
 
 /* Navbar */
 .navbar {

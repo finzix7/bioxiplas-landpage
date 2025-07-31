@@ -2,7 +2,7 @@
 
 ---
 
-<div class="hexagon-grid opacity-40 -z-10 w-full h-full"></div>
+<div class="hexagon-grid -z-10 h-full w-full opacity-40"></div>
 
 <script is:inline>
   document.addEventListener("DOMContentLoaded", () => {
@@ -12,8 +12,8 @@
       const { clientX, clientY } = e;
       const { innerWidth, innerHeight } = window;
 
-      const offsetX = ((clientX / innerWidth) - 0.5) * 10;
-      const offsetY = ((clientY / innerHeight) - 0.5) * 10;
+      const offsetX = (clientX / innerWidth - 0.5) * 10;
+      const offsetY = (clientY / innerHeight - 0.5) * 10;
 
       if (hexagonGrid) {
         hexagonGrid.style.transform = `translate3d(${offsetX}px, ${offsetY}px, 0)`;
@@ -40,7 +40,8 @@
     overflow: hidden;
     pointer-events: none;
     z-index: -10;
-    background: radial-gradient(
+    background:
+      radial-gradient(
           circle farthest-side at 0% 50%,
           #0a0a0a 23.5%,
           rgba(255, 170, 0, 0) 0

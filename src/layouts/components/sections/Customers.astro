@@ -24,68 +24,68 @@ let actual_content = overrideObjects(
 ) as customersSectionType;
 
 // Extracting required values from content
-let {
-  enable = true,
-  description,
-  marquee,
-  list,
-} = actual_content;
+let { enable = true, description, marquee, list } = actual_content;
 
 const { class: className, width = "sm", ...rest } = Astro.props;
 
 // Prepare duplicated list for the marquee
-let duplicatedList = list.length <= 3
-  ? Array.from({ length: 3 }, () => [...list]).flat()
-  : Array.from({ length: 2 }, () => [...list]).flat();
+let duplicatedList =
+  list.length <= 3
+    ? Array.from({ length: 3 }, () => [...list]).flat()
+    : Array.from({ length: 2 }, () => [...list]).flat();
 ---
-{enable && (
-  <section class:list={[className]} {...rest}>
-    <div class="container mt-20 lg:mt-36">
-      <div
-        class:list={[
-          "mx-auto text-center",
-          width === "sm" ? "max-w-full" : "max-w-full",
-        ]}
-      >
-        {description && (
-          <p
-            class="shrink-0 text-center text-xs tracking-wider opacity-80"
-            set:html={markdownify(description)}
-          />
-        )}
+
+{
+  enable && (
+    <section class:list={[className]} {...rest}>
+      <div class="container mt-20 lg:mt-36">
         <div
-          class="relative mt-4 flex items-center overflow-x-hidden [mask-image:linear-gradient(to_right,rgba(0,0,0,0)_0%,rgb(0,0,0)_10%,rgb(0,0,0)_90%,rgba(0,0,0,0)_100%)]"
-        >
-          <Marquee
-            marqueeElements={duplicatedList.length}
-            marqueePauseOnHover={marquee.pause_on_hover}
-            marqueeReverse={marquee.reverse}
-            marqueeDuration={marquee.duration}
-            marqueeElementWidth={marquee.element_width}
-            marqueeElementWidthAuto={marquee.element_width_auto}
-            marqueeElementWidthResponsive={marquee.element_width_in_small_devices}
-          >
-            {duplicatedList.map((item) => (
-              <div
-                class:list={[
-                  "px-4",
-                  {
-                    "min-w-fit": marquee.element_width_auto,
-                  },
-                ]}
-                class="flex items-center justify-center"
-              >
-                <OptimizedImage
-                  src={item.src}
-                  alt={item.alt}
-                  height={80} // Altura fija
-                  class="object-contain h-[80px] w-auto max-w-none" // Estilos clave
-                />
-              </div>
-            ))}
-          </Marquee>
+          class:list={[
+            "mx-auto text-center",
+            width === "sm" ? "max-w-full" : "max-w-full",
+          ]}>
+          {description && (
+            <p
+              class="shrink-0 text-center text-xs tracking-wider opacity-80"
+              set:html={markdownify(description)}
+            />
+          )}
+          <div class="relative mt-4 flex items-center overflow-x-hidden [mask-image:linear-gradient(to_right,rgba(0,0,0,0)_0%,rgb(0,0,0)_10%,rgb(0,0,0)_90%,rgba(0,0,0,0)_100%)]">
+            <Marquee
+              marqueeElements={duplicatedList.length}
+              marqueePauseOnHover={marquee.pause_on_hover}
+              marqueeReverse={marquee.reverse}
+              marqueeDuration={marquee.duration}
+              marqueeElementWidth={marquee.element_width}
+              marqueeElementWidthAuto={marquee.element_width_auto}
+              marqueeElementWidthResponsive={
+                marquee.element_width_in_small_devices
+              }>
+              {duplicatedList.map((item) => (
+                <div
+                  class:list={[
+                    "px-4",
+                    {
+                      "min-w-fit": marquee.element_width_auto,
+                    },
+                  ]}
+                  class="flex items-center justify-center">
+                  <OptimizedImage
+                    src={item.src}
+                    alt={item.alt}
+                    height={80}
+                    Altura
+                    fija
+                    class="h-[80px] w-auto max-w-none object-contain"
+                    Estilos
+                    clave
+                  />
+                </div>
+              ))}
+            </Marquee>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
-)}
+    </section>
+  )
+}

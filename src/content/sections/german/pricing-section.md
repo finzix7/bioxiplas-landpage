@@ -1,5 +1,5 @@
 ---
-enable: true  # Controla la visibilidad de esta sección en todas las páginas donde se utilice
+enable: true # Controla la visibilidad de esta sección en todas las páginas donde se utilice
 title: Precios Que **Tienen Sentido**
 
 plans:
@@ -24,11 +24,11 @@ list:
       - type: Mensual
         prepend_value: $
         value: 20000
-        append_value: 
+        append_value:
       - type: Anual
         prepend_value: $
         value: 200000
-        append_value: 
+        append_value:
 
     features:
       - Menú digital básico con actualizaciones en tiempo real
@@ -53,8 +53,8 @@ list:
       enable: true
       label: Comenzar
       url: /contact/
-      rel: 
-      target: 
+      rel:
+      target:
 
   # Plan Starter
   - enable: true
@@ -69,11 +69,11 @@ list:
       - type: Mensual
         prepend_value: $
         value: 45000
-        append_value: 
+        append_value:
       - type: Anual
         prepend_value: $
         value: 450000
-        append_value: 
+        append_value:
 
     features:
       - Menú digital interactivo con actualizaciones en tiempo real
@@ -100,8 +100,8 @@ list:
       enable: true
       label: Comenzar
       url: /contact/
-      rel: 
-      target: 
+      rel:
+      target:
 
   # Plan Medio
   - enable: true
@@ -116,11 +116,11 @@ list:
       - type: Mensual
         prepend_value: $
         value: 70000
-        append_value: 
+        append_value:
       - type: Anual
         prepend_value: $
         value: 700000
-        append_value: 
+        append_value:
 
     features:
       - Todas las funcionalidades del Plan Starter
@@ -146,8 +146,8 @@ list:
       enable: true
       label: Comenzar
       url: /contact/
-      rel: 
-      target: 
+      rel:
+      target:
 
   # Plan Pro
   - enable: true
@@ -162,11 +162,11 @@ list:
       - type: Mensual
         prepend_value: $
         value: 100000
-        append_value: 
+        append_value:
       - type: Anual
         prepend_value: $
         value: 1000000
-        append_value: 
+        append_value:
 
     features:
       - Todas las funcionalidades del Plan Advance
@@ -192,8 +192,8 @@ list:
       enable: true
       label: Comenzar
       url: /contact/
-      rel: 
-      target: 
+      rel:
+      target:
 
   # Plan Loyalty
   - enable: true
@@ -208,11 +208,11 @@ list:
       - type: Mensual
         prepend_value: $
         value: 20000
-        append_value: 
+        append_value:
       - type: Anual
         prepend_value: $
         value: 200000
-        append_value: 
+        append_value:
 
     features:
       - Loyalty ilimitado
@@ -235,8 +235,8 @@ list:
       enable: true
       label: Comenzar
       url: /contact/
-      rel: 
-      target: 
+      rel:
+      target:
 
   # Plan Exclusive
   - enable: true
@@ -272,8 +272,8 @@ list:
       enable: true
       label: Comenzar
       url: /contact/
-      rel: 
-      target: 
+      rel:
+      target:
 
 # Comparativa de Precios
 comparison:
@@ -281,12 +281,12 @@ comparison:
     list:
       - value: Integraciones
         included:
-          - true   # Basic
-          - true   # Starter
-          - true   # Advance
-          - true   # Pro
-          - false  # Loyalty
-          - true   # Exclusive
+          - true # Basic
+          - true # Starter
+          - true # Advance
+          - true # Pro
+          - false # Loyalty
+          - true # Exclusive
       - value: Enlaces compartidos
         included:
           - true
@@ -305,39 +305,39 @@ comparison:
           - true
       - value: Miembros del equipo
         included:
-          - false            # Basic
-          - false            # Starter
+          - false # Basic
+          - false # Starter
           - Hasta 20 usuarios # Advance
           - Hasta 50 usuarios # Pro
-          - 0 usuarios        # Loyalty
-          - Ilimitados        # Exclusive
+          - 0 usuarios # Loyalty
+          - Ilimitados # Exclusive
 
   - label: Reportes
     list:
       - value: Analíticas avanzadas
         included:
-          - false  # Basic
-          - true   # Starter
-          - true   # Advance
-          - true   # Pro
-          - false  # Loyalty
-          - true   # Exclusive
+          - false # Basic
+          - true # Starter
+          - true # Advance
+          - true # Pro
+          - false # Loyalty
+          - true # Exclusive
       - value: Reportes básicos
         included:
-          - false  # Basic
-          - false  # Starter
-          - true   # Advance
-          - true   # Pro
-          - false  # Loyalty
-          - true   # Exclusive
+          - false # Basic
+          - false # Starter
+          - true # Advance
+          - true # Pro
+          - false # Loyalty
+          - true # Exclusive
       - value: Reportes profesionales
         included:
-          - false  # Basic
-          - false  # Starter
-          - false  # Advance
-          - true   # Pro
-          - false  # Loyalty
-          - true   # Exclusive
+          - false # Basic
+          - false # Starter
+          - false # Advance
+          - true # Pro
+          - false # Loyalty
+          - true # Exclusive
       - value: Generador de reportes personalizados
         included:
           - false
@@ -351,12 +351,12 @@ comparison:
     list:
       - value: Soporte en línea 24/7
         included:
-          - false  # Basic
-          - true   # Starter
-          - false  # Advance
-          - false  # Pro
-          - false  # Loyalty
-          - true   # Exclusive
+          - false # Basic
+          - true # Starter
+          - false # Advance
+          - false # Pro
+          - false # Loyalty
+          - true # Exclusive
       - value: Talleres trimestrales del producto
         included:
           - false

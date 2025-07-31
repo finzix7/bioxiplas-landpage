@@ -1,12 +1,11 @@
 ---
 enable: true
 subtitle: Comprehensive Solutions
-title:  
+title:
 
 layout_type: modern
 
 list:
-
   - title: Certified Compostable Packaging
     title_size: sm
     image: "/images/why-us/11.png"

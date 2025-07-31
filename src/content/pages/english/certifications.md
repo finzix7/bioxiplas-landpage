@@ -9,6 +9,7 @@ excerpt: "All our raw materials and processes are certified to ensure safety, qu
 ## Our Certifications [.text-h4]
 
 ### Food Grade [.text-h5]
+
 <img
   src="/images/certificaciones/food-grade.png"
   alt="Food Grade Icon"
@@ -17,6 +18,7 @@ excerpt: "All our raw materials and processes are certified to ensure safety, qu
 Food-grade raw materials, suitable for direct contact with food.
 
 ### FDA [.text-h5]
+
 <img
   src="/images/certificaciones/fda.png"
   alt="FDA Logo"
@@ -25,6 +27,7 @@ Food-grade raw materials, suitable for direct contact with food.
 We comply with the **U.S. Food and Drug Administration (FDA)** standards for food‑contact materials.
 
 ### CE [.text-h5]
+
 <img
   src="/images/certificaciones/ce.png"
   alt="CE Logo"
@@ -33,11 +36,13 @@ We comply with the **U.S. Food and Drug Administration (FDA)** standards for foo
 CE conformity marking, certifying our materials meet **European Economic Community (EEC)** safety and health regulations.
 
 ### Chemical Safety [.text-h5]
-- **Allergen‑free**  
-- **Free of crystal violet and malachite green**  
-- **BPA‑free** and other endocrine disruptors  
+
+- **Allergen‑free**
+- **Free of crystal violet and malachite green**
+- **BPA‑free** and other endocrine disruptors
 
 ### Testing and Analysis [.text-h5]
+
 <img
   src="/images/certificaciones/analysis.webp"
   alt="Lab Analysis Icon"
@@ -47,4 +52,4 @@ We conduct **surface analysis** and **global migration testing** in accredited l
 
 ---
 
-With these certifications and tests, Bioxiplas ensures every product is **safe**, **reliable**, and **environmentally friendly**.  
+With these certifications and tests, Bioxiplas ensures every product is **safe**, **reliable**, and **environmentally friendly**.

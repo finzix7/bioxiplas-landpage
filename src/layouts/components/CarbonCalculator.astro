@@ -2,21 +2,62 @@
 // src/components/CarbonCalculator.astro
 
 const productos = [
-  { slug: "delantal",  nombre: "Delantal",         peso: 0.043, img: "/images/products/delantal.jpg" },
-  { slug: "chaqueta",  nombre: "Chaqueta",         peso: 0.030, img: "/images/products/chaqueta.jpg" },
-  { slug: "funda",     nombre: "Funda Food Grade", peso: 0.025, img: "/images/products/funda.png" },
-  { slug: "pantalon",  nombre: "Pantalón",         peso: 0.058, img: "/images/products/pantalon.jpg" },
-  { slug: "mantilla",  nombre: "Mantilla",         peso: 0.046, img: "/images/products/mantilla.jpg" },
-  { slug: "uniforme",  nombre: "Uniforme",         peso: 0.065, img: "/images/products/uniforme.jpg" },
-  { slug: "lamina",    nombre: "Lámina",           peso: 0.021, img: "/images/products/lamina.png" },
-  { slug: "pechera",   nombre: "Pechera",          peso: 0.035, img: "/images/products/pechera.jpg" },
+  {
+    slug: "delantal",
+    nombre: "Delantal",
+    peso: 0.043,
+    img: "/images/products/delantal.jpg",
+  },
+  {
+    slug: "chaqueta",
+    nombre: "Chaqueta",
+    peso: 0.03,
+    img: "/images/products/chaqueta.jpg",
+  },
+  {
+    slug: "funda",
+    nombre: "Funda Food Grade",
+    peso: 0.025,
+    img: "/images/products/funda.png",
+  },
+  {
+    slug: "pantalon",
+    nombre: "Pantalón",
+    peso: 0.058,
+    img: "/images/products/pantalon.jpg",
+  },
+  {
+    slug: "mantilla",
+    nombre: "Mantilla",
+    peso: 0.046,
+    img: "/images/products/mantilla.jpg",
+  },
+  {
+    slug: "uniforme",
+    nombre: "Uniforme",
+    peso: 0.065,
+    img: "/images/products/uniforme.jpg",
+  },
+  {
+    slug: "lamina",
+    nombre: "Lámina",
+    peso: 0.021,
+    img: "/images/products/lamina.png",
+  },
+  {
+    slug: "pechera",
+    nombre: "Pechera",
+    peso: 0.035,
+    img: "/images/products/pechera.jpg",
+  },
 ];
 
 const EF_CONV = 2.5; // kg CO₂e/kg plástico convencional
-const EF_BIO  = 2.2; // kg CO₂e/kg plástico Bioxiplas
+const EF_BIO = 2.2; // kg CO₂e/kg plástico Bioxiplas
 // Máximo de ahorro considerado como 100%
-const MAX_SAVING = 0.02; 
+const MAX_SAVING = 0.02;
 ---
+
 <style>
   .product-card {
     border: 2px solid transparent;
@@ -28,7 +69,7 @@ const MAX_SAVING = 0.02;
     background: none;
   }
   .product-card.selected {
-    border-color: #10B981;
+    border-color: #10b981;
   }
   .product-card img {
     width: 100%;
@@ -63,56 +104,57 @@ const MAX_SAVING = 0.02;
   }
 </style>
 
-<div class="mt-4 mx-10 lg:mx-auto p-4 border rounded-xl">
+<div class="mx-10 mt-4 rounded-xl border p-4 lg:mx-auto">
   <!-- Productos -->
-  <div class="product-grid grid grid-cols-2 md:grid-cols-4 gap-2 mb-6">
-    {productos.map((producto) => (
-      <button
-        class="product-card hover:-translate-y-1"
-        data-product-id={producto.slug}
-        data-product-weight={producto.peso}
-        onclick={`selectProduct('${producto.slug}')`}
-      >
-        <img src={producto.img} alt={producto.nombre} />
-        <div class="product-name">{producto.nombre}</div>
-      </button>
-    ))}
+  <div class="product-grid mb-6 grid grid-cols-2 gap-2 md:grid-cols-4">
+    {
+      productos.map((producto) => (
+        <button
+          class="product-card hover:-translate-y-1"
+          data-product-id={producto.slug}
+          data-product-weight={producto.peso}
+          onclick={`selectProduct('${producto.slug}')`}>
+          <img src={producto.img} alt={producto.nombre} />
+          <div class="product-name">{producto.nombre}</div>
+        </button>
+      ))
+    }
   </div>
 
   <!-- Cantidad -->
   <div class="quantity-input mb-6">
-    <label for="quantity" class="block mb-2 font-medium">Cantidad:</label>
+    <label for="quantity" class="mb-2 block font-medium">Cantidad:</label>
     <input
       type="number"
       id="quantity"
       min="1"
       value="1"
-      class="w-full p-2 bg-body border border-white/10 rounded"
+      class="bg-body w-full rounded border border-white/10 p-2"
       oninput="calculateFootprint()"
     />
   </div>
 
   <!-- Resultados -->
-  <div class="results-grid grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
-    <div class="result-card p-4 bg-body border rounded-lg text-center">
-      <p class="text-sm mb-1">Convencional</p>
+  <div class="results-grid mb-6 grid grid-cols-1 gap-4 sm:grid-cols-3">
+    <div class="result-card bg-body rounded-lg border p-4 text-center">
+      <p class="mb-1 text-sm">Convencional</p>
       <p id="conventional-result" class="text-xl font-bold">0.000</p>
       <p class="text-xs">kg CO₂e</p>
     </div>
-    <div class="result-card p-4 bg-body border rounded-lg text-center">
-      <p class="text-sm mb-1">Bioxiplas</p>
+    <div class="result-card bg-body rounded-lg border p-4 text-center">
+      <p class="mb-1 text-sm">Bioxiplas</p>
       <p id="biox-result" class="text-xl font-bold">0.000</p>
       <p class="text-xs">kg CO₂e</p>
     </div>
-    <div class="result-card p-4 bg-body border rounded-lg text-center">
-      <p class="text-sm mb-1">Ahorro</p>
+    <div class="result-card bg-body rounded-lg border p-4 text-center">
+      <p class="mb-1 text-sm">Ahorro</p>
       <p id="saving-result" class="text-xl font-bold">0.000</p>
       <p class="text-xs">kg CO₂e</p>
     </div>
   </div>
 
   <!-- Gráficos -->
-  <div class="chart-container bg-body border p-4 rounded-lg">
+  <div class="chart-container bg-body rounded-lg border p-4">
     <div class="charts-grid">
       <canvas id="footprint-chart"></canvas>
       <canvas id="saving-chart"></canvas>
@@ -124,24 +166,26 @@ const MAX_SAVING = 0.02;
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <script is:inline>
-  const EF_CONV    = 2.5;
-  const EF_BIO     = 2.2;
+  const EF_CONV = 2.5;
+  const EF_BIO = 2.2;
   const MAX_SAVING = 0.02;
 
-  let selectedProduct = { id: 'delantal', weight: 0.043 };
-  let footprintChart  = null;
-  let savingChart     = null;
+  let selectedProduct = { id: "delantal", weight: 0.043 };
+  let footprintChart = null;
+  let savingChart = null;
 
-  document.addEventListener('DOMContentLoaded', () => {
-    selectProduct('delantal');
+  document.addEventListener("DOMContentLoaded", () => {
+    selectProduct("delantal");
     initializeCharts();
     calculateFootprint();
   });
 
   function selectProduct(productId) {
-    document.querySelectorAll('.product-card').forEach(c => c.classList.remove('selected'));
+    document
+      .querySelectorAll(".product-card")
+      .forEach((c) => c.classList.remove("selected"));
     const card = document.querySelector(`[data-product-id="${productId}"]`);
-    card.classList.add('selected');
+    card.classList.add("selected");
     selectedProduct = {
       id: productId,
       weight: parseFloat(card.dataset.productWeight),
@@ -150,14 +194,15 @@ const MAX_SAVING = 0.02;
   }
 
   function calculateFootprint() {
-    const qty  = parseInt(document.getElementById('quantity').value) || 1;
+    const qty = parseInt(document.getElementById("quantity").value) || 1;
     const conv = selectedProduct.weight * qty * EF_CONV;
-    const bio  = selectedProduct.weight * qty * EF_BIO;
+    const bio = selectedProduct.weight * qty * EF_BIO;
     const save = conv - bio;
 
-    document.getElementById('conventional-result').textContent = conv.toFixed(3);
-    document.getElementById('biox-result').textContent         = bio.toFixed(3);
-    document.getElementById('saving-result').textContent       = save.toFixed(3);
+    document.getElementById("conventional-result").textContent =
+      conv.toFixed(3);
+    document.getElementById("biox-result").textContent = bio.toFixed(3);
+    document.getElementById("saving-result").textContent = save.toFixed(3);
 
     if (footprintChart) {
       footprintChart.data.datasets[0].data = [conv, bio];
@@ -171,24 +216,20 @@ const MAX_SAVING = 0.02;
   }
 
   function initializeCharts() {
-    const ctx1 = document.getElementById('footprint-chart').getContext('2d');
+    const ctx1 = document.getElementById("footprint-chart").getContext("2d");
     footprintChart = new Chart(ctx1, {
-      type: 'bar',
+      type: "bar",
       data: {
-        labels: ['Convencional', 'Bioxiplas'],
-        datasets: [{
-          label: 'Emisiones (kg CO₂e)',
-          data: [0, 0],
-          backgroundColor: [
-            'rgba(239, 68, 68, 0.7)',
-            'rgba(54, 200, 83, 1)',
-          ],
-          borderColor: [
-            'rgba(239, 68, 68, 1)',
-            'rgba(16, 185, 129, 1)',
-          ],
-          borderWidth: 1,
-        }],
+        labels: ["Convencional", "Bioxiplas"],
+        datasets: [
+          {
+            label: "Emisiones (kg CO₂e)",
+            data: [0, 0],
+            backgroundColor: ["rgba(239, 68, 68, 0.7)", "rgba(54, 200, 83, 1)"],
+            borderColor: ["rgba(239, 68, 68, 1)", "rgba(16, 185, 129, 1)"],
+            borderWidth: 1,
+          },
+        ],
       },
       options: {
         responsive: true,
@@ -197,46 +238,48 @@ const MAX_SAVING = 0.02;
       },
     });
 
-    const ctx2 = document.getElementById('saving-chart').getContext('2d');
+    const ctx2 = document.getElementById("saving-chart").getContext("2d");
     savingChart = new Chart(ctx2, {
-      type: 'doughnut',
+      type: "doughnut",
       data: {
-        labels: ['Ahorro', 'Resto (hasta 0.02)'],
-        datasets: [{
-          data: [0, MAX_SAVING],
-          backgroundColor: [
-            'rgba(26, 195,222, 1)',
-            'rgba(229, 231, 235, 0.05)',
-          ],
-          hoverOffset: 20,
-          borderWidth: 0,
-        }],
+        labels: ["Ahorro", "Resto (hasta 0.02)"],
+        datasets: [
+          {
+            data: [0, MAX_SAVING],
+            backgroundColor: [
+              "rgba(26, 195,222, 1)",
+              "rgba(229, 231, 235, 0.05)",
+            ],
+            hoverOffset: 20,
+            borderWidth: 0,
+          },
+        ],
       },
       options: {
         responsive: true,
         maintainAspectRatio: true,
         aspectRatio: 1,
-        cutout: '60%',
+        cutout: "60%",
         plugins: {
           legend: {
-            position: 'bottom',
+            position: "bottom",
             labels: {
-              filter: (item) => item.text === 'Ahorro'
-            }
+              filter: (item) => item.text === "Ahorro",
+            },
           },
           tooltip: {
             callbacks: {
               label: (ctx) =>
-                ctx.label === 'Ahorro'
+                ctx.label === "Ahorro"
                   ? `Ahorro: ${ctx.parsed.toFixed(3)} kg CO₂e`
-                  : null
-            }
-          }
+                  : null,
+            },
+          },
         },
         animation: {
           animateRotate: true,
           animateScale: true,
-        }
+        },
       },
     });
   }

@@ -1,6 +1,9 @@
 ---
 import parseTomlToJson from "@/lib/utils/parseTomlToJson";
-import { supportedLanguages, useTranslations } from "@/lib/utils/languageParser.ts";
+import {
+  supportedLanguages,
+  useTranslations,
+} from "@/lib/utils/languageParser.ts";
 import { getEntryCTM } from "@/lib/contentParser.astro";
 import Base from "@/layouts/Base.astro";
 import SinglePageLayout from "@/components/SinglePageLayout.astro";
@@ -13,7 +16,8 @@ import FeaturesSection from "@/components/sections/FeaturesSection.astro";
 //    - `lang = "es"`      → /es/about
 export async function getStaticPaths() {
   const config = parseTomlToJson("./src/config/config.toml");
-  const { default_language, show_default_lang_in_url } = config.settings.multilingual;
+  const { default_language, show_default_lang_in_url } =
+    config.settings.multilingual;
 
   // Idiomas configurados (["en", "es", ...])
   const all = supportedLanguages.map((l) => l.languageCode);
@@ -37,12 +41,15 @@ const SLUG = "about";
 // 3) Determino el locale efectivo
 //    Astro.params.lang es string | undefined, así que
 //    si viene undefined uso el default del config
-const locale = Astro.params.lang ?? config.settings.multilingual.default_language;
+const locale =
+  Astro.params.lang ?? config.settings.multilingual.default_language;
 
 // 4) Cargo la entrada Markdown
 const entry = await getEntryCTM(PAGES_FOLDER, SLUG, locale);
 if (!entry) {
-  throw new Error(`No se encontró '/${SLUG}' en la colección '${PAGES_FOLDER}'.`);
+  throw new Error(
+    `No se encontró '/${SLUG}' en la colección '${PAGES_FOLDER}'.`,
+  );
 }
 
 // 5) Frontmatter + renderizado MDX/MD
@@ -51,7 +58,8 @@ const { Content, headings = [] } = await entry.render();
 
 // 6) Tabla de contenidos si está habilitada
 const tocConfig = config.settings.markup.table_of_contents;
-const tocHeadings = tocConfig.enable && headings.length ? buildToc(headings) : [];
+const tocHeadings =
+  tocConfig.enable && headings.length ? buildToc(headings) : [];
 
 // 7) Traducciones para el locale actual
 const translations = await useTranslations(locale);

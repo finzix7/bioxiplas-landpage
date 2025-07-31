@@ -224,7 +224,6 @@
   .logo {
     @apply flex;
   }
-
 }
 
 /* Hide alternate logo */
@@ -242,9 +241,9 @@ header {
 footer {
   .logo-wrapper {
     .logo-text {
-      @apply text-h5 font-medium text-white ;
+      @apply text-h5 font-medium text-white;
     }
-  
+
     &.logo-alternate {
       @apply hidden;
     }
@@ -279,11 +278,11 @@ footer {
 } */
 
 .has-italic-text strong .word {
-  @apply font-[inherit] font-bold not-italic bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
+  @apply from-primary to-secondary bg-gradient-to-r bg-clip-text font-[inherit] font-bold text-transparent not-italic;
 }
 
-.has-italic-text strong  {
-  @apply font-[inherit] font-bold not-italic bg-gradient-to-r from-secondary to-primary bg-clip-text text-transparent;
+.has-italic-text strong {
+  @apply from-secondary to-primary bg-gradient-to-r bg-clip-text font-[inherit] font-bold text-transparent not-italic;
 }
 
 /* Icon Color Override */

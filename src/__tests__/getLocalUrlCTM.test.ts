@@ -82,9 +82,7 @@ describe("getLocaleUrlCTM", () => {
   test("Handles absolute URLs and preserves anchors", () => {
     const url = "http://localhost:4321/en/pricing/#example-anchor";
     const result = getLocaleUrlCTM(url, "en", prependValue);
-    expect(result).toBe(
-      "http://localhost:4321/pricing/#example-anchor",
-    );
+    expect(result).toBe("http://localhost:4321/pricing/#example-anchor");
   });
 
   test("Handles relative URL with language directory in URL", () => {

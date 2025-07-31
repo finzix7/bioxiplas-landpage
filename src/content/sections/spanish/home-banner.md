@@ -37,9 +37,6 @@ buttons:
       provider: html5
       poster: "/images/video-poster-bioxiplas.png"
       autoplay: false
-   
-
-
 
 customers:
   enable: true

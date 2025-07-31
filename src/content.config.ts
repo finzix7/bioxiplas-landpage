@@ -9,10 +9,10 @@ const { integration_folder } = config.settings;
 // 📄 Esquema base reutilizable (pages, blog, products, etc.)
 const page = z.object({
   title: z.string(),
-  date: z.date().optional(),               // e.g. 2022-01-01 or with timezone
+  date: z.date().optional(), // e.g. 2022-01-01 or with timezone
   image: z.string().optional(),
   draft: z.boolean().optional(),
-  excerpt: z.string().optional(),          // ¡Agregado!
+  excerpt: z.string().optional(), // ¡Agregado!
   description: z.string().optional(),
   meta_title: z.string().optional(),
   meta_description: z.string().optional(),

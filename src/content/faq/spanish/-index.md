@@ -150,5 +150,4 @@ list:
         title: "¿Qué monedas aceptan?"
         content: |
           Actualmente trabajamos con pagos en CLP (pesos chilenos), USD y EUR.
-
 ---

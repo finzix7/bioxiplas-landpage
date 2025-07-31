@@ -150,5 +150,4 @@ list:
         title: "What currencies do you accept?"
         content: |
           We currently accept payments in CLP (Chilean Pesos), USD, and EUR.
-
 ---

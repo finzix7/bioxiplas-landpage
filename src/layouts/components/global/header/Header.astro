@@ -29,14 +29,16 @@ const {
 } = config;
 ---
 
-{!isHomepage && (
-  <div
-    class="absolute top-0 left-1/2 -z-30 h-1/2 w-full -translate-x-1/2 overflow-hidden"
-    aria-hidden="true">
-    <div class="bg-[radial-gradient(53.29%_50%_at_50%_50%,theme(colors.primary)_0%,rgba(39,_27,_69,_0)_100%)] absolute top-[-550px] left-[-10%] h-[800px] w-[800px]" />
-    <div class="bg-[radial-gradient(53.29%_50%_at_50%_50%,theme(colors.primary)_0%,rgba(39,_27,_69,_0)_100%)] absolute top-[-550px] right-[-10%] h-[800px] w-[800px]" />
-  </div>
-)}
+{
+  !isHomepage && (
+    <div
+      class="absolute top-0 left-1/2 -z-30 h-1/2 w-full -translate-x-1/2 overflow-hidden"
+      aria-hidden="true">
+      <div class="bg-[radial-gradient(53.29%_50%_at_50%_50%,theme(colors.primary)_0%,rgba(39,_27,_69,_0)_100%)] absolute top-[-550px] left-[-10%] h-[800px] w-[800px]" />
+      <div class="bg-[radial-gradient(53.29%_50%_at_50%_50%,theme(colors.primary)_0%,rgba(39,_27,_69,_0)_100%)] absolute top-[-550px] right-[-10%] h-[800px] w-[800px]" />
+    </div>
+  )
+}
 
 <header
   class:list={[
@@ -45,42 +47,48 @@ const {
   ]}>
   <div class="relative container">
     <nav
-      class="hs-dropdown relative flex items-center justify-between pr-2 pl-4 py-2.5 [--auto-close:inside] [--gpu-acceleration:false] [--strategy:absolute] lg:[--strategy:static]">
+      class="hs-dropdown relative flex items-center justify-between py-2.5 pr-2 pl-4 [--auto-close:inside] [--gpu-acceleration:false] [--strategy:absolute] lg:[--strategy:static]">
       <Logo class={logo_hover_animation && "has-hover-animation"} />
 
       <ul
         id="nav-menu"
-        class="navbar pl-4 hs-dropdown-menu hs-dropdown-open:flex gap-1 hs-dropdown-open:!mt-2 has-customized-scrollbar max-lg:absolute max-lg:!transform-none lg:!transform-none">
+        class="navbar hs-dropdown-menu hs-dropdown-open:flex hs-dropdown-open:!mt-2 has-customized-scrollbar gap-1 pl-4 max-lg:absolute max-lg:!transform-none lg:!transform-none">
         {main.map((menu) => <NavMenuItem menu={menu} />)}
 
         {/* Language Switcher For Small Devices */}
-        {config.settings.multilingual.enable && (
-          <li class="max-lg:px-4 max-lg:py-2 lg:hidden" role="menuitem">
-            <LanguageSwitcher />
-          </li>
-        )}
-        {navigation_button.enable && (
-          <li class="max-lg:px-4 max-lg:py-2 lg:hidden" role="menuitem">
-            <NavigationButton
-              navigation_button={navigation_button}
-              navigation_button_label={t("navigation.button_label")}
-            />
-          </li>
-        )}
+        {
+          config.settings.multilingual.enable && (
+            <li class="max-lg:px-4 max-lg:py-2 lg:hidden" role="menuitem">
+              <LanguageSwitcher />
+            </li>
+          )
+        }
+        {
+          navigation_button.enable && (
+            <li class="max-lg:px-4 max-lg:py-2 lg:hidden" role="menuitem">
+              <NavigationButton
+                navigation_button={navigation_button}
+                navigation_button_label={t("navigation.button_label")}
+              />
+            </li>
+          )
+        }
       </ul>
 
       {/* Navigation Button For Large Devices */}
-      {(navigation_button.enable || config.settings.multilingual.enable) && (
-        <div class="hidden gap-3.5 max-lg:me-4 max-lg:ml-auto lg:flex lg:items-center">
-          {config.settings.multilingual.enable && <LanguageSwitcher />}
-          {navigation_button.enable && (
-            <NavigationButton
-              navigation_button={navigation_button}
-              navigation_button_label={t("navigation.button_label")}
-            />
-          )}
-        </div>
-      )}
+      {
+        (navigation_button.enable || config.settings.multilingual.enable) && (
+          <div class="hidden gap-3.5 max-lg:me-4 max-lg:ml-auto lg:flex lg:items-center">
+            {config.settings.multilingual.enable && <LanguageSwitcher />}
+            {navigation_button.enable && (
+              <NavigationButton
+                navigation_button={navigation_button}
+                navigation_button_label={t("navigation.button_label")}
+              />
+            )}
+          </div>
+        )
+      }
       <NavToggleBtn />
     </nav>
   </div>

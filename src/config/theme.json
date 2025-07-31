@@ -8,9 +8,8 @@
         "body": "#0B0E0F",
         "border": "#ffffff1f",
         "theme_dark": "#10251E"
-    }
-    
-      ,
+      },
+
       "text_color": {
         "default": "#C8C1C1",
         "dark": "#000E30",

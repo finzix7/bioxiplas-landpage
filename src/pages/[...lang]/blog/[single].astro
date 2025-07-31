@@ -23,6 +23,9 @@ let tocHeadings;
 let contentHtml = "";
 let authorEntry: any = {};
 
+const categoryNames =
+  blog?.categories?.map((category: { name: string }) => category.name) || [];
+
 if (blog?.content) {
   if (typeof blog.content === "string") {
     tocHeadings = buildToc(extractHeadings(blog.content));
@@ -45,6 +48,7 @@ if (blog?.author) {
       ...blog,
       table_of_contents,
       tocHeadings,
+      categories: categoryNames,
       author: authorEntry,
       Content: contentHtml,
     }}

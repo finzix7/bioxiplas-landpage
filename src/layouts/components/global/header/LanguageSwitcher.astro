@@ -23,7 +23,8 @@ const languages = supportedLanguages.map((lang) => {
 });
 
 const currentLanguageName =
-  supportedLanguages.find((l) => l.languageCode === currentLocale)?.languageName || currentLocale;
+  supportedLanguages.find((l) => l.languageCode === currentLocale)
+    ?.languageName || currentLocale;
 ---
 
 <div
@@ -47,25 +48,29 @@ const currentLanguageName =
     />
   </button>
   <ul
-  class="language-switcher-dropdown hs-dropdown-menu hs-dropdown-open:opacity-100 hs-dropdown-open:!mt-0 hs-dropdown-open:visible z-10 mt-2 hidden min-w-[8rem] rounded-md border bg-theme-dark/90 backdrop-blur-md p-2 opacity-0 transition-[opacity,margin] [--placement:right-bottom]">
-  {supportedLanguages.map((language) => {
-    const href = getLocaleUrlCTM(Astro.url.pathname, language.languageCode as string);
-    const isActive = language.languageCode === currentLocale;
+    class="language-switcher-dropdown hs-dropdown-menu hs-dropdown-open:opacity-100 hs-dropdown-open:!mt-0 hs-dropdown-open:visible bg-theme-dark/90 z-10 mt-2 hidden min-w-[8rem] rounded-md border p-2 opacity-0 backdrop-blur-md transition-[opacity,margin] [--placement:right-bottom]">
+    {
+      supportedLanguages.map((language) => {
+        const href = getLocaleUrlCTM(
+          Astro.url.pathname,
+          language.languageCode as string,
+        );
+        const isActive = language.languageCode === currentLocale;
 
-    return (
-      <li>
-        <a
-          href={href}
-          class:list={[
-            "flex items-center gap-2  w-full rounded px-3 py-2 text-sm text-white transition hover:bg-white/10 uppercase",
-            { "bg-white/10 text-emerald-400 font-semibold": isActive },
-          ]}>
-          <span>{language.flagEmoji}</span>
-          <span>{language.languageName}</span>
-        </a>
-      </li>
-    );
-  })}
-</ul>
-
+        return (
+          <li>
+            <a
+              href={href}
+              class:list={[
+                "flex w-full items-center gap-2 rounded px-3 py-2 text-sm text-white uppercase transition hover:bg-white/10",
+                { "bg-white/10 font-semibold text-emerald-400": isActive },
+              ]}>
+              <span>{language.flagEmoji}</span>
+              <span>{language.languageName}</span>
+            </a>
+          </li>
+        );
+      })
+    }
+  </ul>
 </div>
