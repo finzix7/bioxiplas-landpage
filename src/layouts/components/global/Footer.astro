@@ -25,8 +25,7 @@ const subscriptionTitle =
   t("subscription.label") ||
   "";
 
-const copyrightText =
-  copyright?.text || t("footer.copyright") || "";
+const copyrightText = copyright?.text || t("footer.copyright") || "";
 
 const copyrightParts = splitProtectedText(copyrightText);
 ---
@@ -77,7 +76,7 @@ const copyrightParts = splitProtectedText(copyrightText);
                         {menu.name}
                       </a>
                     </li>
-                  )
+                  ),
                 )
               }
             </ul>
@@ -106,7 +105,7 @@ const copyrightParts = splitProtectedText(copyrightText);
                             set:html={menu.name}
                           />
                         </li>
-                      )
+                      ),
                     )
                   }
                 </ul>
@@ -131,21 +130,26 @@ const copyrightParts = splitProtectedText(copyrightText);
                             set:html={menu.name}
                           />
                         </li>
-                      )
+                      ),
                     )
                   }
                 </ul>
               </div>
             </div>
 
-            {subscription?.enable && (
-              <div class="mt-8 border-t pt-5">
-                {subscriptionTitle && (
-                  <p class="mb-2.5" set:html={markdownify(subscriptionTitle)} />
-                )}
-                <SubscriptionForm {...subscription} />
-              </div>
-            )}
+            {
+              subscription?.enable && (
+                <div class="mt-8 border-t pt-5">
+                  {subscriptionTitle && (
+                    <p
+                      class="mb-2.5"
+                      set:html={markdownify(subscriptionTitle)}
+                    />
+                  )}
+                  <SubscriptionForm {...subscription} />
+                </div>
+              )
+            }
           </div>
         </div>
       </div>
@@ -153,7 +157,8 @@ const copyrightParts = splitProtectedText(copyrightText);
       <!-- Footer Menu & Copyright -->
       <div class="py-7 text-sm md:text-base">
         <div class="flex flex-wrap justify-between gap-x-8 gap-y-6">
-          <ul class="has-list has-list-dot flex flex-wrap gap-y-2 md:flex-nowrap">
+          <ul
+            class="has-list has-list-dot flex flex-wrap gap-y-2 md:flex-nowrap">
             {
               t("footer_menu")?.map((menu: { name: string; url: string }) => (
                 <li class="inline-block">
@@ -166,15 +171,17 @@ const copyrightParts = splitProtectedText(copyrightText);
               ))
             }
           </ul>
-          {copyright?.enable && (
-            <ul class="has-list has-list-slash prose-a:text-inherit flex flex-wrap gap-y-4 text-white">
-              {copyrightParts.map((value: string) => (
-                <li class="prose-a:transition-colors prose-a:duration-300 prose-a:text-secondary prose-a:underline-offset-2 prose-a:underline inline-block opacity-90 [&_a:hover]:text-white">
-                  <span set:html={markdownify(value)} />
-                </li>
-              ))}
-            </ul>
-          )}
+          {
+            copyright?.enable && (
+              <ul class="has-list has-list-slash prose-a:text-inherit flex flex-wrap gap-y-4 text-white">
+                {copyrightParts.map((value: string) => (
+                  <li class="prose-a:transition-colors prose-a:duration-300 prose-a:text-secondary prose-a:underline-offset-2 prose-a:underline inline-block opacity-90 [&_a:hover]:text-white">
+                    <span set:html={markdownify(value)} />
+                  </li>
+                ))}
+              </ul>
+            )
+          }
         </div>
       </div>
     </div>

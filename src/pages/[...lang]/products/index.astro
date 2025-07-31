@@ -15,7 +15,11 @@ const config = parseTomlToJson("./src/config/config.toml");
 const { products_folder }: { products_folder: "products"; pagination: number } =
   config.settings;
 
-const postIndex = await getEntryCTM(products_folder, "-index", Astro.currentLocale);
+const postIndex = await getEntryCTM(
+  products_folder,
+  "-index",
+  Astro.currentLocale,
+);
 
 // Remove drafts pages in production
 const response = handleDraftPage(postIndex?.data);

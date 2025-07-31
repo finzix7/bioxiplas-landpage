@@ -9,6 +9,7 @@ excerpt: "Alle unsere Rohstoffe und Prozesse sind zertifiziert, um Sicherheit, Q
 ## Unsere Zertifizierungen [.text-h4]
 
 ### Food-Grade [.text-h5]
+
 <img
   src="/images/certificaciones/food-grade.png"
   alt="Food Grade Icon"
@@ -17,6 +18,7 @@ excerpt: "Alle unsere Rohstoffe und Prozesse sind zertifiziert, um Sicherheit, Q
 Lebensmittelgerechte Rohmaterialien, geeignet für den direkten Kontakt mit Lebensmitteln.
 
 ### FDA [.text-h5]
+
 <img
   src="/images/certificaciones/fda.png"
   alt="FDA Logo"
@@ -25,6 +27,7 @@ Lebensmittelgerechte Rohmaterialien, geeignet für den direkten Kontakt mit Lebe
 Wir erfüllen die Standards der US-amerikanischen Food and Drug Administration (FDA) für Materialien in Lebensmittelkontakt.
 
 ### CE [.text-h5]
+
 <img
   src="/images/certificaciones/ce.png"
   alt="CE Logo"
@@ -33,11 +36,13 @@ Wir erfüllen die Standards der US-amerikanischen Food and Drug Administration (
 CE‑Kennzeichnung, die bestätigt, dass unsere Materialien den Sicherheits- und Gesundheitsvorschriften der Europäischen Wirtschaftsgemeinschaft (EWG) entsprechen.
 
 ### Chemische Sicherheit [.text-h5]
-- **Frei von Allergenen**  
-- **Frei von Kristallviolett und Malachitgrün**  
-- **Frei von BPA und anderen endokrinen Disruptoren**  
+
+- **Frei von Allergenen**
+- **Frei von Kristallviolett und Malachitgrün**
+- **Frei von BPA und anderen endokrinen Disruptoren**
 
 ### Tests und Analysen [.text-h5]
+
 <img
   src="/images/certificaciones/analysis.webp"
   alt="Lab Analysis Icon"
@@ -47,4 +52,4 @@ Wir führen Oberflächenanalysen und globale Migrationstests in akkreditierten L
 
 ---
 
-Mit diesen Zertifizierungen und Tests stellt Bioxiplas sicher, dass jedes Produkt **sicher**, **zuverlässig** und **umweltfreundlich** ist.  
+Mit diesen Zertifizierungen und Tests stellt Bioxiplas sicher, dass jedes Produkt **sicher**, **zuverlässig** und **umweltfreundlich** ist.

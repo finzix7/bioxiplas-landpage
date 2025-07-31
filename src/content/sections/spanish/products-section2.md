@@ -19,7 +19,7 @@ list:
     features:
       - Rápida degradación (6-24 meses)
       - Apto para contacto con alimentos
-      - 'Colores: Blanco o Azul'
+      - "Colores: Blanco o Azul"
     cta_btn:
       enable: true
       label: Consultar
@@ -39,7 +39,7 @@ list:
       append_value: "Consultar"
     features:
       - Degradación 6-24 meses
-      - 'Espesor: 20-200 micras'
+      - "Espesor: 20-200 micras"
       - Medidas personalizadas
     cta_btn:
       enable: true
@@ -60,7 +60,7 @@ list:
       append_value: "Consultar"
     features:
       - Degradación 2-12 meses
-      - 'Cumple norma EN-13432'
+      - "Cumple norma EN-13432"
       - Compostable en composteras domésticas o industriales
     cta_btn:
       enable: true
@@ -81,7 +81,7 @@ list:
       append_value: "Consultar"
     features:
       - Degradación acelerada
-      - 'Espesor: desde 15 micras'
+      - "Espesor: desde 15 micras"
       - Alto rendimiento en embalaje
     cta_btn:
       enable: true
@@ -102,7 +102,7 @@ list:
       append_value: "Consultar"
     features:
       - Adhesivo compostable
-      - 'Colores: transparente, personalizada'
+      - "Colores: transparente, personalizada"
       - Alta resistencia mecánica
     cta_btn:
       enable: true

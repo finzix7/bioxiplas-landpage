@@ -19,9 +19,7 @@ const { navigation_button, navigation_button_label } = Astro.props;
   class="relative flex items-center"
   href={getLocaleUrlCTM(navigation_button.url, Astro.currentLocale)}>
   <span
-    class:list={[
-      "btn btn-primary has-text-flip-animation",
-    ]}
+    class:list={["btn btn-primary has-text-flip-animation"]}
     data-content={navigation_button_label}>
     {navigation_button_label}
   </span>

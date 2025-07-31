@@ -344,6 +344,5 @@ export type ProductItem = {
 };
 // END PRODUCT TYPE
 
-
 // END MENU TYPE
 // ----------------------------------------------------------------------

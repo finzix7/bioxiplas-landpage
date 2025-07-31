@@ -9,10 +9,15 @@ const text = " - CATÁLOGO - CATÁLOGO - CATÁLOGO";
 const letters = text.split("");
 const deg = 360 / letters.length;
 ---
+
 <style>
   @keyframes spin {
-    0%   { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
   }
 
   .spinning-text-wrapper {
@@ -44,32 +49,23 @@ const deg = 360 / letters.length;
 </style>
 
 <div
-  class="fixed bottom-5 right-5 lg:bottom-7 lg:right-7
-         rounded-full flex justify-center items-center
-         z-50 hover:scale-110 lg:scale-125 transition cursor-pointer backdrop-blur-md
-        "
->
+  class="fixed right-5 bottom-5 z-50 flex cursor-pointer items-center justify-center rounded-full backdrop-blur-md transition hover:scale-110 lg:right-7 lg:bottom-7 lg:scale-125">
   <a
     href="/catalogo.pdf"
     download
     aria-label="Descargar catálogo"
     target="_blank"
-    class="overflow-hidden p-1 flex justify-center items-center
-           bg-secondary/20  w-full h-full
-           rounded-full text-white/80"
-  >
-    <div class="spinning-text-wrapper bg-secondary/40 ">
+    class="bg-secondary/20 flex h-full w-full items-center justify-center overflow-hidden rounded-full p-1 text-white/80">
+    <div class="spinning-text-wrapper bg-secondary/40">
       <div class="spinning-text">
-        {letters.map((letra, i) => (
-          <span
-            style={`transform: rotate(${deg * i}deg);`}
-          >
-            {letra}
-          </span>
-        ))}
+        {
+          letters.map((letra, i) => (
+            <span style={`transform: rotate(${deg * i}deg);`}>{letra}</span>
+          ))
+        }
       </div>
       <slot>
-        <p class="text-[12px] ">2025</p>
+        <p class="text-[12px]">2025</p>
       </slot>
     </div>
   </a>

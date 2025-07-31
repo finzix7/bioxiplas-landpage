@@ -12,5 +12,4 @@ list:
 
   - title: ♻️ Una solución circular real
     description: Bioxiplas ofrece materiales biodegradables y compostables certificados, diseñados específicamente para la industria alimentaria. Permiten reemplazar los plásticos convencionales sin comprometer el rendimiento, y generan un impacto ambiental positivo medible.
-
 ---

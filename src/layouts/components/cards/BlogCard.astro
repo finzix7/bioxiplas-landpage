@@ -22,12 +22,6 @@ const t = await useTranslations(Astro.currentLocale as string);
 let { content, class: className, ...rest } = Astro.props;
 let { title, image, date, categories } = content || {};
 
-// Format categories
-const categoriesArray = categories?.map((category: string) => ({
-  name: category,
-  slug: slugifyyy(category),
-}));
-
 let slug = getLocaleUrlCTM(
   content.slug,
   Astro.currentLocale,
@@ -80,11 +74,11 @@ let slug = getLocaleUrlCTM(
       </span>
 
       {
-        categoriesArray &&
-          categoriesArray.map((category: any, index: number) => (
+        categories &&
+          categories.map((category: any, index: number) => (
             <>
               <span class="text-inherit">{humanize(category.name)}</span>
-              {index !== categoriesArray.length - 1 && (
+              {index !== categories.length - 1 && (
                 <span class="bg-secondary inline-block h-[0.1875rem] w-[0.1875rem] rounded-full" />
               )}
             </>

@@ -25,9 +25,9 @@ Aceptas utilizar el Sitio Web y el Software únicamente para fines lícitos y de
 ### 3. Cuentas de Usuario
 
 1. **Registro y Credenciales**  
-   Si creas una cuenta (ya sea de administrador, gerente o mesero), eres responsable de mantener la confidencialidad de tus credenciales.  
+   Si creas una cuenta (ya sea de administrador, gerente o mesero), eres responsable de mantener la confidencialidad de tus credenciales.
 2. **Notificación de Uso No Autorizado**  
-   Te comprometes a notificarnos de inmediato sobre cualquier uso no autorizado o sospechoso de tu cuenta.  
+   Te comprometes a notificarnos de inmediato sobre cualquier uso no autorizado o sospechoso de tu cuenta.
 3. **Suspensión o Cancelación**  
    Nos reservamos el derecho de suspender o eliminar cuentas que incumplan estos Términos, sin previo aviso ni responsabilidad adicional.
 
@@ -38,13 +38,13 @@ Todo el contenido del Sitio Web y del Software —incluyendo, pero no limitado a
 ### 5. Suscripciones, Pagos y Facturación
 
 1. **Planes y Precios**  
-   ARIA ofrece planes de suscripción mensual o anual. Los detalles de precios y características de cada plan se publican en el Sitio Web y pueden actualizarse periódicamente.  
+   ARIA ofrece planes de suscripción mensual o anual. Los detalles de precios y características de cada plan se publican en el Sitio Web y pueden actualizarse periódicamente.
 2. **Métodos de Pago**  
-   Aceptamos pagos mediante tarjeta de crédito (Visa, Mastercard, American Express) y transferencias bancarias. Los cobros se procesan a través de pasarelas seguras (p. ej., WebPay en Chile).  
+   Aceptamos pagos mediante tarjeta de crédito (Visa, Mastercard, American Express) y transferencias bancarias. Los cobros se procesan a través de pasarelas seguras (p. ej., WebPay en Chile).
 3. **Facturación y Comprobantes**  
-   Emitimos facturas electrónicas (SII) y/o comprobantes de pago según tu tipo de contribuyente. Las facturas se envían por correo electrónico tras cada cobro exitoso.  
+   Emitimos facturas electrónicas (SII) y/o comprobantes de pago según tu tipo de contribuyente. Las facturas se envían por correo electrónico tras cada cobro exitoso.
 4. **Cambios de Plan**  
-   Puedes cambiar de plan desde el panel de administración. El ajuste se aplica inmediatamente y el monto se prorratea al periodo restante.  
+   Puedes cambiar de plan desde el panel de administración. El ajuste se aplica inmediatamente y el monto se prorratea al periodo restante.
 5. **Reembolsos**  
    Los reembolsos se evaluarán conforme a nuestra Política de Reembolsos. Para solicitarlo, escribe a <facturacion@aria.com> con detalles de tu caso. ARIA se reserva el derecho de aprobar o rechazar el reembolso según lo establecido en el contrato de servicio.
 
@@ -54,10 +54,11 @@ El Sitio Web, el Software y todo su contenido se ofrecen "tal cual" y "según di
 
 ### 7. Limitación de Responsabilidad
 
-En la máxima medida permitida por la ley, ARIA no será responsable por daños indirectos, incidentales, especiales, punitivos o consecuentes que surjan de:  
-- El uso o la imposibilidad de uso del Sitio Web o el Software.  
-- Errores, omisiones, interrupciones, defectos o retrasos en funcionamiento.  
-- Pérdida de datos, ingresos o ganancias.  
+En la máxima medida permitida por la ley, ARIA no será responsable por daños indirectos, incidentales, especiales, punitivos o consecuentes que surjan de:
+
+- El uso o la imposibilidad de uso del Sitio Web o el Software.
+- Errores, omisiones, interrupciones, defectos o retrasos en funcionamiento.
+- Pérdida de datos, ingresos o ganancias.
 
 La responsabilidad total de ARIA frente a ti, por cualquier motivo, no excederá el monto que hayas pagado a ARIA en los seis (6) meses previos al evento que causó la reclamación.
 
@@ -88,6 +89,6 @@ Si tienes preguntas o inquietudes sobre estos Términos, contáctanos en:
 ARIA  
 Correo electrónico: <soporte@aria.com>  
 Ventas: <ventas@aria.com>  
-Dirección: Av. del Software 456, Santiago, Chile  
+Dirección: Av. del Software 456, Santiago, Chile
 
-¡Gracias por confiar en ARIA!  
+¡Gracias por confiar en ARIA!

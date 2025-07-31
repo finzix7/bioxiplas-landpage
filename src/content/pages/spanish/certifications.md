@@ -9,6 +9,7 @@ excerpt: "Todas nuestras materias primas y procesos cuentan con certificaciones 
 ## Nuestras Certificaciones [.text-h4]
 
 ### Food Grade [.text-h5]
+
 <img
   src="/images/certificaciones/food-grade.png"
   alt="Food Grade Icon"
@@ -17,6 +18,7 @@ excerpt: "Todas nuestras materias primas y procesos cuentan con certificaciones 
 Materias primas de **grado alimenticio**, aptas para contacto directo con alimentos.
 
 ### FDA [.text-h5]
+
 <img
   src="/images/certificaciones/fda.png"
   alt="FDA Logo"
@@ -25,6 +27,7 @@ Materias primas de **grado alimenticio**, aptas para contacto directo con alimen
 Cumplimos con los estándares de la **Administración de Alimentos y Medicamentos de EE. UU. (FDA)** para materiales en contacto con alimentos.
 
 ### CE [.text-h5]
+
 <img
   src="/images/certificaciones/ce.png"
   alt="CE Logo"
@@ -33,11 +36,13 @@ Cumplimos con los estándares de la **Administración de Alimentos y Medicamento
 Marcado de conformidad **CE**, acreditando que nuestros materiales cumplen las normativas de la **Comunidad Económica Europea**.
 
 ### Seguridad Química [.text-h5]
-- **Libre de alérgenos**  
-- **Libre de cristal violeta** y **verde malaquita**  
-- **Libre de Bisfenol A (BPA)** y otros disruptores endocrinos  
+
+- **Libre de alérgenos**
+- **Libre de cristal violeta** y **verde malaquita**
+- **Libre de Bisfenol A (BPA)** y otros disruptores endocrinos
 
 ### Ensayos y Análisis [.text-h5]
+
 <img
   src="/images/certificaciones/analysis.webp"
   alt="Lab Analysis Icon"

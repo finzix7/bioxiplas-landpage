@@ -1,6 +1,6 @@
 # Bioxiplas Landing Page
 
-This project uses **Astro** together with **Payload CMS**. Products are fetched from the Payload API so new content appears without redeploy.
+This project uses **Astro** together with **Payload CMS**. Products and blog posts are fetched from the Payload API so new content appears without redeploy.
 
 ## Setup
 
@@ -23,11 +23,15 @@ This project uses **Astro** together with **Payload CMS**. Products are fetched 
 Product data is retrieved using requests like:
 `GET $PAYLOAD_API_URL/api/productos?page=1&limit=12`.
 
+Blog posts can be fetched with:
+`GET $PAYLOAD_API_URL/api/blogs?page=1&limit=12`.
+
 The front-end uses these endpoints from [`src/lib/payload.ts`](src/lib/payload.ts).
 
 ## Tests
 
 Run unit tests with:
+
 ```bash
 yarn test
 ```

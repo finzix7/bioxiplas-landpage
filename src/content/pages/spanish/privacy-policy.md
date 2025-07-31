@@ -61,6 +61,7 @@ No vendemos, alquilamos ni intercambiamos tu información personal con terceros 
 ### Seguridad de los Datos
 
 Implementamos medidas de seguridad estándar de la industria para proteger tu información, tales como:
+
 - Encriptación TLS 1.2+ para todas las comunicaciones.
 - Almacenamiento cifrado de datos sensibles (AES-256) en servidores seguros.
 - Control de acceso restringido al personal autorizado.
@@ -71,6 +72,7 @@ Sin embargo, ningún método de transmisión por Internet o almacenamiento elect
 ### Tus Derechos
 
 Dependiendo de tu ubicación, puedes tener los siguientes derechos respecto a tu información personal:
+
 - Acceder a tus datos y recibir una copia de ellos.
 - Corregir o actualizar tu información.
 - Solicitar la eliminación de tus datos personales.
@@ -99,4 +101,4 @@ ARIA
 Correo electrónico: <contacto@arialabs.cl>  
 Dirección: Valdivia, Chile
 
-¡Gracias por confiar en ARIA para proteger tu información personal!  
+¡Gracias por confiar en ARIA para proteger tu información personal!

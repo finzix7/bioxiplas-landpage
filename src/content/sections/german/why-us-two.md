@@ -1,12 +1,11 @@
 ---
 enable: true
 subtitle: Umfassende Lösungen
-title:  
+title:
 
 layout_type: modern
 
 list:
-
   - title: Zertifizierte kompostierbare Verpackungen
     title_size: sm
     image: "/images/why-us/11.png"

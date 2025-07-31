@@ -1,12 +1,11 @@
 ---
 enable: true
 subtitle: Soluciones Integrales
-title:  
+title:
 
 layout_type: modern
 
 list:
-
   - title: Packaging compostable certificado
     title_size: sm
     image: "/images/why-us/11.png"
