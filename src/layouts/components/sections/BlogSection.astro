@@ -1,7 +1,7 @@
 ---
 import type { Section } from "@/types";
 import { sortByDate } from "@/lib/utils/sortFunctions";
-import { getCollectionCTM } from "@/lib/contentParser.astro";
+import { fetchBlogs } from "@/lib/payload";
 import parseTomlToJson from "@/lib/utils/parseTomlToJson";
 import { getEntryCTM } from "@/lib/contentParser.astro";
 import Subtitle from "../widgets/Subtitle.astro";
@@ -40,20 +40,23 @@ let actual_content = overrideObjects(
 // Extracting required values from 'content' object
 let { enable = true, title, subtitle } = actual_content as blog_section_type;
 
-let posts = await getCollectionCTM(blog_folder, Astro.currentLocale);
+const currentPage = Astro.props.pagination?.currentPage || 1;
+const limit = config.settings.pagination;
+const blogResponse = await fetchBlogs({
+  page: currentPage,
+  limit,
+  locale: Astro.currentLocale,
+});
 
-// Sort posts by date
+let posts =
+  blogResponse?.docs?.map((doc: any) => ({
+    data: doc,
+    slug: doc.slug || doc.id,
+    collection: 'blog',
+  })) || [];
 posts = sortByDate(posts);
 
-// Limit the number of items to be displayed
-let totalPages = Math.ceil(posts?.length / config.settings.pagination);
-
-if (Astro.props.pagination) {
-  const indexOfLastPost =
-    Astro.props.pagination?.currentPage * config.settings.pagination;
-  const indexOfFirstPost = indexOfLastPost - config.settings.pagination;
-  posts = posts.slice(indexOfFirstPost, indexOfLastPost);
-}
+let totalPages = blogResponse?.totalPages || 1;
 ---
 
 {
