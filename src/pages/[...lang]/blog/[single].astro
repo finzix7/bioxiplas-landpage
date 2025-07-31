@@ -24,8 +24,12 @@ let contentHtml = "";
 let authorEntry: any = {};
 
 if (blog?.content) {
-  tocHeadings = buildToc(extractHeadings(blog.content));
-  contentHtml = markdownify(blog.content, true) as string;
+  if (typeof blog.content === "string") {
+    tocHeadings = buildToc(extractHeadings(blog.content));
+    contentHtml = markdownify(blog.content, true) as string;
+  } else {
+    console.error("blog.content is not a string:", blog.content);
+  }
 }
 
 if (blog?.author) {
