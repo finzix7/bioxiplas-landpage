@@ -58,3 +58,34 @@ export async function fetchCertifications({
 
   return res.json();
 }
+
+export async function fetchAllBlogs(locale?: string) {
+  const url = new URL('/api/blogs', PAYLOAD_API_URL);
+  url.searchParams.set('depth', '2');
+  url.searchParams.set('draft', 'false');
+  url.searchParams.set('sort', 'createdAt');
+  if (locale) url.searchParams.set('locale', locale);
+
+  const res = await fetch(url.toString());
+  if (!res.ok) {
+    throw new Error(`Failed to fetch blogs: ${res.status}`);
+  }
+
+  return res.json();
+}
+
+export async function fetchBlogBySlug(slug: string, locale?: string) {
+  const url = new URL('/api/blogs', PAYLOAD_API_URL);
+  url.searchParams.set('where[slug][equals]', slug);
+  url.searchParams.set('depth', '2');
+  url.searchParams.set('draft', 'false');
+  if (locale) url.searchParams.set('locale', locale);
+
+  const res = await fetch(url.toString());
+  if (!res.ok) {
+    throw new Error(`Failed to fetch blog: ${res.status}`);
+  }
+
+  const data = await res.json();
+  return data?.docs?.[0];
+}
