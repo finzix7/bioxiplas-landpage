@@ -6,18 +6,24 @@ const productHeadings: Record<SupportedLocale, Record<string, string>> = {
     caracteristicas: "Características",
     usos: "Usos recomendados",
     como_solicitar: "¿Cómo solicitar?",
+    ficha_tecnica: "Ficha técnica",
+    descargar: "Descargar",
   },
   en: {
     descripcion: "Description",
     caracteristicas: "Features",
     usos: "Recommended Uses",
     como_solicitar: "How to Request?",
+    ficha_tecnica: "Technical Sheet",
+    descargar: "Download",
   },
   de: {
     descripcion: "Beschreibung",
     caracteristicas: "Merkmale",
     usos: "Empfohlene Verwendungen",
     como_solicitar: "Wie anfragen?",
+    ficha_tecnica: "Technisches Datenblatt",
+    descargar: "Herunterladen",
   },
 };
 

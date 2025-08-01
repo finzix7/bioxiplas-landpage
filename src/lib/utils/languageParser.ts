@@ -198,6 +198,11 @@ export const getLocaleUrlCTM = (
   // Don't handle external url
   if (isExternalUrl) return url;
 
+  if (typeof url !== "string") {
+    // Optionally handle or throw an error, or convert to string if possible
+    return url;
+  }
+
   const isAbsoluteUrl = url.startsWith("http://") || url.startsWith("https://");
   let hash;
 

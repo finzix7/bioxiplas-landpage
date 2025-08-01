@@ -50,6 +50,35 @@ if (certificates.length === 0) {
   contentMd += `No certifications available at the moment.`;
 }
 
+if (locale === "en") {
+  contentMd += `\n\n### Chemical Safety\n\n`;
+  contentMd += `- **Allergen-free**\n`;
+  contentMd += `- **Free of crystal violet** and **malachite green**\n`;
+  contentMd += `- **Free of Bisphenol A (BPA)** and other endocrine disruptors\n\n`;
+
+  contentMd += `### Tests and Analysis\n\n`;
+  contentMd += `<img\n  src="/images/certificaciones/analysis.webp"\n  alt="Lab Analysis Icon"\n  class=" mx-auto mb-2"\n/>\n`;
+  contentMd += `We conduct **surface analysis** and **global migration analysis** in accredited laboratories, ensuring no substance transfer to food.\n\n`;
+} else if (locale === "de") {
+  contentMd += `\n\n### Chemische Sicherheit\n\n`;
+  contentMd += `- **Frei von Allergenen**\n`;
+  contentMd += `- **Frei von Kristallviolett** und **Malachitgrün**\n`;
+  contentMd += `- **Frei von Bisphenol A (BPA)** und anderen endokrinen Disruptoren\n\n`;
+
+  contentMd += `### Tests und Analysen\n\n`;
+  contentMd += `<img\n  src="/images/certificaciones/analysis.webp"\n  alt="Lab Analysis Icon"\n  class=" mx-auto mb-2"\n/>\n`;
+  contentMd += `Wir führen **Oberflächenanalysen** und **globale Migrationsanalysen** in akkreditierten Laboren durch, um sicherzustellen, dass keine Substanzen auf Lebensmittel übertragen werden.\n\n`;
+} else {
+  contentMd += `\n\n### Seguridad Química\n\n`;
+  contentMd += `- **Libre de alérgenos**\n`;
+  contentMd += `- **Libre de cristal violeta** y **verde malaquita**\n`;
+  contentMd += `- **Libre de Bisfenol A (BPA)** y otros disruptores endocrinos\n\n`;
+
+  contentMd += `### Ensayos y Análisis\n\n`;
+  contentMd += `<img\n  src="/images/certificaciones/analysis.webp"\n  alt="Lab Analysis Icon"\n  class=" mx-auto mb-2"\n/>\n`;
+  contentMd += `Realizamos **análisis de superficie** y **análisis de migración global** en laboratorios acreditados, garantizando que no haya transferencia de sustancias a los alimentos.\n\n`;
+}
+
 contentMd += `\n\n---\n\n`;
 // Añadir un pie de página o nota adicional
 if (locale === "en") {

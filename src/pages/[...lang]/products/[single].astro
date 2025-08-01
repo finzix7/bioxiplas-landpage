@@ -31,6 +31,16 @@ if (product) {
   if (product.como_solicitar) {
     contentHtml += `\n### ${t.como_solicitar}\n${product.como_solicitar}\n`;
   }
+  if (product.ficha_tecnica) {
+    contentHtml += `\n### ${t.ficha_tecnica}\n`;
+    contentHtml += `\n<a
+      href="${product.ficha_tecnica}"
+      download
+      class="from-primary/70 hover:bg-primary/70 inline-block rounded-lg bg-gradient-to-r to-transparent px-6 py-3 text-white no-underline transition"
+    >
+      ${t.descargar}
+    </a>\n`;
+  }
 
   contentHtml = markdownify(contentHtml, true) as string;
 }
