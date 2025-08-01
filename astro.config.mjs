@@ -9,7 +9,7 @@ import rehypeExternalLinks from "rehype-external-links";
 import remarkParseContent from "./src/lib/utils/remarkParseContent.ts";
 import parseTomlToJson from "./src/lib/utils/parseTomlToJson.ts";
 import tailwindcss from "@tailwindcss/vite";
-import vercel from "@astrojs/vercel/static";
+import vercel from "@astrojs/vercel/serverless";
 
 const config = parseTomlToJson("./src/config/config.toml");
 let supportedLanguages = [...languagesJSON.map((lang) => lang.languageCode)];
