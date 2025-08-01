@@ -9,6 +9,7 @@ import rehypeExternalLinks from "rehype-external-links";
 import remarkParseContent from "./src/lib/utils/remarkParseContent.ts";
 import parseTomlToJson from "./src/lib/utils/parseTomlToJson.ts";
 import tailwindcss from "@tailwindcss/vite";
+import vercel from "@astrojs/vercel/static";
 
 const config = parseTomlToJson("./src/config/config.toml");
 let supportedLanguages = [...languagesJSON.map((lang) => lang.languageCode)];
@@ -38,6 +39,7 @@ const locales = disable_language
 // https://astro.build/config
 export default defineConfig({
   site: config.site.base_url ? config.site.base_url : "http://examplesite.com",
+  adapter: vercel(),
   trailingSlash: config.site.trailing_slash ? "always" : "never",
   image: {
     experimentalLayout: "responsive",
