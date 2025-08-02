@@ -39,7 +39,7 @@ const locales = disable_language
 // https://astro.build/config
 export default defineConfig({
   site: config.site.base_url ? config.site.base_url : "http://examplesite.com",
-  output: "server",
+  // output: "server",
   adapter: vercel(),
   trailingSlash: config.site.trailing_slash ? "always" : "never",
   image: {
