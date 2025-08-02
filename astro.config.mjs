@@ -40,7 +40,10 @@ const locales = disable_language
 export default defineConfig({
   site: config.site.base_url ? config.site.base_url : "http://examplesite.com",
   // output: "server",
-  adapter: vercel(),
+  adapter: vercel({
+    includeFiles: ["src/config/config.toml", "src/config/**/*.tom"],
+
+  }),
   trailingSlash: config.site.trailing_slash ? "always" : "never",
   image: {
     experimentalLayout: "responsive",
@@ -100,6 +103,7 @@ export default defineConfig({
     extendDefaultPlugins: true,
   },
   vite: {
+    assetsInclude: ["**/*.toml"],
     plugins: [reloadOnTomlChange(), tailwindcss()],
   },
 });
