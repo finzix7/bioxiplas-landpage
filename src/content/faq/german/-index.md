@@ -15,6 +15,7 @@ list:
     title: "Welche Produkte bietet Bioxiplas an?"
     content: |
     Bioxiplas entwickelt fortschrittliche biologisch abbaubare Lösungen für verschiedene Branchen, darunter:
+
     - **Zertifizierte kompostierbare Verpackungen**: Beutel, Folien und Verpackungen mit OK Compost Industrial-Zertifizierung (EN-13432).
     - **Biologisch abbaubarer persönlicher Schutz**: Schürzen, Kittel und Artikel für die Lebensmittel-, Gesundheits- und Logistikbranche.
     - **Maßgeschneiderte technische Lösungen**: Spezielle Produkte wie Beutel für gefährliche Abfälle, Behälteretiketten und Gefrierfolien.
@@ -29,6 +30,7 @@ list:
     title: "Über welche Zertifizierungen verfügen die Produkte von Bioxiplas?"
     content: |
     Unsere Produkte verfügen über folgende Zertifizierungen:
+
     - **OK Compost Industrial (EN-13432)**
     - **FDA - Lebensmittelsicherheit**
     - **Zertifikate für antivirale, antifungale und antibakterielle Eigenschaften**
@@ -38,6 +40,7 @@ list:
     title: "In welchen Branchen werden Bioxiplas-Produkte eingesetzt?"
     content: |
     Bioxiplas bietet biologisch abbaubare Lösungen für:
+
     - Lebensmittelindustrie (Verarbeitung und Verpackung)
     - Einzelhandel und Handel
     - Obst- und Landwirtschaft
@@ -48,6 +51,7 @@ list:
     title: "Wie läuft die Entwicklung von maßgeschneiderten Produkten ab?"
     content: |
     Wir arbeiten eng mit unseren Kunden zusammen, um maßgeschneiderte Produkte zu entwickeln:
+
     1. **Bedarfsanalyse** und Erfassung technischer Anforderungen.
     2. **Lösungsvorschlag** mit Materialien, Formaten und Zertifizierungen.
     3. **Prototyping** und funktionale Tests.
@@ -59,6 +63,7 @@ list:
     title: "Produziert Bioxiplas auf Bestellung?"
     content: |
     Ja. Wir bieten Produktion auf Bestellung sowie Standardserien an für Produkte wie:
+
     - Kompostierbare Beutel
     - Biologisch abbaubare Folien
     - Persönlicher Schutz
@@ -68,6 +73,7 @@ list:
     title: "Wie lange dauert die Produktion und Lieferung?"
     content: |
     Die Zeiten variieren je nach Produkttyp:
+
     - Standardprodukte: 1 bis 2 Wochen.
     - Maßgeschneiderte Produkte: 3 bis 5 Wochen (inklusive Entwicklungsphase, falls erforderlich).
 
@@ -75,6 +81,7 @@ list:
     title: "Wie wird die Produktqualität sichergestellt?"
     content: |
     Bioxiplas führt Qualitätskontrollen in allen Produktionsstufen durch:
+
     - Prüfung zertifizierter Rohstoffe.
     - Interne Prozessaudits.
     - Tests auf biologische Abbaubarkeit, Festigkeit und Lebensmittelsicherheit.
@@ -88,6 +95,7 @@ list:
     title: "Bieten Sie Beratung zu Kreislaufwirtschaft und Umweltmetriken an?"
     content: |
     Ja. Wir unterstützen unsere Kunden beim Design von Kreislaufwirtschaftsmodellen und liefern Umweltmetriken wie:
+
     - Vermiedene Tonnen konventionellen Kunststoffs.
     - Reduzierung des CO₂-Fußabdrucks.
     - Erzielte Zirkularität.
@@ -103,6 +111,7 @@ list:
     title: "Was ist die Mindestbestellmenge?"
     content: |
     Die Mindestbestellmengen hängen vom Produkttyp ab:
+
     - Standardbeutel und -folien: ab 5.000 Stück.
     - Maßgeschneiderte Produkte: abhängig von den Spezifikationen und dem Entwicklungstyp.
 
