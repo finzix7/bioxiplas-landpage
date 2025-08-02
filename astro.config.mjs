@@ -9,7 +9,7 @@ import rehypeExternalLinks from "rehype-external-links";
 import remarkParseContent from "./src/lib/utils/remarkParseContent.ts";
 import parseTomlToJson from "./src/lib/utils/parseTomlToJson.ts";
 import tailwindcss from "@tailwindcss/vite";
-import vercel from "@astrojs/vercel/serverless";
+import vercel from "@astrojs/vercel";
 
 const config = parseTomlToJson("./src/config/config.toml");
 let supportedLanguages = [...languagesJSON.map((lang) => lang.languageCode)];
@@ -41,8 +41,7 @@ export default defineConfig({
   site: config.site.base_url ? config.site.base_url : "http://examplesite.com",
   // output: "server",
   adapter: vercel({
-    includeFiles: ["src/config/config.toml", "src/config/**/*.tom"],
-
+    includeFiles: ["./src/config/config.toml"], // Remove unnecessary patterns
   }),
   trailingSlash: config.site.trailing_slash ? "always" : "never",
   image: {
