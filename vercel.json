@@ -7,5 +7,34 @@
       "destination": "/sitemap-index.xml",
       "permanent": true
     }
+  ],
+  "headers": [
+    {
+      "source": "/products/:slug",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "s-maxage=86400, stale-while-revalidate=43200"
+        }
+      ]
+    },
+    {
+      "source": "/certifications",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "s-maxage=86400, stale-while-revalidate=43200"
+        }
+      ]
+    },
+    {
+      "source": "/blog/:slug",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "s-maxage=86400, stale-while-revalidate=43200"
+        }
+      ]
+    }
   ]
 }

@@ -21,7 +21,11 @@ export async function fetchProducts({
   url.searchParams.set("draft", "false");
   if (locale) url.searchParams.set("locale", locale);
 
-  const res = await fetch(url.toString());
+  const res = await fetch(url.toString(), {
+    headers: {
+      "Cache-Control": "s-maxage=86400, stale-while-revalidate=43200",
+    },
+  });
   if (!res.ok) {
     throw new Error(`Failed to fetch products: ${res.status}`);
   }
@@ -36,7 +40,12 @@ export async function fetchProductBySlug(slug: string, locale?: string) {
   url.searchParams.set("draft", "false");
   if (locale) url.searchParams.set("locale", locale);
 
-  const res = await fetch(url.toString());
+  const res = await fetch(url.toString(), 
+  {
+    headers: {
+      "Cache-Control": "s-maxage=86400, stale-while-revalidate=43200",
+    },
+  });
   if (!res.ok) {
     throw new Error(`Failed to fetch product: ${res.status}`);
   }
@@ -58,7 +67,12 @@ export async function fetchCertifications({
   url.searchParams.set("sort", "createdAt");
   if (locale) url.searchParams.set("locale", locale);
 
-  const res = await fetch(url.toString());
+  const res = await fetch(url.toString(),
+  {
+    headers: {
+      "Cache-Control": "s-maxage=86400, stale-while-revalidate=43200",
+    },
+  });
   if (!res.ok) {
     throw new Error(`Failed to fetch certifications: ${res.status}`);
   }
@@ -78,7 +92,12 @@ export async function fetchBlogs({
   url.searchParams.set("draft", "false");
   if (locale) url.searchParams.set("locale", locale);
 
-  const res = await fetch(url.toString());
+  const res = await fetch(url.toString(), 
+  {
+    headers: {
+      "Cache-Control": "s-maxage=86400, stale-while-revalidate=43200",
+    },
+  });
   if (!res.ok) {
     throw new Error(`Failed to fetch blogs: ${res.status}`);
   }
@@ -93,7 +112,12 @@ export async function fetchBlogBySlug(slug: string, locale?: string) {
   url.searchParams.set("draft", "false");
   if (locale) url.searchParams.set("locale", locale);
 
-  const res = await fetch(url.toString());
+  const res = await fetch(url.toString(),
+  {
+    headers: {
+      "Cache-Control": "s-maxage=86400, stale-while-revalidate=43200",
+    },
+  });
   if (!res.ok) {
     throw new Error(`Failed to fetch blog: ${res.status}`);
   }

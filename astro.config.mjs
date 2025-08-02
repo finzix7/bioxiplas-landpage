@@ -41,7 +41,7 @@ export default defineConfig({
   site: config.site.base_url ? config.site.base_url : "http://examplesite.com",
   // output: "server",
   adapter: vercel({
-    includeFiles: ["./src/config/config.toml"], // Remove unnecessary patterns
+    includeFiles: ["./src/config/config.toml"],
   }),
   trailingSlash: config.site.trailing_slash ? "always" : "never",
   image: {
