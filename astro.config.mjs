@@ -5,12 +5,13 @@ import sitemap from "@astrojs/sitemap";
 import AutoImport from "astro-auto-import";
 import { defineConfig } from "astro/config";
 import languagesJSON from "./src/config/language.json";
-import config from "./src/config/config.json";
 import rehypeExternalLinks from "rehype-external-links";
 import remarkParseContent from "./src/lib/utils/remarkParseContent.ts";
+import parseTomlToJson from "./src/lib/utils/parseTomlToJson.ts";
 import tailwindcss from "@tailwindcss/vite";
 import vercel from "@astrojs/vercel/serverless";
 
+const config = parseTomlToJson("./src/config/config.toml");
 let supportedLanguages = [...languagesJSON.map((lang) => lang.languageCode)];
 
 let {
